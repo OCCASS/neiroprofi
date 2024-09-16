@@ -1,0 +1,128 @@
+.fields {
+    padding: 60px 30px;
+    background-color: var(--color-white);
+}
+
+.fields__header {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.fields__headerDescription {
+    color: var(--color-gray-hard);
+}
+
+.fields__headerTitle {
+    margin: 0;
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.fields__body {
+    display: grid;
+    grid-template-columns: 75fr 25fr;
+    gap: 15px;
+}
+
+.fields__list {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.list__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    border-radius: 15px;
+}
+
+.fields__contact {
+    color: var(--color-white);
+    background-color: var(--color-blue);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.contact__title {
+    text-align: center;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 500;
+    margin: 0 0 30px;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact__formInput {
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--color-white);
+    text-align: center;
+    height: 55px;
+    font-size: 1.2rem;
+}
+
+.contact__formButton {
+    padding: 0;
+    height: 55px;
+    border: none;
+    background-color: var(--color-white);
+    border-radius: 100px;
+    color: var(--color-blue);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1430px) {
+    .fields__body {
+        grid-template-columns: 1fr;
+    }
+
+    .fields__list {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .fields {
+        padding: 30px 0 !important;
+    }
+
+    .fields__header {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .fields__headerTitle, .fields__headerDescription {
+        text-align: center;
+    }
+
+    .fields__headerTitle {
+        font-size: 2.25em;
+    }
+
+    .fields__headerDescription {
+        font-size: 0.875em;
+    }
+}
+
+@media (max-width: 805px) {
+    .list__content {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 90%;
+        overflow-x: scroll;
+    }
+}

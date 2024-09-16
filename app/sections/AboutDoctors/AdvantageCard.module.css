@@ -1,0 +1,19 @@
+.advantage_card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media (max-width: 460px) {
+    .advantage_card__title {
+        font-size: 1em !important;
+        line-height: 1.5 !important;
+        word-break: break-all;
+        hyphens: manual;
+    }
+
+    .advantage_card__content {
+        word-break: break-all;
+        hyphens: manual;
+    }
+}

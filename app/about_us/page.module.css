@@ -1,0 +1,62 @@
+.section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 120px;
+    background-color: var(--color-white) !important;
+}
+
+.section__first {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.first__content {
+    color: var(--color-gray-hard);
+    margin: 0;
+}
+
+.section__second {
+    display: grid;
+    column-gap: 15px;
+    row-gap: 45px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr min-content;
+}
+
+.second__imageFirst {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.second__image {
+    border-radius: 15px;
+    object-fit: cover;
+    height: 100%;
+}
+
+.second__license {
+    justify-self: end;
+    align-self: end;
+    position: relative;
+    background-image: url("/license_bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    width: 162px;
+    height: 162px;
+}
+
+.license__link {
+    height: 36px;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    color: inherit;
+    background-color: var(--color-white);
+    border-radius: 100px;
+    line-height: 36px;
+    text-align: center;
+    text-decoration: none;
+}

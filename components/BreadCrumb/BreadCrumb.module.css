@@ -1,0 +1,26 @@
+.bread_crumb {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    list-style: none;
+    margin: 0 0 20px;
+}
+
+.bread_crumb__item {
+    background-color: var(--color-white);
+    border-radius: 100px;
+    color: var(--color-gray-hard);
+}
+
+.bread_crumb__item:nth-last-child(1) {
+    color: var(--color-black);
+}
+
+.bread_crumb__link {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.8em;
+}

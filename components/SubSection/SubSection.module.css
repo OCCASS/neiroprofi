@@ -1,0 +1,11 @@
+.sub_section {
+    padding: 30px;
+    background-color: var(--color-white);
+    border-radius: 15px;
+}
+
+@media (max-width: 800px) {
+    .sub_section {
+        padding: 20px;
+    }
+}
