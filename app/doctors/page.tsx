@@ -1,30 +1,31 @@
-"use server"
-
 import UnderHeader from "@/components/UnderHeader/UnderHeader";
 import styles from "./page.module.css"
 import DoctorCard from "@/components/DoctorCard";
 import PageTitle from "@/components/PageTitle";
 import BreadCrumb from "@/components/BreadCrumb";
-import {TDoctor} from "@/types/doctor";
-import loadData from "@/lib/loadData";
+import { TDoctor } from "@/types/doctor";
+import Section from "@/components/Section";
+import { get } from "@/lib/fetch";
+
+export const revalidate = 120;
 
 export default async function Page() {
-    const doctors: TDoctor[] = await loadData("doctors.json")
+    const doctors = await get<TDoctor[]>("/api/doctors")
 
     return (
         <>
             <UnderHeader>
                 <BreadCrumb items={[
-                    {name: "НейроПрофи", path: "/"},
-                    {name: "Персонал", path: "/doctors"}
-                ]}/>
+                    { name: "НейроПрофи", path: "/" },
+                    { name: "Персонал", path: "/doctors" }
+                ]} />
                 <PageTitle>Наш персонал</PageTitle>
             </UnderHeader>
-            <div className={styles.doctors__list}>
+            <Section className={styles.doctors__list}>
                 {
-                    doctors.map(item => <DoctorCard key={item.id} data={item}/>)
+                    doctors.map(item => <DoctorCard key={item.id} data={item} />)
                 }
-            </div>
+            </Section>
         </>
     )
 }

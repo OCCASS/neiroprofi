@@ -1,14 +1,12 @@
 .doctors__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    border-radius: 30px;
-    padding: 15px;
-    background-color: var(--color-blue-gray);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 15px !important;
 }
 
 @media (max-width: 1600px) {
-    .doctors__list {
-        grid-template-columns: 1fr;
-    }
+  .doctors__list {
+    grid-template-columns: 1fr;
+  }
 }

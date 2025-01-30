@@ -1,52 +1,75 @@
 .staff_card {
-    border-radius: 15px;
-    border: 2px solid #D3D9E8;
-    background-color: var(--color-white);
-    padding: 20px;
+  display: grid;
+  grid-template-rows: 1fr max-content;
+  gap: 30px;
+  border-radius: 15px;
+  border: 1.5px solid #d3d9e8;
+  background-color: var(--color-white);
+  padding: 20px;
 }
 
 .staff_card__link {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.staff_card__imageLink {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  width: fit-content;
 }
 
 .staff_card__image {
-    grid-row-start: 1;
-    grid-row-end: 3;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 .staff_card__top {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-template-rows: min-content 1fr;
-    align-items: start;
-    column-gap: 20px;
-    row-gap: 10px;
-    margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: min-content 1fr;
+  align-items: start;
+  column-gap: 20px;
+  row-gap: 10px;
 }
 
 .staff_card__position {
-    width: min-content;
-    padding: 5px 15px;
-    border-radius: 1000px;
-    background-color: #DFE4F1;
+  width: min-content;
+  padding: 5px 15px;
+  border-radius: 1000px;
+  background-color: var(--color-primary-light);
 }
 
 .staff_card__positionPrimary {
-    background-color: var(--color-blue);
-    color: var(--color-white);
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .staff_card__specialities {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: var(--color-gray-hard);
+  margin: 0;
+  padding: 0 0 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--color-grey-hard);
+  overflow-y: auto;
+  max-height: 150px;
 }
 
-.staff_card__image {
-    border-radius: 15px;
+.staff_card__specialitiesWrapper {
+  position: relative;
+  height: 100%;
+}
+
+.staff_card__specialitiesWrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: var(--color-white);
+  background: linear-gradient(180deg, transparent 0%, var(--color-white) 100%);
 }

@@ -1,1 +1,47 @@
-.page {}
+.sections_list {
+  padding: 15px !important;
+}
+
+.section__search {
+  padding: 15px !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+  column-gap: 15px;
+  align-items: center;
+}
+
+.section__input {
+  grid-row: 2;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 100px;
+  padding: 15px 20px;
+}
+
+.section__input:focus {
+  outline: none;
+}
+
+.section__input::placeholder {
+  font-family: inherit;
+  color: var(--color-grey-hard);
+}
+
+.section__not_found {
+  text-align: center;
+  font-size: 1.2em;
+  overflow-wrap: anywhere;
+}
+
+.section__not_foundQuery {
+  font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+  .section__search {
+    grid-template-columns: 1fr;
+  }
+}

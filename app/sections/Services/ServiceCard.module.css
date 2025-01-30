@@ -1,43 +1,50 @@
 .service_card {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 20px 30px;
-    border-radius: 15px;
-    background-color: var(--color-white);
+  display: grid;
+  grid-template-rows: 1fr max-content;
+  align-items: center;
+  gap: 5px;
+  padding: 20px 30px;
+  border-radius: 15px;
+  background-color: var(--color-white);
 }
 
 .service_card__top {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .service_card__icon {
-    height: 61px;
+  flex-shrink: 0;
+  height: 61px;
 }
 
 .service_card__name {
-    flex-grow: 1;
+  flex-grow: 1;
+}
+
+.service_card__link {
+  color: inherit;
+  text-decoration: none;
 }
 
 .service_card__bottom {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .service_card__price {
-    flex-grow: 1;
-    color: var(--color-blue);
+  flex-grow: 1;
+  color: var(--color-primary);
 }
 
 .service_card__button {
-    height: 36px;
-    padding: 0 15px;
-    border: 1px solid var(--color-gray-hard);
-    color: var(--color-gray-hard);
-    border-radius: 100px;
-    text-decoration: none;
-    line-height: 36px;
+  height: 36px;
+  padding: 0 15px;
+  border: 1px solid var(--color-grey-hard);
+  color: var(--color-grey-hard);
+  border-radius: 100px;
+  text-decoration: none;
+  line-height: 36px;
 }

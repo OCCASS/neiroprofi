@@ -1,13 +1,80 @@
 import styles from "./page.module.css"
 import UnderHeader from "@/components/UnderHeader/UnderHeader";
 import PageTitle from "@/components/PageTitle";
+import ServiceSection from "./components/ServiceSection";
+import Section from "@/components/Section";
+import ServicesGrid from "@/app/services/components/ServicesGrid";
+import BreadCrumb from "@/components/BreadCrumb";
+import { TService } from "@/types/service";
+import Search from "./components/Search";
+import LargeP from "@/components/LargeP";
+import { get } from "@/lib/fetch";
 
-export default function Page() {
+
+export const revalidate = 0;
+
+export default async function Page({ searchParams }: { searchParams: { search: string } }) {
+    const filterServices = (services: TService[]) => {
+        if (searchParams.search) {
+            return services.map(service => {
+                let filteredList = service.list.map(
+                    item => {
+                        const filteredItems = item.items.filter(item1 => item1.name.toLowerCase().includes(searchParams.search.toLowerCase().trim()))
+                        return { ...item, items: filteredItems }
+                    }
+                )
+                filteredList = filteredList.filter(item => item.items.length > 0)
+
+                if (filteredList.length > 0) {
+                    return {
+                        ...service,
+                        list: filteredList
+                    };
+                }
+
+                return null;
+            }).filter(service => service !== null)
+        }
+        return services
+    }
+
+
+    const services = filterServices(await get<TService[]>("/api/services"))
+
     return (
-    <>
-        <UnderHeader>
-            <PageTitle>Цены на услуги</PageTitle>
-        </UnderHeader>
-    </>
+        <>
+            <UnderHeader>
+                <BreadCrumb items={[
+                    { name: "НейроПрофи", path: "/" },
+                    { name: "Прайс", path: "/services" }
+                ]} />
+                <PageTitle>Цены на услуги</PageTitle>
+            </UnderHeader>
+            <Section className={styles.section__search}>
+                <LargeP>Быстрый поиск по названию</LargeP>
+                <Search />
+            </Section>
+            <Section className={styles.sections_list}>
+                {
+                    services.length > 0
+                        ?
+                        <ServicesGrid>
+                            {
+                                services.map((item, index) => (
+                                    <ServiceSection
+                                        key={index}
+                                        className={styles.sections_list__item}
+                                        service={item}
+                                    />
+                                ))
+                            }
+                        </ServicesGrid>
+                        :
+                        <p className={styles.section__not_found}>
+                            По запросу <span className={styles.section__not_foundQuery}>«{searchParams.search ?? ""}»</span> ничего не найдено
+                        </p>
+                }
+            </Section>
+        </>
     )
 }

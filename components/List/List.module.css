@@ -1,0 +1,27 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list__separators .item {
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+.list__separators .item:last-child {
+  border-bottom: none;
+}
+
+.item {
+  padding: 15px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.item__icon {
+  flex-shrink: 0;
+}

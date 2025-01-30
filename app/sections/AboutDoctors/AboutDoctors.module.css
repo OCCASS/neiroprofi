@@ -1,55 +1,55 @@
 .about_doctors {
-    display: grid;
-    grid-template-columns: 1fr 387px;
-    gap: 15px;
-    padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 387px;
+  gap: 15px;
+  padding: 15px;
 }
 
 .about_doctors__advantages {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .sectionSecond {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .sectionSecond__image {
-    width: 100%;
-    max-width: 387px;
+  width: 100%;
+  max-width: 387px;
 }
 
 .doctors__button {
-    width: max-content;
-    height: 40px;
-    padding: 0 15px;
-    color: inherit;
-    text-decoration: none;
-    line-height: 40px;
-    border: 1px solid var(--color-gray-hard);
-    border-radius: 100px;
+  width: max-content;
+  height: 40px;
+  padding: 0 15px;
+  color: inherit;
+  text-decoration: none;
+  line-height: 40px;
+  border: 1px solid var(--color-grey-hard);
+  border-radius: 100px;
 }
 
 @media (max-width: 915px) {
-    .about_doctors {
-        grid-template-columns: 1fr;
-    }
+  .about_doctors {
+    grid-template-columns: 1fr;
+  }
 
-    .about_doctors__advantages {
-        grid-template-columns: 1fr;
-    }
+  .about_doctors__advantages {
+    grid-template-columns: 1fr;
+  }
 
-    .sectionSecond {
-        align-items: center;
-    }
+  .sectionSecond {
+    align-items: center;
+  }
 
-    .sectionSecond__title {
-        text-align: center;
-    }
+  .sectionSecond__title {
+    text-align: center;
+  }
 }

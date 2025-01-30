@@ -1,9 +1,9 @@
 "use client"
 
-import {createPortal} from "react-dom";
-import {useEffect, useState} from "react";
+import { createPortal } from "react-dom";
+import { ReactNode, useEffect, useState } from "react";
 
-const UnderHeader = ({children}: { children: React.ReactNode }) => {
+const UnderHeader = ({ children }: { children: ReactNode }) => {
     const [mounted, setMounted] = useState(false)
 
     useEffect(() => {

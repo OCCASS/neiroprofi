@@ -2,105 +2,104 @@ import Section from "@/components/Section";
 import styles from "./Fields.module.css"
 import LargeP from "@/components/LargeP";
 import FieldCard from "@/app/sections/Fields/FieldCard";
-import Icon from "@/components/Icon";
 
 const FIELDS = [
     {
         name: "Неврология",
         icon: {
             name: "brain",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
     {
         name: "Терапия",
         icon: {
             name: "stethoscope",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
     {
         name: "Гинекология",
         icon: {
             name: "pelvis",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
     {
         name: "Эндокринология",
         icon: {
             name: "thyroid_gland",
-            size: {width: 34, height: 40}
+            size: { width: 34, height: 40 }
         }
     },
     {
         name: "Гастроэнтерология",
         icon: {
             name: "stomach_gray",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
     {
         name: "Педиатрия",
         icon: {
             name: "baby",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
     {
         name: "Дерматовенерология",
         icon: {
             name: "bacteria",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
     {
         name: "Кардиология",
         icon: {
             name: "heart",
-            size: {width: 45, height: 56}
+            size: { width: 45, height: 56 }
         }
     },
     {
         name: "Ревматология",
         icon: {
             name: "foot",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
     {
         name: "Остеопатия",
         icon: {
             name: "osteopathy",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
     {
         name: "Психология",
         icon: {
             name: "psychology",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
     {
         name: "Психотерапия",
         icon: {
             name: "psychotherapy",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
     {
         name: "Оториноларингология",
         icon: {
             name: "nose",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
     {
         name: "УЗИ",
         icon: {
             name: "ultrasound_machine",
-            size: {width: 45, height: 45}
+            size: { width: 45, height: 45 }
         }
     },
 ]
@@ -116,19 +115,8 @@ const Fields = () => {
             <div className={styles.fields__body}>
                 <Section className={styles.fields__list}>
                     <div className={styles.list__content}>
-                        {FIELDS.map((item, i) => <FieldCard key={i} name={item.name} icon={item.icon}/>)}
+                        {FIELDS.map((item, i) => <FieldCard key={i} name={item.name} icon={item.icon} />)}
                     </div>
-                </Section>
-                <Section className={styles.fields__contact}>
-                    <h4 className={styles.contact__title}>Запись на консультацию</h4>
-                    <form className={styles.contact__form}>
-                        <input className={styles.contact__formInput} placeholder="Ваше имя"/>
-                        <input className={styles.contact__formInput} placeholder="+7 (___) ___ __ __"/>
-                        <button className={styles.contact__formButton} type="submit">
-                            <Icon name="phone" width={24} height={25} />
-                            <span>Запись на консультацию</span>
-                        </button>
-                    </form>
                 </Section>
             </div>
         </Section>

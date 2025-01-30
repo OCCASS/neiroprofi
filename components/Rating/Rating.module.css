@@ -1,0 +1,8 @@
+.rating {
+  display: flex;
+  gap: 4px;
+}
+
+.rating__grey {
+  color: var(--color-grey-hard);
+}

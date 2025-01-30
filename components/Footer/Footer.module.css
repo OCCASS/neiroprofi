@@ -1,125 +1,128 @@
 .footer {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: max-content 1fr max-content max-content max-content;
-    gap: 10px;
-    margin-bottom: 15px;
-    border-radius: 30px;
-    background-color: #A7B4D4;
-    color: var(--color-white);
-    padding: 30px;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content max-content max-content;
+  gap: 10px;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  background-color: #a7b4d4;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  padding: 30px;
 }
 
 .footer__nav {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 45px;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  list-style: none;
 }
 
 .footer__link {
-    text-decoration: none;
-    color: inherit;
-    text-wrap: nowrap;
+  text-decoration: none;
+  color: inherit;
+  text-wrap: nowrap;
 }
 
 .footer__address {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .address__content {
-    font-style: normal;
+  font-style: normal;
 }
 
 .footer__phone {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .phone__content {
-    text-decoration: none;
-    color: inherit;
-    text-wrap: nowrap;
+  text-decoration: none;
+  color: inherit;
+  text-wrap: nowrap;
 }
 
 .footer__links {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    list-style: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  list-style: none;
 }
 
 @media (max-width: 1700px) {
-    .footer {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
+  .footer {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 
-    .footer__nav {
-        justify-content: flex-end;
-        grid-column-start: 2;
-        grid-column-end: 4;
-    }
-    
-    .footer__phone {
-        justify-content: center;
-    }
+  .footer__nav {
+    justify-content: end;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
 
-    .footer__links {
-        justify-content: flex-end;
-    }
+  .footer__phone {
+    justify-content: center;
+  }
+
+  .footer__links {
+    justify-content: end;
+  }
 }
 
 @media (max-width: 1080px) {
-    .footer {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(4, max-content);
-        gap: 30px;
-    }
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, max-content);
+    gap: 30px;
+  }
 
-    .footer__address, .footer__phone, .footer__links {
-        grid-column-start: 1;
-        grid-column-end: 1;
-        justify-content: flex-start;
-    }
+  .footer__address,
+  .footer__phone,
+  .footer__links {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    justify-content: start;
+  }
 
-    .footer__links {
-        text-wrap: wrap;
-        align-items: flex-end;
-    }
+  .footer__links {
+    text-wrap: wrap;
+    align-items: end;
+  }
 
-    .footer__nav {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 6;
-        gap: 0;
-    }
+  .footer__nav {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    gap: 0;
+  }
 }
 
 @media (max-width: 430px) {
-    .footer {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, max-content);
-    }
+  .footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, max-content);
+  }
 
-    .footer__nav {
-        grid-column-start: 1;
-        grid-column-end: 1;
-        grid-row-start: 5;
-        grid-row-end: 6;
-        gap: 20px;
-    }
+  .footer__nav {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    gap: 20px;
+  }
 }

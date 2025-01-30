@@ -3,7 +3,7 @@
 import styles from "./Header.module.css";
 import Icon from "@/components/Icon";
 import Link from "next/link";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import useOutsideClick from "@/lib/hooks/useOutsideClick";
 
 const Burger = () => {
@@ -36,17 +36,16 @@ const Burger = () => {
                 aria-label="Меню"
                 className={styles.burger__button}
             >
-                <Icon name="burger" width={27} height={17}/>
+                <Icon name="burger" width={27} height={17} />
             </button>
             <ul className={`${styles.burger__list} ${showBurger ? styles.burger__show : null}`}>
                 <li className={styles.nav__item}><Link href="/about_us" className={styles.nav__link} onClick={close}>О центре</Link></li>
                 <li className={styles.nav__item}><Link href="/services" className={styles.nav__link} onClick={close}>Услуги</Link></li>
                 <li className={styles.nav__item}><Link href="/doctors" className={styles.nav__link} onClick={close}>Персонал</Link></li>
-                <li className={styles.nav__item}><Link href="" className={styles.nav__link} onClick={close}>Прайс</Link></li>
-                <li className={styles.nav__item}><Link href="" className={styles.nav__link} onClick={close}>Отзывы</Link></li>
-                <li className={styles.nav__item}><Link href="" className={styles.nav__link} onClick={close}>Частые вопросы</Link>
+                <li className={styles.nav__item}><Link href="/reviews" className={styles.nav__link} onClick={close}>Отзывы</Link></li>
+                <li className={styles.nav__item}><Link href="/faq" className={styles.nav__link} onClick={close}>Частые вопросы</Link>
                 </li>
-                <li className={styles.nav__item}><Link href="" className={styles.nav__link} onClick={close}>Контакты</Link></li>
+                <li className={styles.nav__item}><Link href="/contacts" className={styles.nav__link} onClick={close}>Контакты</Link></li>
             </ul>
         </div>
     )

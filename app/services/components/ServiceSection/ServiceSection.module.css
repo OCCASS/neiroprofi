@@ -1,0 +1,140 @@
+.service_section {
+  background-color: var(--color-white);
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.service_section__headerMainIcon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.service_section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.service_section__headerTitle {
+  flex: 1;
+  overflow-wrap: anywhere;
+  padding: 0 20px;
+}
+
+.service_section__headerLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.service_section__headerButton {
+  display: none;
+  justify-self: end;
+  place-content: center;
+  width: 45px;
+  height: 45px;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.service_section__headerIcon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.service_section__headerIcon_open {
+  transform: rotate(180deg);
+}
+
+.service_section__list {
+  margin: 15px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service_section__title,
+.service_section__item {
+  display: flex;
+  algin-items: center;
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+.service_section__title {
+  justify-content: flex-start;
+  color: var(--color-grey-hard);
+}
+
+.service_section__item {
+  justify-content: space-between;
+}
+
+.service_section__item__sub {
+  margin-left: 15px;
+}
+
+.service_section__itemLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  color: var(--color-grey-hard);
+}
+
+.service_section__itemIcon {
+  flex-shrink: 0;
+}
+
+.service_section__itemRight {
+  display: flex;
+  gap: 2px;
+  text-wrap: nowrap;
+  margin: 0;
+}
+
+.service_section__list .service_section__item:last-child {
+  border-bottom: 0;
+}
+
+@media (max-width: 1000px) {
+  .service_section__headerMainIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .service_section__headerButton {
+    display: block;
+    width: 40px;
+    height: 40px;
+    justify-content: end;
+  }
+
+  .service_section__listClose {
+    display: none;
+  }
+
+  .service_section__headerTitle {
+    font-size: 1.2em !important;
+    line-height: 24px !important;
+  }
+}
+
+@media (max-width: 729px) {
+  .service_section__headerTitle {
+    font-size: 1em !important;
+    line-height: 20px !important;
+  }
+
+  .service_section__itemRight {
+    flex-direction: column;
+    gap: 0;
+    font-size: 0.9em;
+  }
+
+  .service_section__itemLeft {
+    font-size: 0.9em;
+  }
+}

@@ -1,12 +1,12 @@
 .section {
-    background-color: var(--color-blue-gray);
-    border-radius: 30px;
-    padding: 20px 30px;
-    margin-bottom: 30px;
+  background-color: var(--color-grey-light);
+  border-radius: 30px;
+  padding: 20px 30px;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 729px) {
-    .section {
-        padding: 30px 15px;
-    }
+  .section {
+    padding: 30px 15px;
+  }
 }
