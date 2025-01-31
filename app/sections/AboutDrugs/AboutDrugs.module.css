@@ -11,7 +11,9 @@
   line-height: 2.625rem;
   font-weight: 500;
   word-break: break-word;
-  hyphens: manual;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .about_drugs__license {
