@@ -12,9 +12,25 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-    title: "Нейропрофи",
-    description: "Клиника",
-
+    title: `Медицинский центр "Нейропрофи"`,
+    description: `Медицинский центр НейроПрофи. Город Казань ул. Космонавтов 6А. Звоните по телефону: 8 (843) 296-66-67. Комплексное лечение болевых синдромов для Вас и ваших близких.\nНейроПрофи Казань Космонавтов 6а`,
+    themeColor: "#ffffff",
+    colorScheme: "light",
+    keywords: "нейропрофи, медициниский центр, клиника казань",
+    openGraph: {
+        title: `Медицинский центр "Нейропрофи"`,
+        description: `Медицинский центр НейроПрофи. Город Казань ул. Космонавтов 6А. Звоните по телефону: 8 (843) 296-66-67. Комплексное лечение болевых синдромов для Вас и ваших близких.\nНейроПрофи Казань Космонавтов 6а`,
+        url: process.env.ROOT_URL,
+        phoneNumbers: ["88432966667"],
+        siteName: `Медицинский центр "Нейропрофи"`,
+        images: {
+            url: "/opengraph_preview.jpg",
+            secureUrl: "/opengraph_preview.jpg",
+            alt: `Медицинский центр "Нейропрофи"`,
+            width: 640,
+            height: 320
+        },
+    }
 };
 
 export const dynamic = "force-dynamic";
@@ -27,7 +43,7 @@ export default function RootLayout({
     return (
         <html lang="ru">
             <head>
-                <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+                <meta name="apple-mobile-web-app-title" content="Нейропрофи" />
             </head>
             <body className={montserrat.className}>
                 <div className="header">
