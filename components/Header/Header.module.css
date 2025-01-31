@@ -70,6 +70,7 @@
 }
 
 .phone__content {
+  font-family: inherit;
   color: inherit;
   text-decoration: none;
   text-wrap: nowrap;

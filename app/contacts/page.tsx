@@ -7,7 +7,6 @@ import LargeP from "@/components/LargeP";
 import styles from "./page.module.css"
 import Icon from "@/components/Icon";
 import Link from "next/link";
-import Image from "next/image"
 
 export const revalidate = 120;
 
@@ -75,29 +74,6 @@ export default function Page() {
                         src="https://yandex.ru/map-widget/v1/?um=constructor%3Acd53663c863fe392dea6bdda4cd1eb6ab54b555101378a3078cb0ad8e4976f3d&amp;source=constructor"
                         width="100%" height="100%" frameBorder="0"></iframe>
                 </div>
-            </Section>
-            <Section className={styles.wishes}>
-                <Image
-                    loading="lazy"
-                    src="/rightcol.png"
-                    width={921}
-                    height={435}
-                    alt=""
-                    className={styles.wishes__image}
-                />
-                <SubSection>
-                    <LargeP className={styles.wishes__title}>Пожелания и предложения</LargeP>
-                    <form className={styles.wishes__form}>
-                        <input className={styles.wishes__input} name="name" placeholder="Ваше имя" type="text" />
-                        <input className={styles.wishes__input} name="phone" placeholder="Телефон" type="phone" />
-                        <input className={styles.wishes__input} name="email" placeholder="Email" type="email" />
-                        <textarea className={`${styles.wishes__input} ${styles.wishes__textarea}`} name="content" placeholder="Ваши пожелания"></textarea>
-                        <button className={styles.wishes__button} type="submit">
-                            <Icon name="arrow_right" width={24} height={24} />
-                            <span className={styles.wishes__button__text}>Отправить</span>
-                        </button>
-                    </form>
-                </SubSection>
             </Section>
         </>
     )
