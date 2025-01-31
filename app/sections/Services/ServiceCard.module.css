@@ -48,3 +48,23 @@
   text-decoration: none;
   line-height: 36px;
 }
+
+@media (max-width: 805px) {
+  .service_card__icon {
+    height: 45px;
+  }
+
+  .service_card__name {
+    font-size: 0.9em;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  .service_card__button {
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.9em;
+  }
+}

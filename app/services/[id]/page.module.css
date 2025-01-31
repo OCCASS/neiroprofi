@@ -12,13 +12,15 @@
   font-size: 1.7em;
   line-height: 32px;
   margin-bottom: 30px !important;
-  word-break: break-all;
 }
 
 .about__content {
   margin: 0;
   white-space: pre-wrap;
-  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
   line-height: 1.5em;
   color: var(--color-grey-hard);
 }
@@ -85,6 +87,10 @@
   .about__title {
     font-size: 1.7em !important;
     line-height: 34px !important;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
   }
 
   .infoSection {

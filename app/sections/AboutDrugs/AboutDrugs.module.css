@@ -1,55 +1,57 @@
 .about_drugs {
-    background-color: var(--color-white);
-    display: grid;
-    grid-template-columns: 370px 1fr 162px;
-    gap: 75px;
+  background-color: var(--color-white);
+  display: grid;
+  grid-template-columns: 370px 1fr 162px;
+  gap: 75px;
 }
 
 .about_drugs__title {
-    margin: 0;
-    font-size: 2.25rem;
-    line-height: 2.625rem;
-    font-weight: 500;
+  margin: 0;
+  font-size: 2.25rem;
+  line-height: 2.625rem;
+  font-weight: 500;
+  word-break: break-word;
+  hyphens: manual;
 }
 
 .about_drugs__license {
-    position: relative;
-    height: 162px;
-    border-radius: 15px;
-    overflow: hidden;
-    background-image: url("/license_bg.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
+  position: relative;
+  height: 162px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-image: url("/license_bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .license__button {
-    height: 36px;
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    right: 15px;
-    color: inherit;
-    background-color: var(--color-white);
-    border-radius: 100px;
-    line-height: 36px;
-    text-align: center;
-    text-decoration: none;
+  height: 36px;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  color: inherit;
+  background-color: var(--color-white);
+  border-radius: 100px;
+  line-height: 36px;
+  text-align: center;
+  text-decoration: none;
 }
 
 @media (max-width: 1500px) {
-    .about_drugs__title {
-        font-size: 1.3rem;
-        line-height: 1.75rem;
-    }
+  .about_drugs__title {
+    font-size: 1.3rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (max-width: 1200px) {
-    .about_drugs {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+  .about_drugs {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 
-    .about_drugs__license {
-        background-image: url("/license_bg_streched.webp");
-    }
+  .about_drugs__license {
+    background-image: url("/license_bg_streched.webp");
+  }
 }

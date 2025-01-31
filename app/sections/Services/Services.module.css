@@ -23,10 +23,7 @@
   --list-item-min-width: 400px;
 
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(var(--list-item-min-width), 1fr)
-  );
+  grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
   gap: 15px;
   border-radius: 15px;
 }
@@ -60,7 +57,7 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: none;
     grid-auto-flow: column;
-    grid-auto-columns: minmax(var(--list-item-min-width), 90%);
+    grid-auto-columns: minmax(90%, var(--list-item-min-width));
     overflow-x: scroll;
   }
 }
