@@ -8,14 +8,14 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 
 export const viewport: Viewport = {
-    userScalable: false
+    userScalable: false,
+    themeColor: "#ffffff",
+    colorScheme: "light",
 }
 
 export const metadata: Metadata = {
     title: `Медицинский центр "Нейропрофи"`,
     description: `Медицинский центр НейроПрофи. Город Казань ул. Космонавтов 6А. Звоните по телефону: 8 (843) 296-66-67. Комплексное лечение болевых синдромов для Вас и ваших близких.\nНейроПрофи Казань Космонавтов 6а`,
-    themeColor: "#ffffff",
-    colorScheme: "light",
     keywords: "нейропрофи, медициниский центр, клиника казань",
     openGraph: {
         title: `Медицинский центр "Нейропрофи"`,
@@ -23,13 +23,6 @@ export const metadata: Metadata = {
         url: process.env.ROOT_URL,
         phoneNumbers: ["88432966667"],
         siteName: `Медицинский центр "Нейропрофи"`,
-        images: {
-            url: "/opengraph_preview.jpg",
-            secureUrl: "/opengraph_preview.jpg",
-            alt: `Медицинский центр "Нейропрофи"`,
-            width: 640,
-            height: 320
-        },
     }
 };
 
