@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ru">
+            <head>
+                <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+            </head>
             <body className={montserrat.className}>
                 <div className="header">
                     <Header />
