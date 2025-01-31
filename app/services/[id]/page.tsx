@@ -12,12 +12,15 @@ import { get } from "@/lib/fetch"
 import SubSection from "@/components/SubSection"
 import List from "@/components/List"
 import LargeP from "@/components/LargeP"
+import { notFound } from "next/navigation";
 
 export const revalidate = 0;
 
 export default async function Page({ params }: { params: { id: string } }) {
     const data = await get<TService[]>("/api/services")
     const service: TService = data.filter(item => item.id === params.id)[0]
+
+    if (!service) notFound()
 
     return (
         <>
