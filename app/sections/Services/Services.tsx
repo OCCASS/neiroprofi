@@ -6,7 +6,7 @@ import { TService } from "@/types/service";
 
 const Services = ({ services }: { services: TService[] }) => {
     return (
-        <Section className={styles.services}>
+        <Section id="services" className={styles.services}>
             <div className={styles.services__header}>
                 <LargeP className={styles.services__headerDescription}>Мы профессионалы своего дела</LargeP>
                 <h2 className={styles.services__headerTitle}>Наши услуги</h2>

@@ -133,3 +133,10 @@
     justify-content: space-between;
   }
 }
+
+@media (max-width: 450px) {
+  .welcome_section__title {
+    font-size: 1.6em;
+    line-height: 1.3;
+  }
+}
