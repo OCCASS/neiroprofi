@@ -6,8 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import LargeP from "@/components/LargeP";
 import Icon from "@/components/Icon";
+import { TDoctor } from "@/types/doctor";
 
-const AboutDoctors = () => {
+const AboutDoctors = ({ doctors }: { doctors: TDoctor[] }) => {
     return (
         <Section className={styles.about_doctors}>
             <SubSection>
@@ -38,8 +39,20 @@ const AboutDoctors = () => {
             <SubSection className={styles.sectionSecond}>
                 <LargeP className={styles.sectionSecond__title}>В нашем центре работает <span
                     style={{ color: "var(--color-primary)" }}>более 26</span> профессионалов</LargeP>
-                <Image className={styles.sectionSecond__image} src="/doctors.png" alt="Наши докторы" width={387}
-                    height={75} />
+                <div className={styles.doctors_list}>
+                    {
+                        doctors?.slice(0, 8).map(item =>
+                            <Image
+                                key={item.id}
+                                className={styles.doctors_list__image}
+                                src={item.image}
+                                alt={item.fullName}
+                                width={60}
+                                height={60}
+                            />
+                        )
+                    }
+                </div>
                 <Link className={styles.doctors__button} href="/doctors">Перейти к профессионалам</Link>
             </SubSection>
         </Section>

@@ -25,6 +25,25 @@
   max-width: 387px;
 }
 
+.doctors_list {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctors_list__image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 100px;
+  margin-left: -25px;
+}
+
+.doctors_list .doctors_list__image:last-child {
+  margin-left: 0;
+}
+
 .doctors__button {
   width: max-content;
   height: 40px;
@@ -51,5 +70,13 @@
 
   .sectionSecond__title {
     text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .doctors_list__image {
+    width: 45px;
+    height: 45px;
+    margin-left: -20px;
   }
 }

@@ -19,7 +19,7 @@ export default async function Home() {
         <>
             <Welcome />
             <AboutDrugs />
-            <AboutDoctors />
+            <AboutDoctors doctors={doctors} />
             <Services services={services} />
             <Staff doctors={doctors} />
             {/*<Fields />*/}
