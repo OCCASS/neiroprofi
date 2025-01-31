@@ -23,7 +23,10 @@
   --list-item-min-width: 400px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--list-item-min-width), 1fr)
+  );
   gap: 15px;
   border-radius: 15px;
 }
@@ -54,10 +57,17 @@
 
 @media (max-width: 805px) {
   .services__list {
+    --list-item-min-width: 300px;
+    --list-item-max-width: 450px;
+
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: none;
     grid-auto-flow: column;
-    grid-auto-columns: minmax(90%, var(--list-item-min-width));
+    grid-auto-columns: clamp(
+      var(--list-item-min-width),
+      90%,
+      var(--list-item-max-width)
+    );
     overflow-x: scroll;
   }
 }
