@@ -44,11 +44,12 @@ const ServiceSection = ({ service, className = "" }: {
 }
 
 const ItemItems = ({ items, asSub }: { items: TServiceItemItems[], asSub: boolean }) => {
-    const getPriceText = (price: number, per: string | null) => {
+    const getPriceContent = (price: number, per: string | null) => {
         const priceText = numberWithSpaces(price)
         if (per && per[per.length - 1] !== ".") per += ".";
-        if (per) return `${priceText} ₽ / ${per}`;
-        return `${priceText} ₽`
+        // Slash in first span, because when parent wraps its correctly
+        if (per) return <><span>{priceText} ₽ /</span> <span>{per}</span></>
+        return <span>{priceText} ₽</span>
     }
 
     return (
@@ -60,7 +61,7 @@ const ItemItems = ({ items, asSub }: { items: TServiceItemItems[], asSub: boolea
                     {item.name}
                 </div>
                 <p className={styles.service_section__itemRight}>
-                    {getPriceText(item.price, item.per)}
+                    {getPriceContent(item.price, item.per)}
                 </p>
             </li>
         ))
