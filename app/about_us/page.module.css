@@ -2,6 +2,11 @@
   background-color: var(--color-white) !important;
 }
 
+.link {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
 .section__title {
   overflow-wrap: break-word;
   text-wrap: wrap;

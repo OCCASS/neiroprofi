@@ -7,6 +7,7 @@ import H3 from "@/components/H3";
 import Staff from "@/components/Staff";
 import { TDoctor } from "@/types/doctor";
 import { get } from "@/lib/fetch";
+import Link from "next/link"
 
 export const revalidate = 120;
 
@@ -33,7 +34,7 @@ export default async function Page() {
 
                     <p>Таким образом мы проводим лечение больного, а не болезни. Это индивидуальный персонифицированный подход.</p>
 
-                    <p>Данная лечебная стратегия осуществляется посредством Лечебных программ,  о которых можно подробнее прочитать ТУТ.</p>
+                    <p>Данная лечебная стратегия осуществляется посредством Лечебных программ,  о которых можно подробнее прочитать <Link className={styles.link} href="/services/lechebnye-individualnye-programmy-lip" target="_blank" rel="norepeer,noreferer">ТУТ</Link>.</p>
 
                     <p>Принципы работы нашей клиники:</p>
 
