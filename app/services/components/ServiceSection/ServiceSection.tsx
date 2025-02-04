@@ -24,21 +24,24 @@ const ServiceSection = ({ service, className = "" }: {
                     <Icon className={`${styles.service_section__headerIcon} ${close ? "" : styles.service_section__headerIcon_open}`} name="arrow_bottom" width={24} height={24} />
                 </button>
             </div>
-            <ul className={`${styles.service_section__list} ${close ? styles.service_section__listClose : ""}`}>
-                {
-                    service.list.map((item, index) => (
-                        <>
-                            {
-                                item.title &&
-                                <li key={`title_${index}`} className={styles.service_section__title}>
-                                    {item.title}
-                                </li>
-                            }
-                            <ItemItems items={item.items} asSub={item.title ? true : false} />
-                        </>
-                    ))
-                }
-            </ul>
+            {
+                service.list.length > 0 &&
+                <ul className={`${styles.service_section__list} ${close ? styles.service_section__listClose : ""}`}>
+                    {
+                        service.list.map((item, index) => (
+                            <>
+                                {
+                                    item.title &&
+                                    <li key={`title_${index}`} className={styles.service_section__title}>
+                                        {item.title}
+                                    </li>
+                                }
+                                <ItemItems items={item.items} asSub={item.title ? true : false} />
+                            </>
+                        ))
+                    }
+                </ul>
+            }
         </section >
     )
 }

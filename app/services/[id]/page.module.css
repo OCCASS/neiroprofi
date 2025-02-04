@@ -4,7 +4,7 @@
 
 .about {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr clamp(400px, 40%, 600px);
   gap: 30px;
 }
 
@@ -28,6 +28,7 @@
 .about__imageWrapper {
   width: 100%;
   position: relative;
+  max-height: 700px;
 }
 
 .about__image {
@@ -75,7 +76,7 @@
   color: var(--color-grey-hard);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .about {
     grid-template-columns: 1fr;
   }

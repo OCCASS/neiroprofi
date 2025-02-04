@@ -26,7 +26,7 @@ const Reviews = async () => {
                     </div>
                 </Link>
                 <div className={styles.reviews__rating}>
-                    <Link className={styles.rating__link} href="https://prodoctorov.ru/" target="_blank">
+                    <Link className={styles.rating__link} href="https://prodoctorov.ru/kazan/lpu/47372-nyayroprofi/" target="_blank">
                         <Icon className={styles.rating__link__icon} name="arrow_up_right" width={25} height={25} />
                     </Link>
                     <Icon className={styles.rating__icon} name="pro_doctorov" width={134} height={20} />

@@ -35,7 +35,10 @@ export default async function Page({ params }: { params: { id: string } }) {
             <Section className={styles.aboutSection}>
                 <div className={styles.about}>
                     <div className={styles.about__left}>
-                        <H3 className={styles.about__title}>{service.name} – {service.descriptionShort.toLowerCase()}{service.descriptionShort.at(service.descriptionShort.length - 1) === "." ? "" : "."}</H3>
+                        <H3 className={styles.about__title}>
+                            {service.name} – {service.descriptionShort.toLowerCase()}
+                            {service.descriptionShort.at(service.descriptionShort.length - 1) === "" ? "" : "."}
+                        </H3>
                         <p className={styles.about__content}>{service.description}</p>
                     </div>
                     <div className={styles.about__imageWrapper}>
@@ -44,20 +47,29 @@ export default async function Page({ params }: { params: { id: string } }) {
                     </div>
                 </div>
             </Section>
-            <Section className={styles.infoSection}>
-                <SubSection>
-                    <LargeP className={styles.infoSection__title}>{service.name}:</LargeP>
-                    <List separators={true}>
-                        {service.advantages.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.toLowerCase()}</List.Item>)}
-                    </List>
-                </SubSection>
-                <SubSection>
-                    <LargeP className={styles.infoSection__title}>Показания к применению:</LargeP>
-                    <List separators={true}>
-                        {service.indications.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.toLowerCase()}</List.Item>)}
-                    </List>
-                </SubSection>
-            </Section>
+            {
+                (service.advantages.length + service.indications.length) > 0 &&
+                <Section className={styles.infoSection}>
+                    {
+                        service.advantages.length > 0 &&
+                        <SubSection>
+                            <LargeP className={styles.infoSection__title}>{service.name}:</LargeP>
+                            <List separators={true}>
+                                {service.advantages.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.toLowerCase()}</List.Item>)}
+                            </List>
+                        </SubSection>
+                    }
+                    {
+                        service.indications.length > 0 &&
+                        <SubSection>
+                            <LargeP className={styles.infoSection__title}>Показания к применению:</LargeP>
+                            <List separators={true}>
+                                {service.indications.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.toLowerCase()}</List.Item>)}
+                            </List>
+                        </SubSection>
+                    }
+                </Section>
+            }
         </>
     )
 }
