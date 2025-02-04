@@ -35,8 +35,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             <Section className={styles.doctor__about}>
                 <div className={styles.about__left}>
                     <H3 className={styles.about__title}>{doctor.fullName} – {doctor.about.toLowerCase()}{doctor.about.at(doctor.about.length - 1) === "." ? "" : "."}</H3>
-                    <div className={styles.about__section}
-                        style={{ borderBottom: "1px solid #D3D9E8", paddingBottom: "15px" }}>
+                    <div className={styles.about__section}>
                         <LargeP className={styles.section__title}>
                             <Icon name={"multi_arrow_right_in_circle"} width={21} height={21} />
                             Специальность
@@ -44,20 +43,26 @@ export default async function Page({ params }: { params: { id: string } }) {
                         <ul className={styles.section__list}>{doctor.specialities.short.map((item, index) => <li
                             key={index}>{item}</li>)}</ul>
                     </div>
-                    <div className={styles.doctor__section}>
-                        <LargeP className={styles.section__title}>
-                            <Icon name={"multi_arrow_right_in_circle"} width={21} height={21} />
-                            Образование
-                        </LargeP>
-                        <p className={styles.section__text}>{doctor.education}</p>
-                    </div>
-                    <div className={styles.about__section_detailed}>
-                        <List>
-                            {doctor.specialities.detailed.map((item, index) => (
-                                <List.Item key={index}>{item}</List.Item>))
-                            }
-                        </List>
-                    </div>
+                    {
+                        doctor.education.length > 0 &&
+                        <div className={styles.doctor__section} style={{ borderTop: "1px solid #D3D9E8", paddingTop: "15px" }}>
+                            <LargeP className={styles.section__title}>
+                                <Icon name={"multi_arrow_right_in_circle"} width={21} height={21} />
+                                Образование
+                            </LargeP>
+                            <p className={styles.section__text}>{doctor.education}</p>
+                        </div>
+                    }
+                    {
+                        doctor.specialities.detailed.length > 0 &&
+                        <div className={styles.about__section_detailed}>
+                            <List>
+                                {doctor.specialities.detailed.map((item, index) => (
+                                    <List.Item key={index}>{item}</List.Item>))
+                                }
+                            </List>
+                        </div>
+                    }
                 </div>
                 <div className={styles.about__imageWrapper}>
                     <Image className={styles.about__image} src={doctor.image} alt={doctor.fullName} width={500} height={500} />

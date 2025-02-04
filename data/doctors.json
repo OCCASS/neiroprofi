@@ -39,7 +39,7 @@
     },
     "specialities": {
       "short": ["отоневролог", "вестибулолог"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -54,7 +54,7 @@
     },
     "specialities": {
       "short": ["фельдшер-лаборант"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -73,7 +73,7 @@
         "ВРТ диагностика",
         "висцеральный массаж"
       ],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -88,7 +88,7 @@
     },
     "specialities": {
       "short": ["психотерапевт"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -103,7 +103,7 @@
     },
     "specialities": {
       "short": ["кардиолог с интегративным подходом"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -124,7 +124,7 @@
         "УЗИ",
         "репродуктология"
       ],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -139,7 +139,7 @@
     },
     "specialities": {
       "short": ["клинический психолог", "сексолог"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -154,7 +154,7 @@
     },
     "specialities": {
       "short": ["невролог", "остеопат"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": "Выпускник Европейской школы остеопатии."
   },
@@ -169,7 +169,7 @@
     },
     "specialities": {
       "short": ["инфекционист", "гастроэнтеролог", "педиатр"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -184,7 +184,7 @@
     },
     "specialities": {
       "short": ["процедурная медсестра"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -199,7 +199,7 @@
     },
     "specialities": {
       "short": ["массаж"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -214,7 +214,7 @@
     },
     "specialities": {
       "short": ["мануальная терапия", "остеопат"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -229,7 +229,7 @@
     },
     "specialities": {
       "short": ["ультразвуковая диагностика", "сосудистая хирургия"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -244,7 +244,7 @@
     },
     "specialities": {
       "short": ["терапевт с интегративным подходом", "гирудотерапевт"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -259,7 +259,7 @@
     },
     "specialities": {
       "short": ["педиатр", "интегративная медицина", "превентивная медицина"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -274,7 +274,7 @@
     },
     "specialities": {
       "short": ["невролог", "вестибулолог"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -289,7 +289,7 @@
     },
     "specialities": {
       "short": ["неврология с интегративным подходом"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -304,7 +304,7 @@
     },
     "specialities": {
       "short": ["остеопатия", "терапевт", "гастроэнтеролог"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -319,7 +319,7 @@
     },
     "specialities": {
       "short": ["оториноларингология с интегративным подходом"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -338,7 +338,7 @@
         "рефлексотерапевт",
         "гирудотерапевт"
       ],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -353,7 +353,7 @@
     },
     "specialities": {
       "short": ["дерматовенеролог", "косметолог"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -372,7 +372,7 @@
         "превентивная медицина",
         "антивозрастная медицина"
       ],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   },
@@ -387,7 +387,7 @@
     },
     "specialities": {
       "short": ["паркинсонолог"],
-      "detailed": [""]
+      "detailed": []
     },
     "education": ""
   }

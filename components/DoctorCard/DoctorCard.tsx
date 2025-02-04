@@ -15,20 +15,23 @@ const DoctorCard = ({ data }: { data: TDoctor }) => {
                     <Link className={styles.doctor_card__link} href={`/doctors/${data.id}`}>{data.fullName}</Link>
                 </LargeP>
                 <SmallP className={`${styles.doctor_card__position} ${data.position.primary ? styles.doctor_card__positionPrimary : ""}`}>{data.position.name}</SmallP>
-                <div className={styles.doctor_card__section} style={{ borderBottom: "1px solid #D3D9E8", paddingBottom: "15px" }}>
+                <div className={styles.doctor_card__section}>
                     <SmallP className={styles.section__title}>
                         <Icon name={"multi_arrow_right_in_circle"} width={21} height={21} />
                         Специальность
                     </SmallP>
                     <ul className={styles.section__list}>{data.specialities.short.map((item, index) => <li key={index}>{item}</li>)}</ul>
                 </div>
-                <div className={styles.doctor_card__section}>
-                    <SmallP className={styles.section__title}>
-                        <Icon name={"multi_arrow_right_in_circle"} width={21} height={21} />
-                        Образование
-                    </SmallP>
-                    <p className={styles.section__text}>{data.education}</p>
-                </div>
+                {
+                    data.education.length > 0 &&
+                    <div className={styles.doctor_card__section} style={{ borderTop: "1px solid #D3D9E8", paddingTop: "15px" }}>
+                        <SmallP className={styles.section__title}>
+                            <Icon name={"multi_arrow_right_in_circle"} width={21} height={21} />
+                            Образование
+                        </SmallP>
+                        <p className={styles.section__text}>{data.education}</p>
+                    </div>
+                }
                 <div className={styles.section__buttonWrapper}>
                     <Link href={`/doctors/${data.id}`} type="button" className={styles.section__button}>Подробнее</Link>
                 </div>
