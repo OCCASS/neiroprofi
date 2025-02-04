@@ -53,7 +53,7 @@
       "primary": false
     },
     "specialities": {
-      "short": [""],
+      "short": ["фельдшер-лаборант"],
       "detailed": [""]
     },
     "education": ""
@@ -183,7 +183,7 @@
       "primary": false
     },
     "specialities": {
-      "short": [""],
+      "short": ["процедурная медсестра"],
       "detailed": [""]
     },
     "education": ""
@@ -194,11 +194,11 @@
     "about": "",
     "image": "/staff/galiullina-ilmira-ravilevna.webp",
     "position": {
-      "name": "Врач",
+      "name": "Специалист",
       "primary": false
     },
     "specialities": {
-      "short": [""],
+      "short": ["массаж"],
       "detailed": [""]
     },
     "education": ""
@@ -243,7 +243,7 @@
       "primary": false
     },
     "specialities": {
-      "short": ["неврология с интегративным подходом"],
+      "short": ["терапевт с интегративным подходом", "гирудотерапевт"],
       "detailed": [""]
     },
     "education": ""
@@ -273,7 +273,7 @@
       "primary": false
     },
     "specialities": {
-      "short": [""],
+      "short": ["невролог", "вестибулолог"],
       "detailed": [""]
     },
     "education": ""
@@ -333,7 +333,11 @@
       "primary": false
     },
     "specialities": {
-      "short": [""],
+      "short": [
+        "невролог с интегративным подходом",
+        "рефлексотерапевт",
+        "гирудотерапевт"
+      ],
       "detailed": [""]
     },
     "education": ""
@@ -382,7 +386,7 @@
       "primary": false
     },
     "specialities": {
-      "short": ["невролог"],
+      "short": ["паркинсонолог"],
       "detailed": [""]
     },
     "education": ""
