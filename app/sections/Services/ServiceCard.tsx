@@ -5,9 +5,9 @@ import { TService } from "@/types/service";
 import { numberWithSpaces } from "@/utils/number_with_spaces";
 
 const ServiceCard = ({ service }: { service: TService }) => {
-    const minPrice = service.list.reduce((min, obj) => {
+    const minPrice = service.list.length > 0 ? service.list.reduce((min, obj) => {
         return obj.items[0].price < min ? obj.items[0].price : min;
-    }, Infinity)
+    }, Infinity) : null
 
     return (
         <article className={styles.service_card}>
@@ -16,7 +16,9 @@ const ServiceCard = ({ service }: { service: TService }) => {
                 <p className={styles.service_card__name}><Link className={styles.service_card__link} href={`/services/${service.id}`}>{service.name}</Link></p>
             </div>
             <div className={styles.service_card__bottom}>
-                <p className={styles.service_card__price}>от {numberWithSpaces(minPrice)}₽</p>
+                <p className={styles.service_card__price}>
+                    {minPrice ? `от ${numberWithSpaces(minPrice)}₽` : null}
+                </p>
                 <Link className={styles.service_card__button} href={`/services/${service.id}`}>К услуге</Link>
             </div>
         </article>
