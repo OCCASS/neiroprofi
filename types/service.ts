@@ -13,6 +13,7 @@ export type TService = {
     iconName: string
     advantages: string[]
     indications: string[]
+    contraindications: string[]
     list: {
         title: string | null,
         items: TServiceItemItems[]

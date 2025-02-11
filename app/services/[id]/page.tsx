@@ -59,7 +59,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                 </div>
             </Section>
             {
-                (service.advantages.length + service.indications.length) > 0 &&
+                (service.advantages.length + service.indications.length + service.contraindications.length) > 0 &&
                 <Section className={styles.infoSection}>
                     {
                         service.advantages.length > 0 &&
@@ -76,6 +76,15 @@ export default async function Page({ params }: { params: { id: string } }) {
                             <LargeP className={styles.infoSection__title}>Показания к применению:</LargeP>
                             <List separators={true}>
                                 {service.indications.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.toLowerCase()}</List.Item>)}
+                            </List>
+                        </SubSection>
+                    }
+                    {
+                        service.contraindications.length > 0 &&
+                        <SubSection>
+                            <LargeP className={styles.infoSection__title}>Противопоказания к применению:</LargeP>
+                            <List separators={true}>
+                                {service.contraindications.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.toLowerCase()}</List.Item>)}
                             </List>
                         </SubSection>
                     }
