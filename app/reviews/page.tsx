@@ -8,8 +8,13 @@ import BreadCrumb from "@/components/BreadCrumb";
 import PageTitle from "@/components/PageTitle";
 import ReviewCard from "@/components/ReviewCard";
 import { get } from "@/lib/fetch";
+import { Metadata } from "next";
 
 export const revalidate = 120;
+
+export const metadata: Metadata = {
+    title: `Отзывы о нашем центре | Медицинский центр «Нейропрофи»`,
+}
 
 export default async function Page({ searchParams }: { searchParams: { key: string } }) {
     const reviews = await get<TReview[]>(`/api/reviews`)

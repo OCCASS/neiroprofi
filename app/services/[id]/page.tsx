@@ -13,8 +13,19 @@ import SubSection from "@/components/SubSection"
 import List from "@/components/List"
 import LargeP from "@/components/LargeP"
 import { notFound } from "next/navigation";
+import { Metadata } from "next"
 
 export const revalidate = 0;
+
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+    const data = await get<TService[]>("/api/services")
+    const service: TService = data.filter(item => item.id === params.id)[0]
+
+    return {
+        title: service ? `${service.name} | Медицинский цент «Нейропрофи»` : "Услуга не найдена"
+    }
+}
 
 export default async function Page({ params }: { params: { id: string } }) {
     const data = await get<TService[]>("/api/services")

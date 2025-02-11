@@ -4,9 +4,13 @@ import PageTitle from "@/components/PageTitle";
 import UnderHeader from "@/components/UnderHeader/UnderHeader";
 import Link from "next/link";
 import styles from "./not-found.module.css"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: `Страница не найдена`,
+}
 
 export default function Custom404() {
-
     return (
         <>
             <UnderHeader>

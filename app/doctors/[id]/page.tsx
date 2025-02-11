@@ -13,8 +13,18 @@ import LargeP from "@/components/LargeP";
 import { get } from "@/lib/fetch";
 import List from "@/components/List";
 import { notFound } from "next/navigation"
+import { Metadata } from "next";
 
 export const revalidate = 120;
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+    const data = await get<TDoctor[]>("/api/doctors")
+    const doctor: TDoctor = data.filter(item => item.id === params.id)[0]
+
+    return {
+        title: doctor ? `${doctor.fullName} | Медицинский цент «Нейропрофи»` : "Доктор не найдена"
+    }
+}
 
 export default async function Page({ params }: { params: { id: string } }) {
     const data = await get<TDoctor[]>("/api/doctors")

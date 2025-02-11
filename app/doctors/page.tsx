@@ -6,8 +6,13 @@ import BreadCrumb from "@/components/BreadCrumb";
 import { TDoctor } from "@/types/doctor";
 import Section from "@/components/Section";
 import { get } from "@/lib/fetch";
+import { Metadata } from "next";
 
 export const revalidate = 120;
+
+export const metadata: Metadata = {
+    title: `Наш персонал | Медицинский центр «Нейропрофи»`,
+}
 
 export default async function Page() {
     const doctors = await get<TDoctor[]>("/api/doctors")

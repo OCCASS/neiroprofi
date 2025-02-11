@@ -5,6 +5,7 @@ import styles from "./page.module.css"
 import Section from "@/components/Section";
 import { ListItem } from "./components";
 import { get } from "@/lib/fetch";
+import { Metadata } from "next";
 
 type TFaq = {
     title: string
@@ -12,6 +13,10 @@ type TFaq = {
 }
 
 export const revalidate = 120;
+
+export const metadata: Metadata = {
+    title: `Часто задаваемые вопросы | Медицинский центр «Нейропрофи»`,
+}
 
 export default async function Page() {
     const faqs = await get<TFaq[]>("/api/faq")

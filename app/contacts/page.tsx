@@ -7,8 +7,13 @@ import LargeP from "@/components/LargeP";
 import styles from "./page.module.css"
 import Icon from "@/components/Icon";
 import Link from "next/link";
+import { Metadata } from "next";
 
 export const revalidate = 120;
+
+export const metadata: Metadata = {
+    title: `Контакты | Медицинский центр «Нейропрофи»`,
+}
 
 export default function Page() {
     return (

@@ -9,9 +9,13 @@ import { TService } from "@/types/service";
 import Search from "./components/Search";
 import LargeP from "@/components/LargeP";
 import { get } from "@/lib/fetch";
-
+import { Metadata } from "next";
 
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+    title: `Наши услуги | Медицинский центр «Нейропрофи»`,
+}
 
 export default async function Page({ searchParams }: { searchParams: { search: string } }) {
     const filterServices = (services: TService[]) => {

@@ -7,9 +7,13 @@ import H3 from "@/components/H3";
 import Staff from "@/components/Staff";
 import { TDoctor } from "@/types/doctor";
 import { get } from "@/lib/fetch";
-import Link from "next/link"
+import { Metadata } from "next";
 
 export const revalidate = 120;
+
+export const metadata: Metadata = {
+    title: `О нас | Медицинский центр «Нейропрофи»`,
+}
 
 export default async function Page() {
     const doctors = await get<TDoctor[]>("/api/doctors")
