@@ -3,8 +3,13 @@
   font-size: 0.875rem;
   line-height: 1.5rem;
   color: var(--color-grey-hard);
-  word-break: break-word;
-  -ms-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+}
+
+@media (max-width: 768px) {
+  .small_p {
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
 }

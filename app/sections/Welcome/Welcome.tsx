@@ -10,8 +10,8 @@ const Welcome = () => {
         <UnderHeader>
             <div className={styles.welcome_section}>
                 <div>
-                    <h1 className={styles.welcome_section__title}>Комплексное<br /> лечение <span
-                        className={styles.welcome_section__titlePrimary}>болевых<br /> синдромов</span> в Казани</h1>
+                    <h1 className={styles.welcome_section__title}>Здоровая – <span
+                        className={styles.welcome_section__titlePrimary}>неврология</span> через здоровую печень!</h1>
                     <div className={styles.welcome_section__buttons}>
                         <Link href="tel:88432966667" className={`${styles.buttons__button} ${styles.buttons__buttonSecondary}`}>
                             <Icon name="phone" width={24} height={25} />

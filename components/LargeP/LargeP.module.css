@@ -2,8 +2,13 @@
   margin: 0;
   font-size: 1.3rem;
   line-height: 1.75rem;
-  word-break: break-word;
-  -ms-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+}
+
+@media (max-width: 768px) {
+  .large_p {
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
 }
