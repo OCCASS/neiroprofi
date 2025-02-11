@@ -32,6 +32,13 @@ export default async function Page({ params }: { params: { id: string } }) {
 
     if (!doctor) notFound()
 
+    const getAboutTitle = () => {
+        if (!doctor.about)
+            return doctor.fullName
+
+        return `${doctor.fullName} – ${doctor.about.toLowerCase()} ${doctor.about.at(doctor.about.length - 1) === "." ? "" : "."}`
+    }
+
     return (
         <>
             <UnderHeader>
@@ -44,7 +51,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             </UnderHeader>
             <Section className={styles.doctor__about}>
                 <div className={styles.about__left}>
-                    <H3 className={styles.about__title}>{doctor.fullName} – {doctor.about.toLowerCase()}{doctor.about.at(doctor.about.length - 1) === "." ? "" : "."}</H3>
+                    <H3 className={styles.about__title}>{getAboutTitle()}</H3>
                     <div className={styles.about__section}>
                         <LargeP className={styles.section__title}>
                             <Icon name={"multi_arrow_right_in_circle"} width={21} height={21} />
