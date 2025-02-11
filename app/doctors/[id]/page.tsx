@@ -76,7 +76,13 @@ export default async function Page({ params }: { params: { id: string } }) {
                 </div>
                 <div className={styles.about__imageWrapper}>
                     <Image className={styles.about__image} src={doctor.image} alt={doctor.fullName} width={500} height={500} />
-                    <Link className={styles.about__button} href="https://api.whatsapp.com" type="button" target="_blank" rel="noreferer,noreply"><Icon name="whatsapp" width={45} height={45} className={styles.about__buttonIcon} /> Записаться через WhatsApp</Link>
+                    <Link
+                        className={styles.about__button}
+                        href={encodeURI(`https://wa.me/79872966667?text=Здравсвтуйте, хочу записаться к доктору ${doctor.fullName}`)}
+                        type="button"
+                        target="_blank"
+                        rel="noreferer,noreply"
+                    ><Icon name="whatsapp" width={45} height={45} className={styles.about__buttonIcon} /> Записаться через WhatsApp</Link>
                 </div>
             </Section>
             <Staff doctors={data} />
