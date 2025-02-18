@@ -1,5 +1,94 @@
 [
   {
+    "id": "tuxbatullina-guzeliya-ravilevna",
+    "fullName": "Туxбатуллина Гузелия Равилевна",
+    "about": "",
+    "image": "/staff/tuxbatullina-guzeliya-ravilevna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": [
+        "невролог с интегративным подходом",
+        "рефлексотерапевт",
+        "гирудотерапевт"
+      ],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "ovsyannikova-kseniya-sergeevna",
+    "fullName": "Овсянникова Ксения Сергеевна",
+    "about": "Кандидат медицинских наук.",
+    "image": "/staff/ovsyannikova-kseniya-sergeevna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": ["неврология с интегративным подходом"],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "davlyatshina-ramilya-ramilevna",
+    "fullName": "Давлятшина Рамиля Рамилевна",
+    "about": "",
+    "image": "/staff/davlyatshina-ramilya-ramilevna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": [
+        "терапевт с интегративным подходом",
+        "ВРТ диагностика",
+        "висцеральный массаж"
+      ],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "latipova-ravilya-barievna",
+    "fullName": "Латипова Равиля Бариевна",
+    "about": "",
+    "image": "/staff/latipova-ravilya-barievna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": ["терапевт с интегративным подходом", "гирудотерапевт"],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "geppa-liliya-vladimirovna",
+    "fullName": "Геппа Лилия Владимировна",
+    "about": "",
+    "image": "/staff/geppa-liliya-vladimirovna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": [
+        "акушер-гинеколог",
+        "интегративная медицина",
+        "превентивная медицина",
+        "УЗИ",
+        "репродуктология"
+      ],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
     "id": "pavlova-gulfiya-robertovna",
     "fullName": "Павлова Гульфия Робертовна",
     "about": "врач интегративной превентивной и антивозрастной медицины, эндокринолог, дерматовенеролог, трихолог, сомнолог",
@@ -29,116 +118,110 @@
     "education": "1992-1998 гг. Казанский Государственный Медицинский Университет, факультет лечебное дело.\n1998-1999 гг. КГМА, интернатура по дерматовенерологии.\n2004 г., 2009 г., 2015 г.-повышение квалификации по программе «Дерматовенерология» в ГБОУ ДПО «КГМА» Минздрава России.2016-2017 гг. КГМА, интернатура по эндокринологии.\n2005 г., 2010 г., 2015 г. Повышение квалификации « Трихология» при РУДН, г. Москва.\n2008 г. Цикл «Мезотерапия» при Российском НЦ Восстановительной медицины и курортологии.\n2017 г. Повышение квалификации « Избранные вопросы гинекологической эндокринологии» приВМШ г. Москвы.\n2016-2018 гг. Повышение квалификации по программе « интегральная превентивная и антивозрастная медицина» Международный Институт «ПревентЭйдж»\n2016-2021 гг. Авторские мастер классы ведущих врачей: Шляпникова К.А, (Нейроиммунология и хрогнические заболевания), Громовой О.А. (макро и микронутриенты), гинеколога Зайцевой О. Г. (метилирование)."
   },
   {
-    "id": "gilaeva-alfiya-rafailevna",
-    "fullName": "Гилаева Альфия Рафаилевна",
-    "about": "Аспирант кафедры неврологии, рефлексотерапии и остеопатии Казанской Государственной Медицинской академии.",
-    "image": "/staff/gilaeva-alfiya-rafailevna.webp",
+    "id": "mansurova-guzel-shamilevna",
+    "fullName": "Мансурова Гузель Шамилевна",
+    "about": "Кандидат медицинских наук, доцент кафедры педиатрии и неонатологии.",
+    "image": "/staff/mansurova-guzel-shamilevna.webp",
     "position": {
       "name": "Врач",
       "primary": false
     },
     "specialities": {
-      "short": ["отоневролог", "вестибулолог"],
+      "short": ["педиатр", "интегративная медицина", "превентивная медицина"],
       "detailed": []
     },
     "education": ""
   },
   {
-    "id": "valeeva-gulsina-rushanovna",
-    "fullName": "Валеева Гульсина Рушановна",
-    "about": "",
-    "image": "/staff/valeeva-gulsina-rushanovna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["фельдшер-лаборант"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "davlyatshina-ramilya-ramilevna",
-    "fullName": "Давлятшина Рамиля Рамилевна",
-    "about": "",
-    "image": "/staff/davlyatshina-ramilya-ramilevna.webp",
+    "id": "usmanova-nafisa-ajratovna",
+    "fullName": "Усманова Нафиса Айратовна",
+    "about": "Врач интегративной, превентивной медицины.",
+    "image": "/staff/usmanova-nafisa-ajratovna.webp",
     "position": {
       "name": "Врач",
       "primary": false
     },
     "specialities": {
       "short": [
-        "терапевт с интегративным подходом",
-        "ВРТ диагностика",
-        "висцеральный массаж"
-      ],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "ahmadullina-liliya-rumysovna",
-    "fullName": "Ахмадуллина Лилия Румысовна",
-    "about": "Врач высшей квалификационной категории. Кандидат медицинских наук.",
-    "image": "/staff/ahmadullina-liliya-rumysovna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["психотерапевт"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "ahmetzyanova-gulnara-semigulovna",
-    "fullName": "Ахметзянова Гульнара Семигуловна",
-    "about": "",
-    "image": "/staff/ahmetzyanova-gulnara-semigulovna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["кардиолог с интегративным подходом"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "geppa-liliya-vladimirovna",
-    "fullName": "Геппа Лилия Владимировна",
-    "about": "",
-    "image": "/staff/geppa-liliya-vladimirovna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": [
-        "акушер-гинеколог",
-        "интегративная медицина",
+        "эндокринолог",
         "превентивная медицина",
-        "УЗИ",
-        "репродуктология"
+        "антивозрастная медицина"
       ],
       "detailed": []
     },
     "education": ""
   },
   {
-    "id": "davydova-amina-ajdarovna",
-    "fullName": "Давыдова Амина Айдаровна",
+    "id": "sabirova-alsu-ildusovna",
+    "fullName": "Сабирова Алсу Ильдусовна",
     "about": "",
-    "image": "/staff/davydova-amina-ajdarovna.webp",
+    "image": "/staff/sabirova-alsu-ildusovna.webp",
     "position": {
       "name": "Врач",
       "primary": false
     },
     "specialities": {
-      "short": ["клинический психолог", "сексолог"],
+      "short": ["оториноларингология с интегративным подходом"],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "drozdova-nailya-faritovna",
+    "fullName": "Дроздова Наиля Фаритовна",
+    "about": "",
+    "image": "/staff/drozdova-nailya-faritovna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": ["инфекционист", "гастроэнтеролог", "педиатр"],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "mullayanova-regina-fanudarovna",
+    "fullName": "Муллаянова Регина Фанударовна",
+    "about": "",
+    "image": "/staff/mullayanova-regina-fanudarovna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": ["невролог", "вестибулолог"],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "latypova-ilina-guzel-rinatovna",
+    "fullName": "Латыпова (Ильина) Гузель Ринатовна",
+    "about": "Кандидат медицинских наук. Член международной ассоциации по двигательным расстройствам.",
+    "image": "/staff/latypova-ilina-guzel-rinatovna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": ["паркинсонолог"],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "ptushkina-valentina-yurevna",
+    "fullName": "Птушкина Валентина Юрьевна",
+    "about": "Член Российской остеопатической ассоциации. Ассистент Института остеопатии Санкт-Петербурга, преподаватель остеопатии.",
+    "image": "/staff/ptushkina-valentina-yurevna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": ["остеопатия", "терапевт", "гастроэнтеролог"],
       "detailed": []
     },
     "education": ""
@@ -159,16 +242,91 @@
     "education": "Выпускник Европейской школы остеопатии."
   },
   {
-    "id": "drozdova-nailya-faritovna",
-    "fullName": "Дроздова Наиля Фаритовна",
+    "id": "islyamov-danis-marselevich",
+    "fullName": "Ислямов Данис Марселевич",
     "about": "",
-    "image": "/staff/drozdova-nailya-faritovna.webp",
+    "image": "/staff/islyamov-danis-marselevich.webp",
     "position": {
       "name": "Врач",
       "primary": false
     },
     "specialities": {
-      "short": ["инфекционист", "гастроэнтеролог", "педиатр"],
+      "short": ["мануальная терапия", "остеопат"],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "ahmadullina-liliya-rumysovna",
+    "fullName": "Ахмадуллина Лилия Румысовна",
+    "about": "Врач высшей квалификационной категории. Кандидат медицинских наук.",
+    "image": "/staff/ahmadullina-liliya-rumysovna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": ["психотерапевт"],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "davydova-amina-ajdarovna",
+    "fullName": "Давыдова Амина Айдаровна",
+    "about": "",
+    "image": "/staff/davydova-amina-ajdarovna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": ["клинический психолог", "сексолог"],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "kapustina-ekaterina-pavlovna",
+    "fullName": "Капустина Екатерина Павловна",
+    "about": "",
+    "image": "/staff/kapustina-ekaterina-pavlovna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": ["ультразвуковая диагностика", "сосудистая хирургия"],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "shamsutdinova-evelina-ajratovna",
+    "fullName": "Шамсутдинова Эвелина Айратовна",
+    "about": "Врач высшей квалификационной категории.",
+    "image": "/staff/shamsutdinova-evelina-ajratovna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": ["дерматовенеролог", "косметолог"],
+      "detailed": []
+    },
+    "education": ""
+  },
+  {
+    "id": "valeeva-gulsina-rushanovna",
+    "fullName": "Валеева Гульсина Рушановна",
+    "about": "",
+    "image": "/staff/valeeva-gulsina-rushanovna.webp",
+    "position": {
+      "name": "Врач",
+      "primary": false
+    },
+    "specialities": {
+      "short": ["фельдшер-лаборант"],
       "detailed": []
     },
     "education": ""
@@ -204,189 +362,16 @@
     "education": ""
   },
   {
-    "id": "islyamov-danis-marselevich",
-    "fullName": "Ислямов Данис Марселевич",
+    "id": "safiullina-rezeda-raisovna",
+    "fullName": "Сафиуллина Резеда Раисовна",
     "about": "",
-    "image": "/staff/islyamov-danis-marselevich.webp",
+    "image": "/staff/safiullina-rezeda-raisovna.webp",
     "position": {
-      "name": "Врач",
+      "name": "Специалист",
       "primary": false
     },
     "specialities": {
-      "short": ["мануальная терапия", "остеопат"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "kapustina-ekaterina-pavlovna",
-    "fullName": "Капустина Екатерина Павловна",
-    "about": "",
-    "image": "/staff/kapustina-ekaterina-pavlovna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["ультразвуковая диагностика", "сосудистая хирургия"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "latipova-ravilya-barievna",
-    "fullName": "Латипова Равиля Бариевна",
-    "about": "",
-    "image": "/staff/latipova-ravilya-barievna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["терапевт с интегративным подходом", "гирудотерапевт"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "mansurova-guzel-shamilevna",
-    "fullName": "Мансурова Гузель Шамилевна",
-    "about": "Кандидат медицинских наук, доцент кафедры педиатрии и неонатологии.",
-    "image": "/staff/mansurova-guzel-shamilevna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["педиатр", "интегративная медицина", "превентивная медицина"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "mullayanova-regina-fanudarovna",
-    "fullName": "Муллаянова Регина Фанударовна",
-    "about": "",
-    "image": "/staff/mullayanova-regina-fanudarovna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["невролог", "вестибулолог"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "ovsyannikova-kseniya-sergeevna",
-    "fullName": "Овсянникова Ксения Сергеевна",
-    "about": "Кандидат медицинских наук.",
-    "image": "/staff/ovsyannikova-kseniya-sergeevna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["неврология с интегративным подходом"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "ptushkina-valentina-yurevna",
-    "fullName": "Птушкина Валентина Юрьевна",
-    "about": "Член Российской остеопатической ассоциации. Ассистент Института остеопатии Санкт-Петербурга, преподаватель остеопатии.",
-    "image": "/staff/ptushkina-valentina-yurevna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["остеопатия", "терапевт", "гастроэнтеролог"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "sabirova-alsu-ildusovna",
-    "fullName": "Сабирова Алсу Ильдусовна",
-    "about": "",
-    "image": "/staff/sabirova-alsu-ildusovna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["оториноларингология с интегративным подходом"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "tuxbatullina-guzeliya-ravilevna",
-    "fullName": "Туxбатуллина Гузелия Равилевна",
-    "about": "",
-    "image": "/staff/tuxbatullina-guzeliya-ravilevna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": [
-        "невролог с интегративным подходом",
-        "рефлексотерапевт",
-        "гирудотерапевт"
-      ],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "shamsutdinova-evelina-ajratovna",
-    "fullName": "Шамсутдинова Эвелина Айратовна",
-    "about": "Врач высшей квалификационной категории.",
-    "image": "/staff/shamsutdinova-evelina-ajratovna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["дерматовенеролог", "косметолог"],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "usmanova-nafisa-ajratovna",
-    "fullName": "Усманова Нафиса Айратовна",
-    "about": "Врач интегративной, превентивной медицины.",
-    "image": "/staff/usmanova-nafisa-ajratovna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": [
-        "эндокринолог",
-        "превентивная медицина",
-        "антивозрастная медицина"
-      ],
-      "detailed": []
-    },
-    "education": ""
-  },
-  {
-    "id": "latypova-ilina-guzel-rinatovna",
-    "fullName": "Латыпова (Ильина) Гузель Ринатовна",
-    "about": "Кандидат медицинских наук. Член международной ассоциации по двигательным расстройствам.",
-    "image": "/staff/latypova-ilina-guzel-rinatovna.webp",
-    "position": {
-      "name": "Врач",
-      "primary": false
-    },
-    "specialities": {
-      "short": ["паркинсонолог"],
+      "short": ["массаж"],
       "detailed": []
     },
     "education": ""

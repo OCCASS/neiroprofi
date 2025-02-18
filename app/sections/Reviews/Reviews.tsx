@@ -19,7 +19,7 @@ const Reviews = async () => {
                 <Section className={styles.reviews__list}>
                     {reviews.map((item, index) => <ReviewCard key={index} review={item} className={styles.list__item} />)}
                 </Section>
-                <Link href="https://t.me/OCCASS" target="_blank" rel="norepeer,noreferer" className={styles.reviews__add_button}>
+                <Link href={encodeURI(`https://wa.me/79872966667?text=Здравсвтуйте, хочу написать отзыв.`)} target="_blank" rel="norepeer,noreferer" className={styles.reviews__add_button}>
                     <div className={styles.reviews__add_buttonContent}>
                         <Icon name="plus" width={32} height={31} style={{ color: "white" }} />
                         <span>Добавить<br />отзыв</span>

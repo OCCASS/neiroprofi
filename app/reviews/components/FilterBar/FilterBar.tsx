@@ -20,7 +20,7 @@ const FilterBar = () => {
                 <li><Button key_={key} setKey={setKey} keyValue={"prodoctorov"}>С ПроДокторов</Button></li>
             </ul>
             <div className={styles.filter__footer}>
-                <Link className={styles.link} href="https://google.com/" target="_blank" rel="norepeer,noreferer">Добавить отзыв</Link>
+                <Link className={styles.link} href={encodeURI(`https://wa.me/79872966667?text=Здравсвтуйте, хочу оставить отзыв.`)} target="_blank" rel="norepeer,noreferer">Добавить отзыв</Link>
             </div>
         </div>
     )
