@@ -24,7 +24,7 @@ const Welcome = () => {
                     </div>
                 </div>
                 <div className={styles.welcome_section__image}>
-                    <Image className={styles.welcome_section__imageImage} src="/woman.png" alt="" aria-hidden="true"
+                    <Image className={styles.welcome_section__imageImage} src="/woman.webp" alt="" aria-hidden="true"
                         width={739} height={682} />
                 </div>
                 <div className={styles.welcome_section__rating}>

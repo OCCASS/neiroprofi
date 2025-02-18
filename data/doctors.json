@@ -367,11 +367,11 @@
     "about": "",
     "image": "/staff/safiullina-rezeda-raisovna.webp",
     "position": {
-      "name": "Специалист",
+      "name": "Врач",
       "primary": false
     },
     "specialities": {
-      "short": ["массаж"],
+      "short": ["медицинская сестра"],
       "detailed": []
     },
     "education": ""
