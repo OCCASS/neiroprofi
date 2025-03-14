@@ -17,7 +17,8 @@ export const metadata: Metadata = {
     title: `Наши услуги | Медицинский центр «Нейропрофи»`,
 }
 
-export default async function Page({ searchParams }: { searchParams: { search: string } }) {
+export default async function Page(props: { searchParams: Promise<{ search: string }> }) {
+    const searchParams = await props.searchParams;
     const filterServices = (services: TService[]) => {
         if (searchParams.search) {
             return services.map(service => {

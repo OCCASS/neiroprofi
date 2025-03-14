@@ -16,7 +16,8 @@ export const metadata: Metadata = {
     title: `Отзывы о нашем центре | Медицинский центр «Нейропрофи»`,
 }
 
-export default async function Page({ searchParams }: { searchParams: { key: string } }) {
+export default async function Page(props: { searchParams: Promise<{ key: string }> }) {
+    const searchParams = await props.searchParams;
     const reviews = await get<TReview[]>(`/api/reviews`)
 
     const filterReviews = () => {

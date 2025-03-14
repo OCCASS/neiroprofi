@@ -6,7 +6,7 @@ import LargeP from "@/components/LargeP";
 import type { TService, TServiceItemItems } from "@/types/service";
 import { numberWithSpaces } from "@/utils/number_with_spaces";
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 
 
 const ServiceSection = ({ service, className = "" }: {
@@ -29,7 +29,7 @@ const ServiceSection = ({ service, className = "" }: {
                 <ul className={`${styles.service_section__list} ${close ? styles.service_section__listClose : ""}`}>
                     {
                         service.list.map((item, index) => (
-                            <>
+                            <React.Fragment key={index}>
                                 {
                                     item.title &&
                                     <li key={`title_${index}`} className={styles.service_section__title}>
@@ -37,7 +37,7 @@ const ServiceSection = ({ service, className = "" }: {
                                     </li>
                                 }
                                 <ItemItems items={item.items} asSub={item.title ? true : false} />
-                            </>
+                            </React.Fragment>
                         ))
                     }
                 </ul>

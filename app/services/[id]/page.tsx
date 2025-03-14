@@ -18,7 +18,8 @@ import { Metadata } from "next"
 export const revalidate = 0;
 
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
+    const params = await props.params;
     const data = await get<TService[]>("/api/services")
     const service: TService = data.filter(item => item.id === params.id)[0]
 
@@ -27,7 +28,8 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     }
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page(props: { params: Promise<{ id: string }> }) {
+    const params = await props.params;
     const data = await get<TService[]>("/api/services")
     const service: TService = data.filter(item => item.id === params.id)[0]
 
