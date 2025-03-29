@@ -123,6 +123,10 @@
   font-weight: normal;
 }
 
+.specialities_item {
+  color: var(--color-grey-hard);
+}
+
 @media (max-width: 1000px) {
   .doctor__about {
     grid-template-columns: 1fr;

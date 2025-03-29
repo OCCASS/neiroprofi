@@ -77,7 +77,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                         <div className={styles.about__section_detailed}>
                             <List>
                                 {doctor.specialities.detailed.map((item, index) => (
-                                    <List.Item key={index}>{item}</List.Item>))
+                                    <List.Item key={index} className={styles.specialities_item}>{item}</List.Item>))
                                 }
                             </List>
                         </div>

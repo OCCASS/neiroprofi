@@ -33,6 +33,14 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
     const data = await get<TService[]>("/api/services")
     const service: TService = data.filter(item => item.id === params.id)[0]
 
+    let titleContent;
+    if (service.descriptionShort.length > 0) {
+        titleContent = `${service.name} – ${service.descriptionShort}`.trim()
+        if (service.descriptionShort.at(service.descriptionShort.length - 1) !== ".") titleContent += "."
+    } else {
+        titleContent = service.name.trim()
+    }
+
     if (!service) notFound()
 
     return (
@@ -49,8 +57,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                 <div className={styles.about}>
                     <div className={styles.about__left}>
                         <H3 className={styles.about__title}>
-                            {service.name} – {service.descriptionShort.toLowerCase()}
-                            {service.descriptionShort.at(service.descriptionShort.length - 1) === "" ? "" : "."}
+                            {titleContent}
                         </H3>
                         <p className={styles.about__content}>{service.description}</p>
                     </div>
