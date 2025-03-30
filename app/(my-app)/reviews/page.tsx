@@ -3,18 +3,19 @@ import { TReview } from "@/types/review";
 import Section from "@/components/Section";
 import styles from "./page.module.css"
 import FilterBar from "./components/FilterBar";
-import UnderHeader from "@/components/UnderHeader/UnderHeader";
 import BreadCrumb from "@/components/BreadCrumb";
 import PageTitle from "@/components/PageTitle";
 import ReviewCard from "@/components/ReviewCard";
 import { get } from "@/lib/fetch";
 import { Metadata } from "next";
+import UnderHeader from "@/components/UnderHeader/UnderHeader";
 
 export const revalidate = 120;
 
 export const metadata: Metadata = {
     title: `Отзывы о нашем центре | Медицинский центр «Нейропрофи»`,
 }
+
 
 export default async function Page(props: { searchParams: Promise<{ key: string }> }) {
     const searchParams = await props.searchParams;

@@ -11,7 +11,20 @@ type BreadCrumbProps = {
     items: BreadCrumbItem[]
 }
 
-const BreadCrumb = ({items}: BreadCrumbProps) => {
+const BreadCrumbSkeleton = () => {
+    return (
+        <ul className={styles.bread_crumb}>
+            {
+                [1, 2, 3].map(
+                    item =>
+                        <li key={item} className={styles.bread_crumb__item_skeleton}></li>
+                )
+            }
+        </ul>
+    )
+}
+
+const BreadCrumb = ({ items }: BreadCrumbProps) => {
     return (
         <ul className={styles.bread_crumb}>
             {
@@ -25,5 +38,7 @@ const BreadCrumb = ({items}: BreadCrumbProps) => {
         </ul>
     )
 }
+
+BreadCrumb.Skeleton = BreadCrumbSkeleton
 
 export default BreadCrumb;

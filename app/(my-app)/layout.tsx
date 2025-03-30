@@ -4,6 +4,9 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { NuqsAdapter } from "nuqs/adapters/next";
+import BreadCrumb from "@/components/BreadCrumb";
+import PageTitle from "@/components/PageTitle";
+import UnderHeaderContainer from "@/components/UnderHeader/DynamicUnderHeader";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -44,7 +47,7 @@ export default function RootLayout({
                 <NuqsAdapter>
                     <div className="header">
                         <Header />
-                        <div id="under-header"></div>
+                        <UnderHeaderContainer />
                     </div>
                     <main>
                         {children}
