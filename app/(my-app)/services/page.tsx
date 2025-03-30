@@ -45,7 +45,6 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
         return services
     }
 
-
     const services = filterServices(await get<TService[]>("/api/services"))
 
     return (
