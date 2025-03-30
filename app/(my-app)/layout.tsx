@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { NuqsAdapter } from "nuqs/adapters/next";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -40,14 +41,16 @@ export default function RootLayout({
                 <meta name="apple-mobile-web-app-title" content="Нейропрофи" />
             </head>
             <body className={montserrat.className}>
-                <div className="header">
-                    <Header />
-                    <div id="under-header"></div>
-                </div>
-                <main>
-                    {children}
-                </main>
-                <Footer />
+                <NuqsAdapter>
+                    <div className="header">
+                        <Header />
+                        <div id="under-header"></div>
+                    </div>
+                    <main>
+                        {children}
+                    </main>
+                    <Footer />
+                </NuqsAdapter>
             </body>
         </html>
     );

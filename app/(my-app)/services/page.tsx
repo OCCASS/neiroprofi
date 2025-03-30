@@ -17,14 +17,15 @@ export const metadata: Metadata = {
     title: `Наши услуги | Медицинский центр «Нейропрофи»`,
 }
 
-export default async function Page(props: { searchParams: Promise<{ search: string }> }) {
-    const searchParams = await props.searchParams;
+export default async function Page({ searchParams }: { searchParams: Promise<{ search: string | undefined }> }) {
+    const search = (await searchParams).search
+
     const filterServices = (services: TService[]) => {
-        if (searchParams.search) {
+        if (search) {
             return services.map(service => {
                 let filteredList = service.list.map(
                     item => {
-                        const filteredItems = item.items.filter(item1 => item1.name.toLowerCase().includes(searchParams.search.toLowerCase().trim()))
+                        const filteredItems = item.items.filter(item1 => item1.name.toLowerCase().includes(search.toLowerCase().trim()))
                         return { ...item, items: filteredItems }
                     }
                 )
@@ -40,6 +41,7 @@ export default async function Page(props: { searchParams: Promise<{ search: stri
                 return null;
             }).filter(service => service !== null)
         }
+
         return services
     }
 
@@ -76,7 +78,7 @@ export default async function Page(props: { searchParams: Promise<{ search: stri
                         </ServicesGrid>
                         :
                         <p className={styles.section__not_found}>
-                            По запросу <span className={styles.section__not_foundQuery}>«{searchParams.search ?? ""}»</span> ничего не найдено
+                            По запросу <span className={styles.section__not_foundQuery}>«{search ?? ""}»</span> ничего не найдено
                         </p>
                 }
             </Section>

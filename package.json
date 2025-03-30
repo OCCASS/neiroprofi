@@ -11,39 +11,20 @@
     "generate:sprite": "svg-sprite -s --symbol-dest ./public --symbol-sprite icons.svg icons/*.svg"
   },
   "dependencies": {
-    "@faceless-ui/modal": "^3.0.0-beta.2",
-    "@faceless-ui/scroll-info": "^2.0.0",
-    "@lexical/react": "^0.29.0",
-    "@lexical/yjs": "^0.29.0",
-    "@monaco-editor/react": "^4.7.0",
-    "@next/bundle-analyzer": "15.2.2",
-    "@payloadcms/db-mongodb": "^3.31.0",
     "@payloadcms/next": "^3.31.0",
     "@payloadcms/richtext-lexical": "^3.31.0",
-    "@payloadcms/ui": "^3.31.0",
     "graphql": "^16.10.0",
-    "monaco-editor": "^0.52.2",
     "next": "^15.2.4",
     "nuqs": "^2.4.1",
     "payload": "^3.31.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-masonry-css": "^1.0.16",
-    "sharp": "^0.33.5",
-    "yjs": "^13.6.24"
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "19.0.10",
-    "@types/react-dom": "19.0.4",
-    "eslint": "^8",
-    "eslint-config-next": "^15.2.2",
-    "svg-sprite": "^2.0.4",
-    "typescript": "^5"
-  },
-  "packageManager": "yarn@4.7.0",
-  "resolutions": {
-    "@types/react": "19.0.10",
-    "@types/react-dom": "19.0.4"
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "5.8.2"
   }
 }

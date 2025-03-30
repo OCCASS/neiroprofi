@@ -12,7 +12,7 @@ const Search = () => {
 
     useEffect(() => {
         setSearchQuery(debouncedSearch)
-    }, [debouncedSearch, setSearchQuery])
+    }, [debouncedSearch])
 
     return <input
         placeholder="Введите ключевое слово"
