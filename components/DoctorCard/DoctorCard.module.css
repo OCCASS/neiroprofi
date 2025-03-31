@@ -98,3 +98,11 @@
     max-height: 350px;
   }
 }
+
+@media (max-width: 600px) {
+  .doctor_card__image {
+    width: 100%;
+    height: auto;
+    max-height: 1000px;
+  }
+}
