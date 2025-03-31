@@ -116,7 +116,9 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 type="button"
                 target="_blank"
                 rel="noreferer,noreply"
-            ><Icon name="whatsapp" width={45} height={45} className={styles.floating__about__buttonIcon} /></Link>
+            >
+                <Icon name="whatsapp_outline" width={40} height={40} className={styles.floating__about__buttonIcon} />
+            </Link>
         </PageLayout>
     )
 }

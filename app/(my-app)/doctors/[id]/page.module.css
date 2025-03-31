@@ -137,16 +137,15 @@
   bottom: 32px;
   right: 32px;
   border-radius: 200px;
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   background: var(--color-primary);
 }
 
 .floating__about__buttonIcon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   animation: pulse 1.5s infinite;
-  background-color: var(--color-primary);
 }
 
 @media (max-width: 1000px) {
