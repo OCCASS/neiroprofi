@@ -28,8 +28,6 @@ const UnderHeader = () => {
 export default function Page() {
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>
-            <UnderHeader>
-            </UnderHeader>
             <Section className={styles.info}>
                 <SubSection>
                     <LargeP className={styles.info__title}>Вместе к здоровью: надежные руки и сердечное
