@@ -32,8 +32,6 @@ export default async function Page() {
 
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>
-            <UnderHeader>
-            </UnderHeader>
             <Section className={styles.section}>
                 <H3 className={styles.section__title}>
                     Казанская клиника Нейропрофи – это многопрофильная клиника с комплексным интегративным подходом к вопросам восстановления и сохранения здоровья.
