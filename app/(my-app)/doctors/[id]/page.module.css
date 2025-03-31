@@ -130,6 +130,25 @@
   color: var(--color-grey-hard);
 }
 
+.floating__about__button {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  border-radius: 200px;
+  width: 48px;
+  height: 48px;
+  background: var(--color-primary);
+}
+
+.floating__about__buttonIcon {
+  width: 32px;
+  height: 32px;
+  animation: pulse 1.5s infinite;
+  background-color: var(--color-primary);
+}
+
 @media (max-width: 1000px) {
   .doctor__about {
     grid-template-columns: 1fr;

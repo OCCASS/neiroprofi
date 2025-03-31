@@ -9,7 +9,6 @@ import Staff from "@/components/Staff";
 import H3 from "@/components/H3";
 import Link from "next/link";
 import LargeP from "@/components/LargeP";
-import { get } from "@/lib/fetch";
 import List from "@/components/List";
 import { notFound } from "next/navigation"
 import { Metadata } from "next";
@@ -42,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         if (!doctor.about)
             return doctor.fullName
 
-        return `${doctor.fullName} – ${doctor.about.toLowerCase()} ${doctor.about.at(doctor.about.length - 1) === "." ? "" : "."}`
+        return `${doctor.fullName} – ${doctor.about.toLowerCase()}${doctor.about.at(doctor.about.length - 1) === "." ? "" : "."}`
     }
 
     const UnderHeader = () => {
@@ -111,6 +110,13 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 </div>
             </Section>
             <Staff />
+            <Link
+                className={styles.floating__about__button}
+                href={encodeURI(`https://wa.me/79872966667?text=Здравсвтуйте, хочу записаться к доктору ${doctor.fullName}`)}
+                type="button"
+                target="_blank"
+                rel="noreferer,noreply"
+            ><Icon name="whatsapp" width={45} height={45} className={styles.floating__about__buttonIcon} /></Link>
         </PageLayout>
     )
 }
