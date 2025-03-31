@@ -3,11 +3,11 @@ import styles from "./Staff.module.css";
 import LargeP from "@/components/LargeP";
 import StaffCard from "./StaffCard";
 import Link from "next/link";
-import { TDoctor } from "@/types/doctor";
-import { get } from "@/lib/fetch";
+import type { TDoctor } from "@/types/doctor";
+import { loadDoctors } from "@/lib/loadData";
 
 const Staff = async () => {
-    const { data: doctors } = await get<TDoctor[]>("/api/doctors")
+    const doctors: TDoctor[] = await loadDoctors()
 
     return (
         <Section className={styles.staff}>

@@ -3,16 +3,10 @@ import PageTitle from "@/components/PageTitle";
 import styles from "./page.module.css"
 import Section from "@/components/Section";
 import { ListItem } from "./components";
-import { get } from "@/lib/fetch";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-
-type TFaq = {
-    title: string
-    content: string
-}
-
-export const revalidate = 120;
+import { loadFaq } from "@/lib/loadData";
+import type { TFaq } from "@/types/faq";
 
 export const metadata: Metadata = {
     title: `Часто задаваемые вопросы | Медицинский центр «Нейропрофи»`,
@@ -31,7 +25,7 @@ const UnderHeader = () => {
 }
 
 export default async function Page() {
-    const { data: faqs } = await get<TFaq[]>("/api/faq")
+    const faqs: TFaq[] = await loadFaq()
 
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>

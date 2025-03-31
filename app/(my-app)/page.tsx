@@ -6,8 +6,6 @@ import Staff from "@/components/Staff";
 import Reviews from "@/app/sections/Reviews";
 import PageLayout from "@/components/PageLayout";
 
-export const revalidate = 60;
-
 export default async function Home() {
     return (
         <PageLayout UnderHeaderComponent={Welcome}>

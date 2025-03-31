@@ -7,11 +7,9 @@ import BreadCrumb from "@/components/BreadCrumb";
 import { TService } from "@/types/service";
 import Search from "./components/Search";
 import LargeP from "@/components/LargeP";
-import { get } from "@/lib/fetch";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-
-export const revalidate = 60;
+import { loadSerivces } from "@/lib/loadData";
 
 export const metadata: Metadata = {
     title: `Наши услуги | Медицинский центр «Нейропрофи»`,
@@ -57,7 +55,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
         return services
     }
 
-    const { data } = await get<TService[]>("/api/services")
+    const data = await loadSerivces()
     const services = filterServices(data)
 
     return (

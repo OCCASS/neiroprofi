@@ -6,11 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 import LargeP from "@/components/LargeP";
 import Icon from "@/components/Icon";
-import { TDoctor } from "@/types/doctor";
-import { get } from "@/lib/fetch";
+import type { TDoctor } from "@/types/doctor";
+import { loadDoctors } from "@/lib/loadData";
 
 const AboutDoctors = async () => {
-    const { data: doctors } = await get<TDoctor[]>("/api/doctors")
+    const doctors: TDoctor[] = await loadDoctors()
 
     return (
         <Section className={styles.about_doctors}>

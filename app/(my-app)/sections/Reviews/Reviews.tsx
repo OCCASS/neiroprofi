@@ -3,13 +3,11 @@ import styles from "./Reviews.module.css"
 import ReviewCard from "@/components/ReviewCard";
 import Link from "next/link";
 import Icon from "@/components/Icon";
-import { TReview } from "@/types/review";
-import { get } from "@/lib/fetch";
-
-export const revalidate = 60
+import type { TReview } from "@/types/review";
+import { loadReivews } from "@/lib/loadData";
 
 const Reviews = async () => {
-    const { data: reviews } = await get<TReview[]>("/api/reviews")
+    const reviews: TReview[] = await loadReivews()
 
     return (
         <Section className={styles.reviews}>

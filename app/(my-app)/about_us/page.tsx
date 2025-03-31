@@ -7,8 +7,6 @@ import Staff from "@/components/Staff";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 
-export const revalidate = 120;
-
 export const metadata: Metadata = {
     title: `О нас | Медицинский центр «Нейропрофи»`,
 }

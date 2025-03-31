@@ -24,6 +24,7 @@ export const metadata: Metadata = {
         siteName: `Медицинский центр "Нейропрофи"`,
     }
 };
+export const dynamic = "force-static"
 
 export default function RootLayout({
     children,

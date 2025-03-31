@@ -14,9 +14,8 @@ import List from "@/components/List";
 import { notFound } from "next/navigation"
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { loadDoctors } from "@/lib/loadData";
+import { loadDoctor, loadDoctors } from "@/lib/loadData";
 
-export const revalidate = 60;
 export const dynamicParams = false
 
 export async function generateStaticParams() {
@@ -26,18 +25,18 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const id = (await params).id
-    const { data: doctor, status } = await get<TDoctor>(`/api/doctors/${id}`)
+    const doctor: TDoctor | null = await loadDoctor(id)
 
-    if (status !== 200) return { title: "Доктор не найден" }
+    if (!doctor) return { title: "Доктор не найден" }
 
     return { title: `${doctor.fullName} | Медицинский цент «Нейропрофи»` }
 }
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
     const id = (await params).id
-    const { data: doctor, status } = await get<TDoctor>(`/api/doctors/${id}`)
+    const doctor: TDoctor | null = await loadDoctor(id)
 
-    if (status !== 200) notFound()
+    if (!doctor) notFound()
 
     const getAboutTitle = () => {
         if (!doctor.about)

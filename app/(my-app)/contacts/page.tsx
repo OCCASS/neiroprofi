@@ -9,8 +9,6 @@ import Link from "next/link";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 
-export const revalidate = 120;
-
 export const metadata: Metadata = {
     title: `Контакты | Медицинский центр «Нейропрофи»`,
 }

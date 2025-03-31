@@ -6,11 +6,9 @@ import FilterBar from "./components/FilterBar";
 import BreadCrumb from "@/components/BreadCrumb";
 import PageTitle from "@/components/PageTitle";
 import ReviewCard from "@/components/ReviewCard";
-import { get } from "@/lib/fetch";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-
-export const revalidate = 120;
+import { loadReivews } from "@/lib/loadData";
 
 export const metadata: Metadata = {
     title: `Отзывы о нашем центре | Медицинский центр «Нейропрофи»`,
@@ -30,7 +28,7 @@ const UnderHeader = () => {
 
 export default async function Page({ searchParams: sParams }: { searchParams: Promise<{ key: string }> }) {
     const searchParams = await sParams
-    const { data: reviews } = await get<TReview[]>(`/api/reviews`)
+    const reviews: TReview[] = await loadReivews()
 
     const filterReviews = () => {
         if (searchParams?.key === "") return reviews

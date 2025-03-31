@@ -4,15 +4,14 @@ import PageTitle from "@/components/PageTitle";
 import BreadCrumb from "@/components/BreadCrumb";
 import { TDoctor } from "@/types/doctor";
 import Section from "@/components/Section";
-import { get } from "@/lib/fetch";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-
-export const revalidate = 120;
+import { loadDoctors } from "@/lib/loadData";
 
 export const metadata: Metadata = {
     title: `Наш персонал | Медицинский центр «Нейропрофи»`,
 }
+export const dynamic = "force-static"
 
 const UnderHeader = () => {
     return (
@@ -27,7 +26,7 @@ const UnderHeader = () => {
 }
 
 export default async function Page() {
-    const { data: doctors } = await get<TDoctor[]>("/api/doctors")
+    const doctors: TDoctor[] = await loadDoctors()
 
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>

@@ -7,16 +7,14 @@ import H3 from "@/components/H3"
 import Icon from "@/components/Icon"
 import Link from "next/link"
 import Image from "next/image"
-import { get } from "@/lib/fetch"
 import SubSection from "@/components/SubSection"
 import List from "@/components/List"
 import LargeP from "@/components/LargeP"
 import { notFound } from "next/navigation";
 import { Metadata } from "next"
 import PageLayout from "@/components/PageLayout"
-import { loadSerivces } from "@/lib/loadData"
+import { loadSerivce, loadSerivces } from "@/lib/loadData"
 
-export const revalidate = 60;
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
@@ -27,7 +25,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const id = (await params).id
-    const { data: service } = await get<TService>(`/api/services/${id}`)
+    const service: TService | null = await loadSerivce(id)
 
     return {
         title: service ? `${service.name} | Медицинский цент «Нейропрофи»` : "Услуга не найдена"
@@ -36,9 +34,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
     const id = (await params).id
-    const { data: service, status } = await get<TService>(`/api/services/${id}`)
+    const service: TService | null = await loadSerivce(id)
 
-    if (status !== 200) notFound()
+    if (!service) notFound()
 
     let titleContent;
     if (service.descriptionShort.length > 0) {
