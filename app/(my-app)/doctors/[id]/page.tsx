@@ -14,6 +14,7 @@ import { notFound } from "next/navigation"
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { loadDoctor, loadDoctors } from "@/lib/loadData";
+import FloatingWhatsappButton from "@/components/FloatingWhatsappButton";
 
 export const dynamicParams = false
 
@@ -110,15 +111,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 </div>
             </Section>
             <Staff />
-            <Link
-                className={styles.floating__about__button}
-                href={encodeURI(`https://wa.me/79872966667?text=Здравсвтуйте, хочу записаться к доктору ${doctor.fullName}`)}
-                type="button"
-                target="_blank"
-                rel="noreferer,noreply"
-            >
-                <Icon name="whatsapp_outline" width={40} height={40} className={styles.floating__about__buttonIcon} />
-            </Link>
+            <FloatingWhatsappButton url={`https://wa.me/79872966667?text=Здравсвтуйте, хочу записаться к доктору ${doctor.fullName}`} />
         </PageLayout>
     )
 }

@@ -14,6 +14,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next"
 import PageLayout from "@/components/PageLayout"
 import { loadSerivce, loadSerivces } from "@/lib/loadData"
+import FloatingWhatsappButton from "@/components/FloatingWhatsappButton"
 
 export const dynamicParams = false;
 
@@ -122,6 +123,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                     }
                 </Section>
             }
+            <FloatingWhatsappButton url={`https://wa.me/79872966667?text=Здравсвтуйте, хочу записаться на услугу ${service.name}`} />
         </PageLayout>
     )
 }
