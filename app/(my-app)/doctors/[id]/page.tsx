@@ -42,7 +42,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         if (!doctor.about)
             return doctor.fullName
 
-        return `${doctor.fullName} – ${doctor.about.toLowerCase()}${doctor.about.at(doctor.about.length - 1) === "." ? "" : "."}`
+        return `${doctor.fullName} – ${doctor.about.toLowerCase().trim()}${doctor.about.at(doctor.about.length - 1) === "." ? "" : "."}`
     }
 
     const UnderHeader = () => {
