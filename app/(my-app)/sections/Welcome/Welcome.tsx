@@ -29,6 +29,7 @@ const Welcome = () => {
                     alt=""
                     aria-hidden="true"
                     width={739} height={682}
+                    priority={true}
                 />
             </div>
             <div className={styles.welcome_section__rating}>
