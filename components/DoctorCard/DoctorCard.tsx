@@ -9,7 +9,14 @@ import Link from "next/link";
 const DoctorCard = ({ data }: { data: TDoctor }) => {
     return (
         <article className={styles.doctor_card}>
-            <Image src={data.image} alt={data.fullName} width={270} height={300} className={styles.doctor_card__image} />
+            <Image
+                src={`/staff/webp/${data.image}.webp`}
+                overrideSrc={`staff/jpeg/${data.image}.jpg`}
+                alt={data.fullName}
+                width={270}
+                height={300}
+                className={styles.doctor_card__image}
+            />
             <div className={styles.doctor_card__right}>
                 <LargeP className={styles.doctor_card__name}>
                     <Link className={styles.doctor_card__link} href={`/doctors/${data.id}`}>{data.fullName}</Link>

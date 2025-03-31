@@ -93,7 +93,14 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                     }
                 </div>
                 <div className={styles.about__imageWrapper}>
-                    <Image className={styles.about__image} src={doctor.image} alt={doctor.fullName} width={500} height={500} />
+                    <Image
+                        className={styles.about__image}
+                        src={`/staff/webp/${doctor.image}.webp`}
+                        overrideSrc={`/staff/jpeg/${doctor.image}.jpg`}
+                        alt={doctor.fullName}
+                        width={500}
+                        height={500}
+                    />
                     <Link
                         className={styles.about__button}
                         href={encodeURI(`https://wa.me/79872966667?text=Здравсвтуйте, хочу записаться к доктору ${doctor.fullName}`)}

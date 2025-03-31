@@ -3,7 +3,7 @@
     "id": "tuxbatullina-guzeliya-ravilevna",
     "fullName": "Туxбатуллина Гузелия Равилевна",
     "about": "Врач интегративной превентивной и антивозрастной медицины ",
-    "image": "/staff/tuxbatullina-guzeliya-ravilevna.webp",
+    "image": "tuxbatullina-guzeliya-ravilevna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -28,7 +28,7 @@
     "id": "ovsyannikova-kseniya-sergeevna",
     "fullName": "Овсянникова Ксения Сергеевна",
     "about": "Невролог, вегетолог, кандидат медицинских наук",
-    "image": "/staff/ovsyannikova-kseniya-sergeevna.webp",
+    "image": "ovsyannikova-kseniya-sergeevna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -53,7 +53,7 @@
     "id": "davlyatshina-ramilya-ramilevna",
     "fullName": "Давлятшина Рамиля Рамилевна",
     "about": "Врач терапевт",
-    "image": "/staff/davlyatshina-ramilya-ramilevna.webp",
+    "image": "davlyatshina-ramilya-ramilevna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -72,7 +72,7 @@
     "id": "latipova-ravilya-barievna",
     "fullName": "Латипова Равиля Бариевна",
     "about": "Врач терапевт с интегративным подходом, гирудотерапевт",
-    "image": "/staff/latipova-ravilya-barievna.webp",
+    "image": "latipova-ravilya-barievna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -91,7 +91,7 @@
     "id": "geppa-liliya-vladimirovna",
     "fullName": "Геппа Лилия Владимировна",
     "about": "Акушер-гинеколог, врач антивозрастной и превентивной медицины, врач УЗД",
-    "image": "/staff/geppa-liliya-vladimirovna.webp",
+    "image": "geppa-liliya-vladimirovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -115,7 +115,7 @@
     "id": "pavlova-gulfiya-robertovna",
     "fullName": "Павлова Гульфия Робертовна",
     "about": "Врач интегративной превентивной и антивозрастной медицины, дерматовенеролог, эндокринолог ",
-    "image": "/staff/pavlova-gulfiya-robertovna.webp",
+    "image": "pavlova-gulfiya-robertovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -144,7 +144,7 @@
     "id": "mansurova-guzel-shamilevna",
     "fullName": "Мансурова Гузель Шамилевна",
     "about": "Интегративный педиатр",
-    "image": "/staff/mansurova-guzel-shamilevna.webp",
+    "image": "mansurova-guzel-shamilevna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -165,7 +165,7 @@
     "id": "usmanova-nafisa-ajratovna",
     "fullName": "Усманова Нафиса Айратовна",
     "about": "Эндокринолог, врач превентивной и антивозрастной медицина",
-    "image": "/staff/usmanova-nafisa-ajratovna.webp",
+    "image": "usmanova-nafisa-ajratovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -187,7 +187,7 @@
     "id": "sabirova-alsu-ildusovna",
     "fullName": "Сабирова Алсу Ильдусовна",
     "about": "Врач Оториноларинголог, врач интегральной превентивной и антивозрастной медицины, нутрициолог",
-    "image": "/staff/sabirova-alsu-ildusovna.webp",
+    "image": "sabirova-alsu-ildusovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -202,7 +202,7 @@
     "id": "drozdova-nailya-faritovna",
     "fullName": "Дроздова Наиля Фаритовна",
     "about": "",
-    "image": "/staff/drozdova-nailya-faritovna.webp",
+    "image": "drozdova-nailya-faritovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -217,7 +217,7 @@
     "id": "mullayanova-regina-fanudarovna",
     "fullName": "Муллаянова Регина Фанударовна",
     "about": "",
-    "image": "/staff/mullayanova-regina-fanudarovna.webp",
+    "image": "mullayanova-regina-fanudarovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -232,7 +232,7 @@
     "id": "latypova-ilina-guzel-rinatovna",
     "fullName": "Латыпова (Ильина) Гузель Ринатовна",
     "about": "врач-невролог-паркинсонолог, ботулинотерапевт, Дуодопа-специалист",
-    "image": "/staff/latypova-ilina-guzel-rinatovna.webp",
+    "image": "latypova-ilina-guzel-rinatovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -266,7 +266,7 @@
     "id": "ptushkina-valentina-yurevna",
     "fullName": "Птушкина Валентина Юрьевна",
     "about": "Член Российской остеопатической ассоциации. Ассистент Института остеопатии Санкт-Петербурга, преподаватель остеопатии.",
-    "image": "/staff/ptushkina-valentina-yurevna.webp",
+    "image": "ptushkina-valentina-yurevna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -281,7 +281,7 @@
     "id": "diyarov-almaz-ilfatovich",
     "fullName": "Дияров Алмаз Илфатович",
     "about": "Врач невролог, остеопат",
-    "image": "/staff/diyarov-almaz-ilfatovich.webp",
+    "image": "diyarov-almaz-ilfatovich",
     "position": {
       "name": "Врач",
       "primary": false
@@ -296,7 +296,7 @@
     "id": "islyamov-danis-marselevich",
     "fullName": "Ислямов Данис Марселевич",
     "about": "Врач травматолог-ортопед",
-    "image": "/staff/islyamov-danis-marselevich.webp",
+    "image": "islyamov-danis-marselevich",
     "position": {
       "name": "Врач",
       "primary": false
@@ -320,7 +320,7 @@
     "id": "ahmadullina-liliya-rumysovna",
     "fullName": "Ахмадуллина Лилия Румысовна",
     "about": "Врач высшей квалификационной категории. Кандидат медицинских наук.",
-    "image": "/staff/ahmadullina-liliya-rumysovna.webp",
+    "image": "ahmadullina-liliya-rumysovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -335,7 +335,7 @@
     "id": "davydova-amina-ajdarovna",
     "fullName": "Давыдова Амина Айдаровна",
     "about": "Медицинский психолог, сексолог",
-    "image": "/staff/davydova-amina-ajdarovna.webp",
+    "image": "davydova-amina-ajdarovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -355,7 +355,7 @@
     "id": "kapustina-ekaterina-pavlovna",
     "fullName": "Капустина Екатерина Павловна",
     "about": "",
-    "image": "/staff/kapustina-ekaterina-pavlovna.webp",
+    "image": "kapustina-ekaterina-pavlovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -370,7 +370,7 @@
     "id": "shamsutdinova-evelina-ajratovna",
     "fullName": "Шамсутдинова Эвелина Айратовна",
     "about": "Врач дерматовенеролог",
-    "image": "/staff/shamsutdinova-evelina-ajratovna.webp",
+    "image": "shamsutdinova-evelina-ajratovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -387,7 +387,7 @@
     "id": "valeeva-gulsina-rushanovna",
     "fullName": "Валеева Гульсина Рушановна",
     "about": "",
-    "image": "/staff/valeeva-gulsina-rushanovna.webp",
+    "image": "valeeva-gulsina-rushanovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -402,7 +402,7 @@
     "id": "battalova-gulfinur-linarovna",
     "fullName": "Батталова Гульфинур Линаровна",
     "about": "",
-    "image": "/staff/battalova-gulfinur-linarovna.webp",
+    "image": "battalova-gulfinur-linarovna",
     "position": {
       "name": "Врач",
       "primary": false
@@ -417,7 +417,7 @@
     "id": "galiullina-ilmira-ravilevna",
     "fullName": "Галиуллина Ильмира Равилевна",
     "about": "",
-    "image": "/staff/galiullina-ilmira-ravilevna.webp",
+    "image": "galiullina-ilmira-ravilevna",
     "position": {
       "name": "Специалист",
       "primary": false
@@ -432,7 +432,7 @@
     "id": "safiullina-rezeda-raisovna",
     "fullName": "Сафиуллина Резеда Раисовна",
     "about": "",
-    "image": "/staff/safiullina-rezeda-raisovna.webp",
+    "image": "safiullina-rezeda-raisovna",
     "position": {
       "name": "Врач",
       "primary": false

@@ -8,8 +8,14 @@ const StaffCard = ({ doctor }: { doctor: TDoctor }) => {
         <article className={styles.staff_card}>
             <div className={styles.staff_card__top}>
                 <Link href={`/doctors/${doctor.id}`} className={styles.staff_card__imageLink}>
-                    <Image className={styles.staff_card__image} src={doctor.image} alt={doctor.fullName} width={137}
-                        height={154} />
+                    <Image
+                        className={styles.staff_card__image}
+                        src={`/staff/webp/${doctor.image}.webp`}
+                        overrideSrc={`/staff/jpeg/${doctor.image}.jpg`}
+                        alt={doctor.fullName}
+                        width={137}
+                        height={154}
+                    />
                 </Link>
                 <span className={`${styles.staff_card__position} ${doctor.position.primary ? styles.staff_card__positionPrimary : ""}`}>{doctor.position.name}</span>
                 <div className={styles.staff_card__specialitiesWrapper}>

@@ -71,7 +71,14 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                         <p className={styles.about__content}>{service.description}</p>
                     </div>
                     <div className={styles.about__imageWrapper}>
-                        <Image className={styles.about__image} src={service.image} alt={service.name} width={500} height={500} />
+                        <Image
+                            className={styles.about__image}
+                            src={`/webp/${service.image}.webp`}
+                            overrideSrc={`/jpeg/${service.image}.jpg`}
+                            alt={service.name}
+                            width={500}
+                            height={500}
+                        />
 
                         <Link
                             className={styles.about__button}

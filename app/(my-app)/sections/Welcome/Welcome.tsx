@@ -22,8 +22,14 @@ const Welcome = () => {
                 </div>
             </div>
             <div className={styles.welcome_section__image}>
-                <Image className={styles.welcome_section__imageImage} src="/woman.webp" alt="" aria-hidden="true"
-                    width={739} height={682} />
+                <Image
+                    className={styles.welcome_section__imageImage}
+                    src="/webp/woman.webp"
+                    overrideSrc="/png/woman.png"
+                    alt=""
+                    aria-hidden="true"
+                    width={739} height={682}
+                />
             </div>
             <div className={styles.welcome_section__rating}>
                 <Icon name="pro_doctorov" width={134} height={20} />

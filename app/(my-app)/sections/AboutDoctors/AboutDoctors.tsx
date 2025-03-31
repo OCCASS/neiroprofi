@@ -48,7 +48,8 @@ const AboutDoctors = async () => {
                             <Image
                                 key={item.id}
                                 className={styles.doctors_list__image}
-                                src={item.image}
+                                src={`/staff/webp/${item.image}.webp`}
+                                overrideSrc={`/staff/jpeg/${item.image}.jpg`}
                                 alt={item.fullName}
                                 width={60}
                                 height={60}
