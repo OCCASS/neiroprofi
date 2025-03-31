@@ -1,4 +1,3 @@
-import UnderHeader from "@/components/UnderHeader/UnderHeader";
 import PageTitle from "@/components/PageTitle";
 import BreadCrumb from "@/components/BreadCrumb";
 import Section from "@/components/Section";
@@ -8,6 +7,7 @@ import styles from "./page.module.css"
 import Icon from "@/components/Icon";
 import Link from "next/link";
 import { Metadata } from "next";
+import PageLayout from "@/components/PageLayout";
 
 export const revalidate = 120;
 
@@ -15,15 +15,22 @@ export const metadata: Metadata = {
     title: `Контакты | Медицинский центр «Нейропрофи»`,
 }
 
-export default function Page() {
+const UnderHeader = () => {
     return (
         <>
+            <BreadCrumb items={[
+                { name: "НейроПрофи", path: "/" },
+                { name: "Контакты", path: "/contacts" }
+            ]} />
+            <PageTitle>Контакты нашего центра</PageTitle>
+        </>
+    )
+}
+
+export default function Page() {
+    return (
+        <PageLayout UnderHeaderComponent={UnderHeader}>
             <UnderHeader>
-                <BreadCrumb items={[
-                    { name: "НейроПрофи", path: "/" },
-                    { name: "Контакты", path: "/contacts" }
-                ]} />
-                <PageTitle>Контакты нашего центра</PageTitle>
             </UnderHeader>
             <Section className={styles.info}>
                 <SubSection>
@@ -80,6 +87,6 @@ export default function Page() {
                         width="100%" height="100%" frameBorder="0"></iframe>
                 </div>
             </Section>
-        </>
+        </PageLayout>
     )
 }

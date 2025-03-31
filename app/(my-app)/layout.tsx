@@ -1,12 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { NuqsAdapter } from "nuqs/adapters/next";
-import BreadCrumb from "@/components/BreadCrumb";
-import PageTitle from "@/components/PageTitle";
-import UnderHeaderContainer from "@/components/UnderHeader/DynamicUnderHeader";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -45,14 +40,7 @@ export default function RootLayout({
             </head>
             <body className={montserrat.className}>
                 <NuqsAdapter>
-                    <div className="header">
-                        <Header />
-                        <UnderHeaderContainer />
-                    </div>
-                    <main>
-                        {children}
-                    </main>
-                    <Footer />
+                    {children}
                 </NuqsAdapter>
             </body>
         </html>

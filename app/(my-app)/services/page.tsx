@@ -1,5 +1,4 @@
 import styles from "./page.module.css"
-import UnderHeader from "@/components/UnderHeader/UnderHeader";
 import PageTitle from "@/components/PageTitle";
 import ServiceSection from "./components/ServiceSection";
 import Section from "@/components/Section";
@@ -10,11 +9,24 @@ import Search from "./components/Search";
 import LargeP from "@/components/LargeP";
 import { get } from "@/lib/fetch";
 import { Metadata } from "next";
+import PageLayout from "@/components/PageLayout";
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
     title: `Наши услуги | Медицинский центр «Нейропрофи»`,
+}
+
+const UnderHeader = () => {
+    return (
+        <>
+            <BreadCrumb items={[
+                { name: "НейроПрофи", path: "/" },
+                { name: "Прайс", path: "/services" }
+            ]} />
+            <PageTitle>Цены на услуги</PageTitle>
+        </>
+    )
 }
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ search: string | undefined }> }) {
@@ -48,14 +60,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
     const services = filterServices(await get<TService[]>("/api/services"))
 
     return (
-        <>
-            <UnderHeader>
-                <BreadCrumb items={[
-                    { name: "НейроПрофи", path: "/" },
-                    { name: "Прайс", path: "/services" }
-                ]} />
-                <PageTitle>Цены на услуги</PageTitle>
-            </UnderHeader>
+        <PageLayout UnderHeaderComponent={UnderHeader}>
             <Section className={styles.section__search}>
                 <LargeP>Быстрый поиск по названию</LargeP>
                 <Search />
@@ -81,6 +86,6 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
                         </p>
                 }
             </Section>
-        </>
+        </PageLayout>
     )
 }

@@ -8,7 +8,7 @@ import PageTitle from "@/components/PageTitle";
 import ReviewCard from "@/components/ReviewCard";
 import { get } from "@/lib/fetch";
 import { Metadata } from "next";
-import UnderHeader from "@/components/UnderHeader/UnderHeader";
+import PageLayout from "@/components/PageLayout";
 
 export const revalidate = 120;
 
@@ -16,6 +16,17 @@ export const metadata: Metadata = {
     title: `Отзывы о нашем центре | Медицинский центр «Нейропрофи»`,
 }
 
+const UnderHeader = () => {
+    return (
+        <>
+            <BreadCrumb items={[
+                { name: "НейроПрофи", path: "/" },
+                { name: "Отзывы", path: "/reviews" }
+            ]} />
+            <PageTitle>Отзывы о нашем центре</PageTitle>
+        </>
+    )
+}
 
 export default async function Page(props: { searchParams: Promise<{ key: string }> }) {
     const searchParams = await props.searchParams;
@@ -29,20 +40,13 @@ export default async function Page(props: { searchParams: Promise<{ key: string 
     }
 
     return (
-        <>
-            <UnderHeader>
-                <BreadCrumb items={[
-                    { name: "НейроПрофи", path: "/" },
-                    { name: "Отзывы", path: "/reviews" }
-                ]} />
-                <PageTitle>Отзывы о нашем центре</PageTitle>
-            </UnderHeader>
+        <PageLayout UnderHeaderComponent={UnderHeader}>
             <Section><FilterBar /></Section>
             <Section className={styles.section}>
                 <ReviewsGrid>
                     {filterReviews().map((item, index) => <ReviewCard key={index} review={item} />)}
                 </ReviewsGrid>
             </Section>
-        </>
+        </PageLayout>
     )
 }

@@ -1,4 +1,3 @@
-import UnderHeader from "@/components/UnderHeader/UnderHeader";
 import BreadCrumb from "@/components/BreadCrumb";
 import PageTitle from "@/components/PageTitle";
 import Section from "@/components/Section";
@@ -8,6 +7,7 @@ import Staff from "@/components/Staff";
 import { TDoctor } from "@/types/doctor";
 import { get } from "@/lib/fetch";
 import { Metadata } from "next";
+import PageLayout from "@/components/PageLayout";
 
 export const revalidate = 120;
 
@@ -15,17 +15,24 @@ export const metadata: Metadata = {
     title: `О нас | Медицинский центр «Нейропрофи»`,
 }
 
+const UnderHeader = () => {
+    return (
+        <>
+            <BreadCrumb items={[
+                { name: "НейроПрофи", path: "/" },
+                { name: "О центре", path: "/about_us" }
+            ]} />
+            <PageTitle>О нашем центре</PageTitle>
+        </>
+    )
+}
+
 export default async function Page() {
     const doctors = await get<TDoctor[]>("/api/doctors")
 
     return (
-        <>
+        <PageLayout UnderHeaderComponent={UnderHeader}>
             <UnderHeader>
-                <BreadCrumb items={[
-                    { name: "НейроПрофи", path: "/" },
-                    { name: "О центре", path: "/about_us" }
-                ]} />
-                <PageTitle>О нашем центре</PageTitle>
             </UnderHeader>
             <Section className={styles.section}>
                 <H3 className={styles.section__title}>
@@ -69,6 +76,6 @@ export default async function Page() {
                 </div>
             </Section>
             <Staff doctors={doctors} />
-        </>
+        </PageLayout>
     )
 }

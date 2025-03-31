@@ -8,6 +8,7 @@ import Reviews from "@/app/sections/Reviews";
 import { TDoctor } from "@/types/doctor";
 import { get } from "@/lib/fetch";
 import { TService } from "@/types/service";
+import PageLayout from "@/components/PageLayout";
 
 export const revalidate = 0;
 
@@ -16,14 +17,13 @@ export default async function Home() {
     const services = await get<TService[]>("/api/services")
 
     return (
-        <>
-            <Welcome />
+        <PageLayout UnderHeaderComponent={Welcome}>
             <AboutDrugs />
             <AboutDoctors doctors={doctors} />
             <Services services={services} />
             <Staff doctors={doctors} />
             {/*<Fields />*/}
             <Reviews />
-        </>
+        </PageLayout>
     )
 }

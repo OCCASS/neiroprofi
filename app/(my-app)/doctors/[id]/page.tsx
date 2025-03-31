@@ -1,4 +1,3 @@
-import UnderHeader from "@/components/UnderHeader/UnderHeader";
 import PageTitle from "@/components/PageTitle";
 import BreadCrumb from "@/components/BreadCrumb";
 import { TDoctor } from "@/types/doctor";
@@ -14,6 +13,7 @@ import { get } from "@/lib/fetch";
 import List from "@/components/List";
 import { notFound } from "next/navigation"
 import { Metadata } from "next";
+import PageLayout from "@/components/PageLayout";
 
 export const revalidate = 120;
 
@@ -32,6 +32,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
     const data = await get<TDoctor[]>("/api/doctors")
     const doctor: TDoctor = data.filter(item => item.id === params.id)[0]
 
+
     if (!doctor) notFound()
 
     const getAboutTitle = () => {
@@ -41,16 +42,21 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
         return `${doctor.fullName} – ${doctor.about.toLowerCase()} ${doctor.about.at(doctor.about.length - 1) === "." ? "" : "."}`
     }
 
-    return (
-        <>
-            <UnderHeader>
+    const UnderHeader = () => {
+        return (
+            <>
                 <BreadCrumb items={[
                     { name: "НейроПрофи", path: "/" },
                     { name: "Персонал", path: "/doctors" },
                     { name: doctor.fullName, path: `/doctors/${doctor.id}` },
                 ]} />
                 <PageTitle>{doctor.fullName}</PageTitle>
-            </UnderHeader>
+            </>
+        )
+    }
+
+    return (
+        <PageLayout UnderHeaderComponent={UnderHeader}>
             <Section className={styles.doctor__about}>
                 <div className={styles.about__left}>
                     <H3 className={styles.about__title}>{getAboutTitle()}</H3>
@@ -95,6 +101,6 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                 </div>
             </Section>
             <Staff doctors={data} />
-        </>
+        </PageLayout>
     )
 }

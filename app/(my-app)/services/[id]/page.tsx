@@ -1,6 +1,5 @@
 import styles from "./page.module.css"
 import { TService } from "@/types/service"
-import UnderHeader from "@/components/UnderHeader/UnderHeader"
 import BreadCrumb from "@/components/BreadCrumb"
 import PageTitle from "@/components/PageTitle"
 import Section from "@/components/Section"
@@ -14,6 +13,7 @@ import List from "@/components/List"
 import LargeP from "@/components/LargeP"
 import { notFound } from "next/navigation";
 import { Metadata } from "next"
+import PageLayout from "@/components/PageLayout"
 
 export const revalidate = 0;
 
@@ -43,16 +43,22 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 
     if (!service) notFound()
 
-    return (
-        <>
-            <UnderHeader>
+    const UnderHeader = () => {
+        return (
+            <>
                 <BreadCrumb items={[
                     { name: "НейроПрофи", path: "/" },
                     { name: "Прайс", path: "/services" },
                     { name: service.name, path: `/services/${service.id}` }
                 ]} />
                 <PageTitle>{service.name}</PageTitle>
-            </UnderHeader>
+            </>
+        )
+    }
+
+
+    return (
+        <PageLayout UnderHeaderComponent={UnderHeader}>
             <Section className={styles.aboutSection}>
                 <div className={styles.about}>
                     <div className={styles.about__left}>
@@ -106,6 +112,6 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                     }
                 </Section>
             }
-        </>
+        </PageLayout>
     )
 }

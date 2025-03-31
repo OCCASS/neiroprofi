@@ -1,4 +1,3 @@
-import UnderHeader from "@/components/UnderHeader/UnderHeader";
 import BreadCrumb from "@/components/BreadCrumb";
 import PageTitle from "@/components/PageTitle";
 import styles from "./page.module.css"
@@ -6,6 +5,7 @@ import Section from "@/components/Section";
 import { ListItem } from "./components";
 import { get } from "@/lib/fetch";
 import { Metadata } from "next";
+import PageLayout from "@/components/PageLayout";
 
 type TFaq = {
     title: string
@@ -18,18 +18,23 @@ export const metadata: Metadata = {
     title: `Часто задаваемые вопросы | Медицинский центр «Нейропрофи»`,
 }
 
+const UnderHeader = () => {
+    return (
+        <>
+            <BreadCrumb items={[
+                { name: "НейроПрофи", path: "/" },
+                { name: "Частые вопросы", path: "/faq" }
+            ]} />
+            <PageTitle>Вопросы и ответы</PageTitle>
+        </>
+    )
+}
+
 export default async function Page() {
     const faqs = await get<TFaq[]>("/api/faq")
 
     return (
-        <>
-            <UnderHeader>
-                <BreadCrumb items={[
-                    { name: "НейроПрофи", path: "/" },
-                    { name: "Частые вопросы", path: "/faq" }
-                ]} />
-                <PageTitle>Вопросы и ответы</PageTitle>
-            </UnderHeader>
+        <PageLayout UnderHeaderComponent={UnderHeader}>
             <Section className={styles.content}>
                 <div>
                     <ul className={styles.list}>
@@ -42,6 +47,6 @@ export default async function Page() {
                 </div>
                 <div></div>
             </Section>
-        </>
+        </PageLayout>
     )
 }
