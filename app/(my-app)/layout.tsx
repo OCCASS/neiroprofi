@@ -5,7 +5,6 @@ import { NuqsAdapter } from "nuqs/adapters/next";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-
 export const viewport: Viewport = {
     userScalable: false,
     themeColor: "#ffffff",
@@ -25,8 +24,6 @@ export const metadata: Metadata = {
         siteName: `Медицинский центр "Нейропрофи"`,
     }
 };
-
-export const dynamic = "force-dynamic";
 
 export default function RootLayout({
     children,
