@@ -1,6 +1,6 @@
 .doctor__about {
   display: grid;
-  grid-template-columns: 1fr max-content;
+  grid-template-columns: 2fr 1fr;
   gap: 30px;
   background-color: var(--color-white) !important;
 }
@@ -18,11 +18,14 @@
 
 .about__imageWrapper {
   position: relative;
+  width: 100%;
+  height: fit-content;
 }
 
 .about__image {
   object-fit: cover;
-  height: 100%;
+  width: 100%;
+  height: auto;
   border-radius: 15px;
 }
 

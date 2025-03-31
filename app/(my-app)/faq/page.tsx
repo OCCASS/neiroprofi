@@ -31,7 +31,7 @@ const UnderHeader = () => {
 }
 
 export default async function Page() {
-    const faqs = await get<TFaq[]>("/api/faq")
+    const { data: faqs } = await get<TFaq[]>("/api/faq")
 
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>

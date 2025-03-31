@@ -4,8 +4,11 @@ import LargeP from "@/components/LargeP";
 import StaffCard from "./StaffCard";
 import Link from "next/link";
 import { TDoctor } from "@/types/doctor";
+import { get } from "@/lib/fetch";
 
-const Staff = ({ doctors }: { doctors: TDoctor[] }) => {
+const Staff = async () => {
+    const { data: doctors } = await get<TDoctor[]>("/api/doctors")
+
     return (
         <Section className={styles.staff}>
             <div className={styles.staff__header}>
@@ -22,4 +25,8 @@ const Staff = ({ doctors }: { doctors: TDoctor[] }) => {
     )
 }
 
-export default Staff;
+const StaffDynamic = () => {
+    return <Staff />
+}
+
+export default StaffDynamic;

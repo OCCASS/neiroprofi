@@ -28,9 +28,9 @@ const UnderHeader = () => {
     )
 }
 
-export default async function Page(props: { searchParams: Promise<{ key: string }> }) {
-    const searchParams = await props.searchParams;
-    const reviews = await get<TReview[]>(`/api/reviews`)
+export default async function Page({ searchParams: sParams }: { searchParams: Promise<{ key: string }> }) {
+    const searchParams = await sParams
+    const { data: reviews } = await get<TReview[]>(`/api/reviews`)
 
     const filterReviews = () => {
         if (searchParams?.key === "") return reviews

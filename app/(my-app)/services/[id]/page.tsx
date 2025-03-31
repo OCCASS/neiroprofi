@@ -14,24 +14,31 @@ import LargeP from "@/components/LargeP"
 import { notFound } from "next/navigation";
 import { Metadata } from "next"
 import PageLayout from "@/components/PageLayout"
+import { loadSerivces } from "@/lib/loadData"
 
-export const revalidate = 0;
+export const revalidate = 60;
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+    const data = await loadSerivces()
+    return data.map(item => ({ id: item.id }))
+}
 
 
-export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
-    const params = await props.params;
-    const data = await get<TService[]>("/api/services")
-    const service: TService = data.filter(item => item.id === params.id)[0]
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+    const id = (await params).id
+    const { data: service } = await get<TService>(`/api/services/${id}`)
 
     return {
         title: service ? `${service.name} | Медицинский цент «Нейропрофи»` : "Услуга не найдена"
     }
 }
 
-export default async function Page(props: { params: Promise<{ id: string }> }) {
-    const params = await props.params;
-    const data = await get<TService[]>("/api/services")
-    const service: TService = data.filter(item => item.id === params.id)[0]
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+    const id = (await params).id
+    const { data: service, status } = await get<TService>(`/api/services/${id}`)
+
+    if (status !== 200) notFound()
 
     let titleContent;
     if (service.descriptionShort.length > 0) {
@@ -40,8 +47,6 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
     } else {
         titleContent = service.name.trim()
     }
-
-    if (!service) notFound()
 
     const UnderHeader = () => {
         return (

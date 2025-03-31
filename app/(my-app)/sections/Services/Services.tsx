@@ -3,8 +3,11 @@ import styles from "./Services.module.css"
 import LargeP from "@/components/LargeP";
 import ServiceCard from "@/app/sections/Services/ServiceCard";
 import { TService } from "@/types/service";
+import { get } from "@/lib/fetch";
 
-const Services = ({ services }: { services: TService[] }) => {
+const Services = async () => {
+    const { data: services } = await get<TService[]>("/api/services")
+
     return (
         <Section id="services" className={styles.services}>
             <div className={styles.services__header}>

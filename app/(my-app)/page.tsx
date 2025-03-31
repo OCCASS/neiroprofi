@@ -3,26 +3,18 @@ import AboutDrugs from "./sections/AboutDrugs";
 import AboutDoctors from "@/app/sections/AboutDoctors";
 import Services from "@/app/sections/Services";
 import Staff from "@/components/Staff";
-/*import Fields from "@/app/sections/Fields";*/
 import Reviews from "@/app/sections/Reviews";
-import { TDoctor } from "@/types/doctor";
-import { get } from "@/lib/fetch";
-import { TService } from "@/types/service";
 import PageLayout from "@/components/PageLayout";
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export default async function Home() {
-    const doctors = await get<TDoctor[]>("/api/doctors")
-    const services = await get<TService[]>("/api/services")
-
     return (
         <PageLayout UnderHeaderComponent={Welcome}>
             <AboutDrugs />
-            <AboutDoctors doctors={doctors} />
-            <Services services={services} />
-            <Staff doctors={doctors} />
-            {/*<Fields />*/}
+            <AboutDoctors />
+            <Services />
+            <Staff />
             <Reviews />
         </PageLayout>
     )

@@ -6,8 +6,10 @@ import Icon from "@/components/Icon";
 import { TReview } from "@/types/review";
 import { get } from "@/lib/fetch";
 
+export const revalidate = 60
+
 const Reviews = async () => {
-    const reviews = await get<TReview[]>("/api/reviews")
+    const { data: reviews } = await get<TReview[]>("/api/reviews")
 
     return (
         <Section className={styles.reviews}>

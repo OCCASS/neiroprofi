@@ -4,8 +4,6 @@ import Section from "@/components/Section";
 import styles from "./page.module.css"
 import H3 from "@/components/H3";
 import Staff from "@/components/Staff";
-import { TDoctor } from "@/types/doctor";
-import { get } from "@/lib/fetch";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 
@@ -28,8 +26,6 @@ const UnderHeader = () => {
 }
 
 export default async function Page() {
-    const doctors = await get<TDoctor[]>("/api/doctors")
-
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>
             <Section className={styles.section}>
@@ -73,7 +69,7 @@ export default async function Page() {
                     <p>Цель нашей работы – здоровый и счастливый пациент!</p>
                 </div>
             </Section>
-            <Staff doctors={doctors} />
+            <Staff />
         </PageLayout>
     )
 }

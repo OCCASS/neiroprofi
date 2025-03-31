@@ -11,7 +11,7 @@ import { get } from "@/lib/fetch";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export const metadata: Metadata = {
     title: `Наши услуги | Медицинский центр «Нейропрофи»`,
@@ -57,7 +57,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
         return services
     }
 
-    const services = filterServices(await get<TService[]>("/api/services"))
+    const { data } = await get<TService[]>("/api/services")
+    const services = filterServices(data)
 
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>

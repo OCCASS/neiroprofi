@@ -27,7 +27,7 @@ const UnderHeader = () => {
 }
 
 export default async function Page() {
-    const doctors = await get<TDoctor[]>("/api/doctors")
+    const { data: doctors } = await get<TDoctor[]>("/api/doctors")
 
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>

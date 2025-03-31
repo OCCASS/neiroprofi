@@ -14,26 +14,30 @@ import List from "@/components/List";
 import { notFound } from "next/navigation"
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
+import { loadDoctors } from "@/lib/loadData";
 
-export const revalidate = 120;
+export const revalidate = 60;
+export const dynamicParams = false
 
-export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
-    const params = await props.params;
-    const data = await get<TDoctor[]>("/api/doctors")
-    const doctor: TDoctor = data.filter(item => item.id === params.id)[0]
-
-    return {
-        title: doctor ? `${doctor.fullName} | Медицинский цент «Нейропрофи»` : "Доктор не найдена"
-    }
+export async function generateStaticParams() {
+    const data = await loadDoctors()
+    return data.map(item => ({ id: item.id }))
 }
 
-export default async function Page(props: { params: Promise<{ id: string }> }) {
-    const params = await props.params;
-    const data = await get<TDoctor[]>("/api/doctors")
-    const doctor: TDoctor = data.filter(item => item.id === params.id)[0]
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+    const id = (await params).id
+    const { data: doctor, status } = await get<TDoctor>(`/api/doctors/${id}`)
 
+    if (status !== 200) return { title: "Доктор не найден" }
 
-    if (!doctor) notFound()
+    return { title: `${doctor.fullName} | Медицинский цент «Нейропрофи»` }
+}
+
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+    const id = (await params).id
+    const { data: doctor, status } = await get<TDoctor>(`/api/doctors/${id}`)
+
+    if (status !== 200) notFound()
 
     const getAboutTitle = () => {
         if (!doctor.about)
@@ -100,7 +104,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                     ><Icon name="whatsapp" width={45} height={45} className={styles.about__buttonIcon} /> Записаться через WhatsApp</Link>
                 </div>
             </Section>
-            <Staff doctors={data} />
+            <Staff />
         </PageLayout>
     )
 }

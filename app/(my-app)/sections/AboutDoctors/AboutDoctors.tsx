@@ -7,8 +7,11 @@ import Link from "next/link";
 import LargeP from "@/components/LargeP";
 import Icon from "@/components/Icon";
 import { TDoctor } from "@/types/doctor";
+import { get } from "@/lib/fetch";
 
-const AboutDoctors = ({ doctors }: { doctors: TDoctor[] }) => {
+const AboutDoctors = async () => {
+    const { data: doctors } = await get<TDoctor[]>("/api/doctors")
+
     return (
         <Section className={styles.about_doctors}>
             <SubSection>

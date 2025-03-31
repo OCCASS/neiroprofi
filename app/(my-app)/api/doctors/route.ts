@@ -1,6 +1,6 @@
-import loadData from "@/lib/loadData";
+import { loadDoctors } from "@/lib/loadData";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
-    return NextResponse.json(await loadData("doctors.json"))
+    return NextResponse.json(await loadDoctors())
 }
