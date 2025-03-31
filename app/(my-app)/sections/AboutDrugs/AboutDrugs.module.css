@@ -21,7 +21,7 @@
   height: 162px;
   border-radius: 15px;
   overflow: hidden;
-  background-image: url("/license_bg.webp");
+  background-image: url("/webp/license_bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -54,6 +54,6 @@
   }
 
   .about_drugs__license {
-    background-image: url("/license_bg_streched.webp");
+    background-image: url("/webp/license_bg_streched.webp");
   }
 }
