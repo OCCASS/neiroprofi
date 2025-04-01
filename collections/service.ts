@@ -31,12 +31,12 @@ export const Services: CollectionConfig = {
         },
         {
             name: "descriptionShort",
-            type: "text",
+            type: "textarea",
             required: true,
         },
         {
             name: "descriptionLong",
-            type: "text",
+            type: "textarea",
             required: true,
         },
         {

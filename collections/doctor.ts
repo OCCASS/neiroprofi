@@ -17,7 +17,7 @@ export const Doctors: CollectionConfig = {
         },
         {
             name: 'about',
-            type: 'text',
+            type: 'textarea',
             required: true,
         },
         {
@@ -64,7 +64,7 @@ export const Doctors: CollectionConfig = {
         },
         {
             name: 'education',
-            type: 'text',
+            type: 'textarea',
             required: true,
         },
     ],

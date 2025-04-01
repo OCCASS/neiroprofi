@@ -17,7 +17,7 @@ export const Faqs: CollectionConfig = {
         },
         {
             name: "content",
-            type: "text",
+            type: "textarea",
             required: true,
         }
     ]
