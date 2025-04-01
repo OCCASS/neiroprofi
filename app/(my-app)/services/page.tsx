@@ -14,6 +14,8 @@ import { Service } from "../../../payload-types";
 export const metadata: Metadata = {
     title: `Наши услуги | Медицинский центр «Нейропрофи»`,
 }
+export const dynamic = "force-dynamic"
+export const revalidate = 120
 
 const UnderHeader = () => {
     return (

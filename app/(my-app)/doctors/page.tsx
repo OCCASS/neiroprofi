@@ -10,6 +10,8 @@ import { loadDoctors } from "@/lib/loadData";
 export const metadata: Metadata = {
     title: `Наш персонал | Медицинский центр «Нейропрофи»`,
 }
+export const dynamic = "force-dynamic"
+export const revalidate = 120
 
 const UnderHeader = () => {
     return (
@@ -22,6 +24,7 @@ const UnderHeader = () => {
         </>
     )
 }
+
 
 export default async function Page() {
     const doctors = await loadDoctors()
