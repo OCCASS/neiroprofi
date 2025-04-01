@@ -10,7 +10,6 @@ import { loadDoctors } from "@/lib/loadData";
 export const metadata: Metadata = {
     title: `Наш персонал | Медицинский центр «Нейропрофи»`,
 }
-export const dynamic = "force-static"
 
 const UnderHeader = () => {
     return (
