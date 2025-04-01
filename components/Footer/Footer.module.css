@@ -1,9 +1,9 @@
 .footer {
   margin-top: 30px;
+  /*margin-bottom: 15px;*/
   display: grid;
   grid-template-columns: max-content 1fr max-content max-content max-content;
   gap: 10px;
-  margin-bottom: 15px;
   border-radius: 30px;
   background-color: #a7b4d4;
   color: var(--color-white);

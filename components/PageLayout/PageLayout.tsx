@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import styles from "./PageLayout.module.css"
+import AgencyLabel from "../AgencyLabel";
 
 const PageLayout = ({ children, UnderHeaderComponent }: { children: React.ReactNode, UnderHeaderComponent: React.FC }) => {
     return (
@@ -13,6 +14,7 @@ const PageLayout = ({ children, UnderHeaderComponent }: { children: React.ReactN
                 {children}
             </main>
             <Footer />
+            <AgencyLabel />
         </>
     )
 }
