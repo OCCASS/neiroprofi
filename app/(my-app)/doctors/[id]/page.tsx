@@ -12,16 +12,10 @@ import List from "@/components/List";
 import { notFound } from "next/navigation"
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { loadDoctor, loadDoctors } from "@/lib/loadData";
+import { loadDoctor } from "@/lib/loadData";
 import FloatingWhatsappButton from "@/components/FloatingWhatsappButton";
 import { Media } from "../../../../payload-types";
 
-export const dynamicParams = false
-
-export async function generateStaticParams() {
-    const data = await loadDoctors()
-    return data.docs.map(item => ({ id: item.id }))
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const id = (await params).id

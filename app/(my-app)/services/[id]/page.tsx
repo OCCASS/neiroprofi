@@ -1,5 +1,4 @@
 import styles from "./page.module.css"
-import { TService } from "@/types/service"
 import BreadCrumb from "@/components/BreadCrumb"
 import PageTitle from "@/components/PageTitle"
 import Section from "@/components/Section"
@@ -13,17 +12,9 @@ import LargeP from "@/components/LargeP"
 import { notFound } from "next/navigation";
 import { Metadata } from "next"
 import PageLayout from "@/components/PageLayout"
-import { loadSerivce, loadSerivces } from "@/lib/loadData"
+import { loadSerivce } from "@/lib/loadData"
 import FloatingWhatsappButton from "@/components/FloatingWhatsappButton"
 import { Media } from "../../../../payload-types"
-
-export const dynamicParams = false;
-
-export async function generateStaticParams() {
-    const data = await loadSerivces()
-    return data.docs.map(item => ({ id: item.id }))
-}
-
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const id = (await params).id
