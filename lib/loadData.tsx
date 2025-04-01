@@ -1,9 +1,8 @@
-import type { TDoctor } from "@/types/doctor";
-import type { TReview } from "@/types/review";
-import type { TService } from "@/types/service";
-import type { TFaq } from "@/types/faq";
 import fsPromises from "fs/promises"
 import path from "path"
+import { getPayload, PaginatedDocs } from "payload";
+import config from "@payload-config"
+import { Doctor, Faq, Review, Service } from "../payload-types";
 
 export default async function loadData(file: string) {
     const filePath = path.join(process.cwd(), `data/${file}`);
@@ -11,32 +10,32 @@ export default async function loadData(file: string) {
     return JSON.parse(jsonData);
 }
 
-export async function loadDoctors(): Promise<TDoctor[]> {
-    return loadData("doctors.json")
+export async function loadDoctors(): Promise<PaginatedDocs<Doctor>> {
+    const payload = await getPayload({ config })
+    return await payload.find({ collection: "doctors", pagination: false })
 }
 
-export async function loadDoctor(id: string): Promise<TDoctor | null> {
-    const doctors = await loadDoctors()
-    const doctor = doctors.find(item => item.id === id)
-    if (!doctor) return null
-    return doctor
+export async function loadDoctor(id: string): Promise<Doctor | null> {
+    const payload = await getPayload({ config })
+    return await payload.findByID({ id, collection: "doctors" })
 }
 
-export async function loadSerivces(): Promise<TService[]> {
-    return loadData("services.json")
+export async function loadSerivces(): Promise<PaginatedDocs<Service>> {
+    const payload = await getPayload({ config })
+    return await payload.find({ collection: "services", pagination: false })
 }
 
-export async function loadSerivce(id: string): Promise<TService | null> {
-    const services = await loadSerivces()
-    const service = services.find(item => item.id === id)
-    if (!service) return null
-    return service
+export async function loadSerivce(id: string): Promise<Service | null> {
+    const payload = await getPayload({ config })
+    return await payload.findByID({ id, collection: "services" })
 }
 
-export async function loadReivews(): Promise<TReview[]> {
-    return loadData("reviews.json")
+export async function loadReivews(): Promise<PaginatedDocs<Review>> {
+    const payload = await getPayload({ config })
+    return await payload.find({ collection: "reviews", pagination: false })
 }
 
-export async function loadFaq(): Promise<TFaq[]> {
-    return loadData("faq.json")
+export async function loadFaq(): Promise<PaginatedDocs<Faq>> {
+    const payload = await getPayload({ config })
+    return await payload.find({ collection: "faqs", pagination: false })
 }

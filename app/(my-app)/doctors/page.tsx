@@ -2,7 +2,6 @@ import styles from "./page.module.css"
 import DoctorCard from "@/components/DoctorCard";
 import PageTitle from "@/components/PageTitle";
 import BreadCrumb from "@/components/BreadCrumb";
-import { TDoctor } from "@/types/doctor";
 import Section from "@/components/Section";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
@@ -26,13 +25,13 @@ const UnderHeader = () => {
 }
 
 export default async function Page() {
-    const doctors: TDoctor[] = await loadDoctors()
+    const doctors = await loadDoctors()
 
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>
             <Section className={styles.doctors__list}>
                 {
-                    doctors.map(item => <DoctorCard key={item.id} data={item} />)
+                    doctors.docs.map(item => <DoctorCard key={item.id} doctor={item} />)
                 }
             </Section>
         </PageLayout>

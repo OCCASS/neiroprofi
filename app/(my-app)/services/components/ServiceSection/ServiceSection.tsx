@@ -3,14 +3,15 @@
 import styles from "./ServiceSection.module.css"
 import Icon from "@/components/Icon";
 import LargeP from "@/components/LargeP";
-import type { TService, TServiceItemItems } from "@/types/service";
+import type { TServiceItemItems } from "@/types/service";
 import { numberWithSpaces } from "@/utils/number_with_spaces";
 import Link from "next/link";
 import React, { useState } from "react";
+import { Service } from "../../../../../payload-types";
 
 
 const ServiceSection = ({ service, className = "" }: {
-    service: TService
+    service: Service
     className?: string
 }) => {
     const [close, setClose] = useState(true)
@@ -18,21 +19,21 @@ const ServiceSection = ({ service, className = "" }: {
     return (
         <section className={`${styles.service_section} ${className}`}>
             <div className={styles.service_section__header}>
-                <Icon className={styles.service_section__headerMainIcon} name={service.iconName} width={60} height={60} />
+                <Icon className={styles.service_section__headerMainIcon} name={service.icon} width={60} height={60} />
                 <LargeP className={styles.service_section__headerTitle}><Link className={styles.service_section__headerLink} href={`/services/${service.id}`}>{service.name}</Link></LargeP>
                 <button className={styles.service_section__headerButton} onClick={() => setClose(prev => !prev)}>
                     <Icon className={`${styles.service_section__headerIcon} ${close ? "" : styles.service_section__headerIcon_open}`} name="arrow_bottom" width={24} height={24} />
                 </button>
             </div>
             {
-                service.list.length > 0 &&
+                service.services &&
                 <ul className={`${styles.service_section__list} ${close ? styles.service_section__listClose : ""}`}>
                     {
-                        service.list.map((item, index) => (
-                            <React.Fragment key={index}>
+                        service.services?.map((item) => (
+                            <React.Fragment key={item.id}>
                                 {
                                     item.title &&
-                                    <li key={`title_${index}`} className={styles.service_section__title}>
+                                    <li key={`title_${item.id}`} className={styles.service_section__title}>
                                         {item.title}
                                     </li>
                                 }
@@ -47,7 +48,7 @@ const ServiceSection = ({ service, className = "" }: {
 }
 
 const ItemItems = ({ items, asSub }: { items: TServiceItemItems[], asSub: boolean }) => {
-    const getPriceContent = (price: number, per: string | null) => {
+    const getPriceContent = (price: number, per: string | null | undefined) => {
         const priceText = numberWithSpaces(price)
         if (per && per[per.length - 1] !== ".") per += ".";
         // Slash in first span, because when parent wraps its correctly

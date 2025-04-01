@@ -1,5 +1,4 @@
 import ReviewsGrid from "./components/ReviewsGrid";
-import { TReview } from "@/types/review";
 import Section from "@/components/Section";
 import styles from "./page.module.css"
 import FilterBar from "./components/FilterBar";
@@ -28,13 +27,13 @@ const UnderHeader = () => {
 
 export default async function Page({ searchParams: sParams }: { searchParams: Promise<{ key: string }> }) {
     const searchParams = await sParams
-    const reviews: TReview[] = await loadReivews()
+    const reviews = await loadReivews()
 
     const filterReviews = () => {
-        if (searchParams?.key === "") return reviews
-        else if (searchParams?.key === "site") return reviews.filter(item => !item.proDoctorov)
-        else if (searchParams?.key === "prodoctorov") return reviews.filter(item => item.proDoctorov)
-        return reviews
+        if (searchParams?.key === "") return reviews.docs
+        else if (searchParams?.key === "site") return reviews.docs.filter(item => !item.proDoctorov)
+        else if (searchParams?.key === "prodoctorov") return reviews.docs.filter(item => item.proDoctorov)
+        return reviews.docs
     }
 
     return (
@@ -42,7 +41,7 @@ export default async function Page({ searchParams: sParams }: { searchParams: Pr
             <Section><FilterBar /></Section>
             <Section className={styles.section}>
                 <ReviewsGrid>
-                    {filterReviews().map((item, index) => <ReviewCard key={index} review={item} />)}
+                    {filterReviews().map((item) => <ReviewCard key={item.id} review={item} />)}
                 </ReviewsGrid>
             </Section>
         </PageLayout>

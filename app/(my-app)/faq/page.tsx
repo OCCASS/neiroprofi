@@ -6,7 +6,6 @@ import { ListItem } from "./components";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { loadFaq } from "@/lib/loadData";
-import type { TFaq } from "@/types/faq";
 
 export const metadata: Metadata = {
     title: `Часто задаваемые вопросы | Медицинский центр «Нейропрофи»`,
@@ -25,7 +24,7 @@ const UnderHeader = () => {
 }
 
 export default async function Page() {
-    const faqs: TFaq[] = await loadFaq()
+    const faqs = await loadFaq()
 
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>
@@ -33,8 +32,8 @@ export default async function Page() {
                 <div>
                     <ul className={styles.list}>
                         {
-                            faqs.map(
-                                (item, index) => <ListItem key={index} title={item.title} content={item.content} />
+                            faqs.docs.map(
+                                (item) => <ListItem key={item.id} title={item.title} content={item.content} />
                             )
                         }
                     </ul>

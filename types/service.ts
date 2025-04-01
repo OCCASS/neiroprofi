@@ -1,7 +1,8 @@
 export type TServiceItemItems = {
-    name: string,
-    price: number,
-    per: string | null
+    id?: string | undefined | null,
+    name: string
+    price: number
+    per?: string | null
 }
 
 export type TService = {

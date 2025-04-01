@@ -1,13 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    // Your Next.js config here
+import { withPayload } from '@payloadcms/next/withPayload'
+import { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
     experimental: {
         reactCompiler: false,
     },
-};
+}
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-    enabled: process.env.ANALYZE === "true",
-});
-
-export default withBundleAnalyzer(nextConfig);
+export default withPayload(nextConfig) 

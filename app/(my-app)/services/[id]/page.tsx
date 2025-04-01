@@ -15,18 +15,19 @@ import { Metadata } from "next"
 import PageLayout from "@/components/PageLayout"
 import { loadSerivce, loadSerivces } from "@/lib/loadData"
 import FloatingWhatsappButton from "@/components/FloatingWhatsappButton"
+import { Media } from "../../../../payload-types"
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
     const data = await loadSerivces()
-    return data.map(item => ({ id: item.id }))
+    return data.docs.map(item => ({ id: item.id }))
 }
 
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const id = (await params).id
-    const service: TService | null = await loadSerivce(id)
+    const service = await loadSerivce(id)
 
     return {
         title: service ? `${service.name} | Медицинский цент «Нейропрофи»` : "Услуга не найдена"
@@ -35,12 +36,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
     const id = (await params).id
-    const service: TService | null = await loadSerivce(id)
+    const service = await loadSerivce(id)
 
     if (!service) notFound()
 
     let titleContent;
-    if (service.descriptionShort.length > 0) {
+    if (service.descriptionShort) {
         titleContent = `${service.name} – ${service.descriptionShort}`.trim()
         if (service.descriptionShort.at(service.descriptionShort.length - 1) !== ".") titleContent += "."
     } else {
@@ -69,14 +70,13 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                         <H3 className={styles.about__title}>
                             {titleContent}
                         </H3>
-                        <p className={styles.about__content}>{service.description}</p>
+                        <p className={styles.about__content}>{service.descriptionLong}</p>
                     </div>
                     <div className={styles.about__imageWrapper}>
                         <Image
                             className={styles.about__image}
-                            src={`/webp/${service.image}.webp`}
-                            overrideSrc={`/jpeg/${service.image}.jpg`}
-                            alt={service.name}
+                            src={(service.image as Media).thumbnailURL ?? ""}
+                            alt={(service.image as Media).alt}
                             width={500}
                             height={500}
                         />
@@ -95,29 +95,29 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 (service.advantages.length + service.indications.length + service.contraindications.length) > 0 &&
                 <Section className={styles.infoSection}>
                     {
-                        service.advantages.length > 0 &&
+                        service.advantages &&
                         <SubSection>
                             <LargeP className={styles.infoSection__title}>{service.name}:</LargeP>
                             <List separators={true}>
-                                {service.advantages.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.toLowerCase()}</List.Item>)}
+                                {service.advantages.map((item) => <List.Item key={item.id} className={styles.infoSection__item}>{item.name?.toLowerCase()}</List.Item>)}
                             </List>
                         </SubSection>
                     }
                     {
-                        service.indications.length > 0 &&
+                        service.indications &&
                         <SubSection>
                             <LargeP className={styles.infoSection__title}>Показания к применению:</LargeP>
                             <List separators={true}>
-                                {service.indications.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.toLowerCase()}</List.Item>)}
+                                {service.indications.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.name?.toLowerCase()}</List.Item>)}
                             </List>
                         </SubSection>
                     }
                     {
-                        service.contraindications.length > 0 &&
+                        service.contraindications &&
                         <SubSection>
                             <LargeP className={styles.infoSection__title}>Противопоказания к применению:</LargeP>
                             <List separators={true}>
-                                {service.contraindications.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.toLowerCase()}</List.Item>)}
+                                {service.contraindications.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.name?.toLowerCase()}</List.Item>)}
                             </List>
                         </SubSection>
                     }

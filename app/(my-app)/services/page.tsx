@@ -4,12 +4,12 @@ import ServiceSection from "./components/ServiceSection";
 import Section from "@/components/Section";
 import ServicesGrid from "@/app/services/components/ServicesGrid";
 import BreadCrumb from "@/components/BreadCrumb";
-import { TService } from "@/types/service";
 import Search from "./components/Search";
 import LargeP from "@/components/LargeP";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { loadSerivces } from "@/lib/loadData";
+import { Service } from "../../../payload-types";
 
 export const metadata: Metadata = {
     title: `Наши услуги | Медицинский центр «Нейропрофи»`,
@@ -30,16 +30,16 @@ const UnderHeader = () => {
 export default async function Page({ searchParams }: { searchParams: Promise<{ search: string | undefined }> }) {
     const search = (await searchParams).search
 
-    const filterServices = (services: TService[]) => {
+    const filterServices = (services: Service[]) => {
         if (search) {
             return services.map(service => {
-                let filteredList = service.list.map(
+                let filteredList = service.services?.map(
                     item => {
-                        const filteredItems = item.items.filter(item1 => item1.name.toLowerCase().includes(search.toLowerCase().trim()))
+                        const filteredItems = item.items?.filter(item1 => item1.name?.toLowerCase().includes(search.toLowerCase().trim()))
                         return { ...item, items: filteredItems }
                     }
                 )
-                filteredList = filteredList.filter(item => item.items.length > 0)
+                filteredList = filteredList.filter(item => item.items)
 
                 if (filteredList.length > 0) {
                     return {
@@ -56,7 +56,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
     }
 
     const data = await loadSerivces()
-    const services = filterServices(data)
+    const services = filterServices(data.docs)
 
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>

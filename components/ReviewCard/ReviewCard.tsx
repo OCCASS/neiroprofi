@@ -3,9 +3,9 @@ import styles from "./ReviewCard.module.css"
 import Rating from "@/components/Rating";
 import LargeP from "@/components/LargeP";
 import Link from "next/link";
-import { TReview } from "@/types/review";
+import { Review } from "../../payload-types";
 
-const ReviewCard = ({ review, className = "" }: { review: TReview, className?: string }) => {
+const ReviewCard = ({ review, className = "" }: { review: Review, className?: string }) => {
     return (
         <section className={`${styles.item} ${className}`}>
             <div>
@@ -24,7 +24,7 @@ const ReviewCard = ({ review, className = "" }: { review: TReview, className?: s
                         <LargeP className={styles.profile__name}>{review.from}</LargeP>
                         <div className={styles.profile__rating}>
                             <Rating value={review.rating} itemClassName={styles.rating__star} />
-                            <p className={styles.rating__value}>{review.rating.toFixed(1)}</p>
+                            <p className={styles.rating__value}>{review.rating}</p>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@ const ReviewCard = ({ review, className = "" }: { review: TReview, className?: s
             <div className={styles.contentWrapper}>
                 <p className={styles.content}>{review.content}</p>
             </div>
-            {review.proDoctorov && <Link href={review.link} className={styles.link} target="_blank" rel="norepeer,noreferer">Читать на «ПроДокторов»</Link>}
+            {review.proDoctorov && review.link && <Link href={review.link} className={styles.link} target="_blank" rel="norepeer,noreferer">Читать на «ПроДокторов»</Link>}
         </section>
     )
 }

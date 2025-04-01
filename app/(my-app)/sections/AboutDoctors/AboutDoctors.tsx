@@ -6,11 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 import LargeP from "@/components/LargeP";
 import Icon from "@/components/Icon";
-import type { TDoctor } from "@/types/doctor";
 import { loadDoctors } from "@/lib/loadData";
+import { Media } from "../../../../payload-types";
 
 const AboutDoctors = async () => {
-    const doctors: TDoctor[] = await loadDoctors()
+    const doctors = await loadDoctors()
 
     return (
         <Section className={styles.about_doctors}>
@@ -44,13 +44,12 @@ const AboutDoctors = async () => {
                     style={{ color: "var(--color-primary)" }}>более 26</span> профессионалов</LargeP>
                 <div className={styles.doctors_list}>
                     {
-                        doctors?.slice(0, 8).map(item =>
+                        doctors.docs.slice(0, 8).map(item =>
                             <Image
                                 key={item.id}
                                 className={styles.doctors_list__image}
-                                src={`/staff/webp/${item.image}.webp`}
-                                overrideSrc={`/staff/jpeg/${item.image}.jpg`}
-                                alt={item.fullName}
+                                src={(item.image as Media).thumbnailURL ?? ""}
+                                alt={(item.image as Media).alt}
                                 width={60}
                                 height={60}
                             />

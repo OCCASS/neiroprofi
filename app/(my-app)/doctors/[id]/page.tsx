@@ -1,6 +1,5 @@
 import PageTitle from "@/components/PageTitle";
 import BreadCrumb from "@/components/BreadCrumb";
-import { TDoctor } from "@/types/doctor";
 import styles from "./page.module.css"
 import Image from "next/image";
 import Icon from "@/components/Icon";
@@ -15,17 +14,18 @@ import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { loadDoctor, loadDoctors } from "@/lib/loadData";
 import FloatingWhatsappButton from "@/components/FloatingWhatsappButton";
+import { Media } from "../../../../payload-types";
 
 export const dynamicParams = false
 
 export async function generateStaticParams() {
     const data = await loadDoctors()
-    return data.map(item => ({ id: item.id }))
+    return data.docs.map(item => ({ id: item.id }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const id = (await params).id
-    const doctor: TDoctor | null = await loadDoctor(id)
+    const doctor = await loadDoctor(id)
 
     if (!doctor) return { title: "Доктор не найден" }
 
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
     const id = (await params).id
-    const doctor: TDoctor | null = await loadDoctor(id)
+    const doctor = await loadDoctor(id)
 
     if (!doctor) notFound()
 
@@ -68,11 +68,11 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                             <Icon name={"multi_arrow_right_in_circle"} width={21} height={21} />
                             Специальность
                         </LargeP>
-                        <ul className={styles.section__list}>{doctor.specialities.short.map((item, index) => <li
-                            key={index}>{item}</li>)}</ul>
+                        <ul className={styles.section__list}>{doctor.specialitiesShort.map((item) => <li
+                            key={item.id}>{item.name}</li>)}</ul>
                     </div>
                     {
-                        doctor.education.length > 0 &&
+                        doctor.education &&
                         <div className={styles.doctor__section} style={{ borderTop: "1px solid #D3D9E8", paddingTop: "15px" }}>
                             <LargeP className={styles.section__title}>
                                 <Icon name={"multi_arrow_right_in_circle"} width={21} height={21} />
@@ -82,11 +82,11 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                         </div>
                     }
                     {
-                        doctor.specialities.detailed.length > 0 &&
+                        doctor.specialitiesLong &&
                         <div className={styles.about__section_detailed}>
                             <List>
-                                {doctor.specialities.detailed.map((item, index) => (
-                                    <List.Item key={index} className={styles.specialities_item}>{item}</List.Item>))
+                                {doctor.specialitiesLong.map((item) => (
+                                    <List.Item key={item.id} className={styles.specialities_item}>{item.name}</List.Item>))
                                 }
                             </List>
                         </div>
@@ -95,11 +95,10 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 <div className={styles.about__imageWrapper}>
                     <Image
                         className={styles.about__image}
-                        src={`/staff/webp/${doctor.image}.webp`}
-                        overrideSrc={`/staff/jpeg/${doctor.image}.jpg`}
-                        alt={doctor.fullName}
-                        width={500}
-                        height={500}
+                        src={(doctor.image as Media).thumbnailURL ?? ""}
+                        alt={(doctor.image as Media).alt}
+                        width={300}
+                        height={400}
                     />
                     <Link
                         className={styles.about__button}
