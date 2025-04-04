@@ -90,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                     <Image
                         className={styles.about__image}
                         src={(doctor.image as Media).thumbnailURL ?? ""}
-                        alt={(doctor.image as Media).alt}
+                        alt={doctor.fullName}
                         width={300}
                         height={400}
                     />

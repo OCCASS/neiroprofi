@@ -67,7 +67,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                         <Image
                             className={styles.about__image}
                             src={(service.image as Media).thumbnailURL ?? ""}
-                            alt={(service.image as Media).alt}
+                            alt={service.name}
                             width={500}
                             height={500}
                         />

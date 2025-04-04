@@ -49,7 +49,7 @@ const AboutDoctors = async () => {
                                 key={item.id}
                                 className={styles.doctors_list__image}
                                 src={(item.image as Media).thumbnailURL ?? ""}
-                                alt={(item.image as Media).alt}
+                                alt={item.fullName}
                                 width={60}
                                 height={60}
                             />

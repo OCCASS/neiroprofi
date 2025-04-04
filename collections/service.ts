@@ -42,48 +42,53 @@ export const Services: CollectionConfig = {
         {
             name: "advantages",
             type: "array",
-            required: true,
+            required: false,
             fields: [
                 {
                     name: "name",
                     type: "text",
                     required: true,
                 }
-            ]
+            ],
+            defaultValue: []
         },
         {
             name: "indications",
             type: "array",
-            required: true,
+            required: false,
             fields: [
                 {
                     name: "name",
                     type: "text",
                     required: true,
                 }
-            ]
+            ],
+            defaultValue: []
         },
         {
             name: "contraindications",
             type: "array",
-            required: true,
+            required: false,
             fields: [
                 {
                     name: "name",
                     type: "text",
                     required: true,
                 }
-            ]
+            ],
+            defaultValue: []
         },
         {
             name: "services",
             type: "array",
-            required: true,
+            required: false,
+            defaultValue: [],
             fields: [
                 {
                     name: "title",
                     type: "text",
-                    required: true,
+                    required: false,
+                    defaultValue: ""
                 },
                 {
                     name: "items",

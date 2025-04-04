@@ -149,7 +149,7 @@ export interface Doctor {
  */
 export interface Media {
   id: string;
-  alt: string;
+  alt?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -194,28 +194,36 @@ export interface Service {
   image: string | Media;
   descriptionShort: string;
   descriptionLong: string;
-  advantages: {
-    name: string;
-    id?: string | null;
-  }[];
-  indications: {
-    name: string;
-    id?: string | null;
-  }[];
-  contraindications: {
-    name: string;
-    id?: string | null;
-  }[];
-  services: {
-    title: string;
-    items: {
-      name: string;
-      price: number;
-      per?: string | null;
-      id?: string | null;
-    }[];
-    id?: string | null;
-  }[];
+  advantages?:
+    | {
+        name: string;
+        id?: string | null;
+      }[]
+    | null;
+  indications?:
+    | {
+        name: string;
+        id?: string | null;
+      }[]
+    | null;
+  contraindications?:
+    | {
+        name: string;
+        id?: string | null;
+      }[]
+    | null;
+  services?:
+    | {
+        title?: string | null;
+        items: {
+          name: string;
+          price: number;
+          per?: string | null;
+          id?: string | null;
+        }[];
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }

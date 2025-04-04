@@ -26,7 +26,7 @@ const Welcome = () => {
                     className={styles.welcome_section__imageImage}
                     src="/webp/woman.webp"
                     overrideSrc="/png/woman.png"
-                    alt=""
+                    alt="Woman"
                     aria-hidden="true"
                     width={739} height={682}
                     priority={true}

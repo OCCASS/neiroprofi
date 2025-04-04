@@ -14,7 +14,7 @@ const DoctorCard = ({ doctor }: { doctor: Doctor }) => {
         <article className={styles.doctor_card}>
             <Image
                 src={(doctor.image as Media).thumbnailURL ?? ""}
-                alt={(doctor.image as Media).alt}
+                alt={doctor.fullName}
                 width={270}
                 height={300}
                 className={styles.doctor_card__image}
