@@ -16,8 +16,12 @@ export async function loadDoctors(): Promise<PaginatedDocs<Doctor>> {
 }
 
 export async function loadDoctor(id: string): Promise<Doctor | null> {
-    const payload = await getPayload({ config })
-    return await payload.findByID({ id, collection: "doctors" })
+    try {
+        const payload = await getPayload({ config })
+        return await payload.findByID({ id, collection: "doctors" })
+    } catch {
+        return null
+    }
 }
 
 export async function loadSerivces(): Promise<PaginatedDocs<Service>> {
@@ -26,8 +30,12 @@ export async function loadSerivces(): Promise<PaginatedDocs<Service>> {
 }
 
 export async function loadSerivce(id: string): Promise<Service | null> {
-    const payload = await getPayload({ config })
-    return await payload.findByID({ id, collection: "services" })
+    try {
+        const payload = await getPayload({ config })
+        return await payload.findByID({ id, collection: "services", })
+    } catch {
+        return null
+    }
 }
 
 export async function loadReivews(): Promise<PaginatedDocs<Review>> {
