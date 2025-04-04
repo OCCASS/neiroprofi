@@ -35,7 +35,9 @@ export const Doctors: CollectionConfig = {
             required: true,
             options: [
                 "admin",
-                "doctor"
+                "doctor",
+                "nurse",
+                "paramedic-laboratory-assistant"
             ]
         },
         {
