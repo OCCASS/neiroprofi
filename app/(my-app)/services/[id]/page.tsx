@@ -83,7 +83,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 </div>
             </Section>
             {
-                (service.advantages.length + service.indications.length + service.contraindications.length) > 0 &&
+                ((service.advantages?.length ?? 0) + (service.indications?.length ?? 0) + (service.contraindications?.length ?? 0)) > 0 &&
                 <Section className={styles.infoSection}>
                     {
                         service.advantages &&

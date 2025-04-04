@@ -41,7 +41,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
                         return { ...item, items: filteredItems }
                     }
                 )
-                filteredList = filteredList.filter(item => item.items)
+                filteredList = filteredList?.filter(item => item.items) ?? []
 
                 if (filteredList.length > 0) {
                     return {
