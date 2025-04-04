@@ -4,8 +4,15 @@ import Link from "next/link";
 import { Doctor, Media } from "../../payload-types";
 
 const StaffCard = ({ doctor }: { doctor: Doctor }) => {
-    let doctorPositionName = "Врач"
-    if (doctor.position === "admin") doctorPositionName = "Администратор"
+    const doctorPositionName = (() => {
+        switch (doctor.position) {
+            case "doctor": return "Врач"
+            case "admin": return "Администратор"
+            case "nurse": return "Медсестра"
+            case "paramedic-laboratory-assistant": return "Фельдшер-лаборант"
+            default: return "Врач"
+        }
+    })()
 
     return (
         <article className={styles.staff_card}>
