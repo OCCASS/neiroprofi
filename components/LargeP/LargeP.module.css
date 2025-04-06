@@ -1,7 +1,7 @@
 .large_p {
   margin: 0;
-  font-size: 1.3rem;
-  line-height: 1.75rem;
+  font-size: 18px;
+  line-height: 25px;
 }
 
 @media (max-width: 768px) {
