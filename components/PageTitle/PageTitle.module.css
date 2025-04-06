@@ -1,7 +1,7 @@
 .page_title {
   margin: 0;
   font-weight: 500;
-  font-size: 3.7em;
+  font-size: 60px;
   line-height: 60px;
   word-break: break-word;
   -ms-hyphens: auto;
@@ -43,14 +43,14 @@
 
 @media (max-width: 1230px) {
   .page_title {
-    font-size: 3.5em;
+    font-size: 56px;
     line-height: 60px;
   }
 }
 
 @media (max-width: 1000px) {
   .page_title {
-    font-size: 3em;
+    font-size: 48px;
     line-height: 52px;
   }
 
@@ -61,7 +61,7 @@
 
 @media (max-width: 900px) {
   .page_title {
-    font-size: 2.2em;
+    font-size: 35px;
     line-height: 44px;
   }
 

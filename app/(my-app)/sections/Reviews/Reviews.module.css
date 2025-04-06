@@ -15,7 +15,7 @@
 
 .reviews__headerTitle {
   margin: 0;
-  font-size: 3em;
+  font-size: 48px;
   font-weight: 500;
 }
 
@@ -115,7 +115,7 @@
 
   .reviews__headerTitle {
     text-align: center;
-    font-size: 2.25em;
+    font-size: 36px;
   }
 }
 

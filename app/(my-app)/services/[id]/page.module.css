@@ -9,7 +9,7 @@
 }
 
 .about__title {
-  font-size: 1.7em;
+  font-size: 27px;
   line-height: 32px;
   margin-bottom: 30px !important;
 }
@@ -21,7 +21,7 @@
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
-  line-height: 1.5em;
+  line-height: 24px;
   color: var(--color-grey-hard);
 }
 
@@ -76,7 +76,7 @@
 }
 
 .infoSection__title {
-  font-size: 1.5em !important;
+  font-size: 24px !important;
   margin-bottom: 15px !important;
 }
 
@@ -94,7 +94,7 @@
   }
 
   .about__title {
-    font-size: 1.7em !important;
+    font-size: 27px !important;
     line-height: 34px !important;
     word-break: break-word;
     -ms-hyphens: auto;

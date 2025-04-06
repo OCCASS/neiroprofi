@@ -55,7 +55,7 @@
   }
 
   .service_card__name {
-    font-size: 0.9em;
+    font-size: 14px;
     word-break: break-word;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
@@ -65,6 +65,6 @@
   .service_card__button {
     height: 30px;
     line-height: 30px;
-    font-size: 0.9em;
+    font-size: 14px;
   }
 }

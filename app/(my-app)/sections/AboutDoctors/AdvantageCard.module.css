@@ -6,7 +6,7 @@
 
 @media (max-width: 460px) {
   .advantage_card__title {
-    font-size: 1em !important;
+    font-size: 16px !important;
     line-height: 1.5 !important;
     word-break: break-all;
     hyphens: manual;

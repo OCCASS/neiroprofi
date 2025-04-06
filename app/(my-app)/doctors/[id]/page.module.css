@@ -12,7 +12,7 @@
 }
 
 .about__title {
-  font-size: 1.7em;
+  font-size: 27px;
   line-height: 32px;
 }
 
@@ -89,7 +89,7 @@
 .section__text {
   padding-left: 35px;
   white-space: pre-wrap;
-  line-height: 1.5em;
+  line-height: 24px;
 }
 
 .about__section_detailed {
@@ -140,7 +140,7 @@
   }
 
   .about__title {
-    font-size: 1.7em !important;
+    font-size: 27px !important;
     line-height: 34px !important;
   }
 }

@@ -7,7 +7,7 @@
 
 .welcome_section__title {
   font-weight: 600;
-  font-size: 4.125em;
+  font-size: 66px;
   line-height: 1.2;
   margin-bottom: 90px;
 }
@@ -71,7 +71,7 @@
 
 @media (max-width: 1230px) {
   .welcome_section__title {
-    font-size: 3.5em;
+    font-size: 56px;
   }
 
   .welcome_section__buttons {
@@ -83,13 +83,13 @@
 
 @media (max-width: 1000px) {
   .welcome_section__title {
-    font-size: 3em;
+    font-size: 48px;
   }
 }
 
 @media (max-width: 900px) {
   .welcome_section__title {
-    font-size: 2.7em;
+    font-size: 44px;
   }
 }
 
@@ -115,7 +115,7 @@
   .welcome_section__title {
     text-align: center;
     font-weight: 500;
-    font-size: 2em;
+    font-size: 32px;
     line-height: 1.4;
     margin: 0;
   }
@@ -136,7 +136,7 @@
 
 @media (max-width: 450px) {
   .welcome_section__title {
-    font-size: 1.6em;
+    font-size: 26px;
     line-height: 1.3;
   }
 }

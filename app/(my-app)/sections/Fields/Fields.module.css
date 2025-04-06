@@ -16,7 +16,7 @@
 
 .fields__headerTitle {
   margin: 0;
-  font-size: 3em;
+  font-size: 48px;
   font-weight: 500;
 }
 
@@ -60,11 +60,11 @@
   }
 
   .fields__headerTitle {
-    font-size: 2.25em;
+    font-size: 36px;
   }
 
   .fields__headerDescription {
-    font-size: 0.875em;
+    font-size: 14px;
   }
 }
 
