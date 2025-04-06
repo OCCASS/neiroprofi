@@ -5,7 +5,7 @@ import { numberWithSpaces } from "@/utils/number_with_spaces";
 import { Service } from "../../../../payload-types";
 
 const ServiceCard = ({ service }: { service: Service }) => {
-    const minPrice = service?.services ? service.services?.reduce((min, obj) => {
+    const minPrice = service?.services?.length ? service.services?.reduce((min, obj) => {
         return obj.items[0].price < min ? obj.items[0].price : min;
     }, Infinity) : null
 
