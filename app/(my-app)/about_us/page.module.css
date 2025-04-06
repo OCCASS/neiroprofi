@@ -1,0 +1,27 @@
+.section {
+  background-color: var(--color-white) !important;
+}
+
+.link {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.section__title {
+  overflow-wrap: break-word;
+  text-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.section__first {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.first__content {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.5em;
+  color: var(--color-grey-hard);
+}
