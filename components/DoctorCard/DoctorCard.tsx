@@ -28,7 +28,7 @@ const DoctorCard = ({ doctor }: { doctor: Doctor }) => {
             />
             <div className={styles.doctor_card__right}>
                 <LargeP className={styles.doctor_card__name}>
-                    <Link className={styles.doctor_card__link} href={`/doctors/${doctor.id}`}>{doctor.fullName}</Link>
+                    <Link className={styles.doctor_card__link} href={`/doctors/${doctor.slug}`}>{doctor.fullName}</Link>
                 </LargeP>
                 <SmallP className={`${styles.doctor_card__position} ${doctor.position === "admin" ? styles.doctor_card__positionPrimary : ""}`}>{doctorPositionName}</SmallP>
                 <div className={styles.doctor_card__section}>
@@ -49,7 +49,7 @@ const DoctorCard = ({ doctor }: { doctor: Doctor }) => {
                     </div>
                 }
                 <div className={styles.section__buttonWrapper}>
-                    <Link href={`/doctors/${doctor.id}`} type="button" className={styles.section__button}>Подробнее</Link>
+                    <Link href={`/doctors/${doctor.slug}`} type="button" className={styles.section__button}>Подробнее</Link>
                 </div>
             </div>
         </article>

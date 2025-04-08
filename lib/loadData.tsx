@@ -15,10 +15,12 @@ export async function loadDoctors(): Promise<PaginatedDocs<Doctor>> {
     return await payload.find({ collection: "doctors", pagination: false })
 }
 
-export async function loadDoctor(id: string): Promise<Doctor | null> {
+export async function loadDoctor(slug: string): Promise<Doctor | null> {
     try {
         const payload = await getPayload({ config })
-        return await payload.findByID({ id, collection: "doctors" })
+        const doctors = await payload.find({ collection: "doctors", where: { slug: { equals: slug } } })
+        if (doctors.docs.length > 0) return doctors.docs[0]
+        else return null
     } catch {
         return null
     }
@@ -29,10 +31,12 @@ export async function loadSerivces(): Promise<PaginatedDocs<Service>> {
     return await payload.find({ collection: "services", pagination: false })
 }
 
-export async function loadSerivce(id: string): Promise<Service | null> {
+export async function loadSerivce(slug: string): Promise<Service | null> {
     try {
         const payload = await getPayload({ config })
-        return await payload.findByID({ id, collection: "services", })
+        const services = await payload.find({ collection: "services", where: { slug: { equals: slug } } })
+        if (services.docs.length > 0) return services.docs[0]
+        else return null
     } catch {
         return null
     }

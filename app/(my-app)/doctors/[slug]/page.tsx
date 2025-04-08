@@ -17,18 +17,18 @@ import FloatingWhatsappButton from "@/components/FloatingWhatsappButton";
 import { Media } from "../../../../payload-types";
 
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-    const id = (await params).id
-    const doctor = await loadDoctor(id)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const slug = (await params).slug
+    const doctor = await loadDoctor(slug)
 
     if (!doctor) return { title: "Доктор не найден" }
 
     return { title: `${doctor.fullName} | Медицинский цент «Нейропрофи»` }
 }
 
-export default async function Page({ params }: { params: Promise<{ id: string }> }) {
-    const id = (await params).id
-    const doctor = await loadDoctor(id)
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+    const slug = (await params).slug
+    const doctor = await loadDoctor(slug)
 
     if (!doctor) notFound()
 
@@ -45,7 +45,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 <BreadCrumb items={[
                     { name: "НейроПрофи", path: "/" },
                     { name: "Персонал", path: "/doctors" },
-                    { name: doctor.fullName, path: `/doctors/${doctor.id}` },
+                    { name: doctor.fullName, path: `/doctors/${doctor.slug}` },
                 ]} />
                 <PageTitle className={styles.header__doctorName}>{doctor.fullName}</PageTitle>
             </>

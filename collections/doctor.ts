@@ -16,6 +16,11 @@ export const Doctors: CollectionConfig = {
             required: true,
         },
         {
+            name: 'slug',
+            type: 'text',
+            required: true,
+        },
+        {
             name: 'about',
             type: 'textarea',
             required: true,

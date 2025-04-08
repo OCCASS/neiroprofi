@@ -15,19 +15,20 @@ import PageLayout from "@/components/PageLayout"
 import { loadSerivce } from "@/lib/loadData"
 import FloatingWhatsappButton from "@/components/FloatingWhatsappButton"
 import { Media } from "../../../../payload-types"
+import RichText from "@/components/RichTextViewer"
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-    const id = (await params).id
-    const service = await loadSerivce(id)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const slug = (await params).slug
+    const service = await loadSerivce(slug)
 
     return {
         title: service ? `${service.name} | Медицинский цент «Нейропрофи»` : "Услуга не найдена"
     }
 }
 
-export default async function Page({ params }: { params: Promise<{ id: string }> }) {
-    const id = (await params).id
-    const service = await loadSerivce(id)
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+    const slug = (await params).slug
+    const service = await loadSerivce(slug)
 
     if (!service) notFound()
 
@@ -45,7 +46,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 <BreadCrumb items={[
                     { name: "НейроПрофи", path: "/" },
                     { name: "Прайс", path: "/services" },
-                    { name: service.name, path: `/services/${service.id}` }
+                    { name: service.name, path: `/services/${service.slug}` }
                 ]} />
                 <PageTitle>{service.name}</PageTitle>
             </>
@@ -58,10 +59,8 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
             <Section className={styles.aboutSection}>
                 <div className={styles.about}>
                     <div className={styles.about__left}>
-                        <H3 className={styles.about__title}>
-                            {titleContent}
-                        </H3>
-                        <p className={styles.about__content}>{service.descriptionLong}</p>
+                        <H3 className={styles.about__title}>{titleContent}</H3>
+                        <RichText className={styles.about__content} data={service.descriptionLong} />
                     </div>
                     <div className={styles.about__imageWrapper}>
                         <Image

@@ -17,7 +17,7 @@ const StaffCard = ({ doctor }: { doctor: Doctor }) => {
     return (
         <article className={styles.staff_card}>
             <div className={styles.staff_card__top}>
-                <Link href={`/doctors/${doctor.id}`} className={styles.staff_card__imageLink}>
+                <Link href={`/doctors/${doctor.slug}`} className={styles.staff_card__imageLink}>
                     <Image
                         className={styles.staff_card__image}
                         src={(doctor.image as Media).thumbnailURL ?? ""}
@@ -33,7 +33,7 @@ const StaffCard = ({ doctor }: { doctor: Doctor }) => {
                     </ul>
                 </div>
             </div>
-            <Link href={`/doctors/${doctor.id}`} className={styles.staff_card__link}>{doctor.fullName}</Link>
+            <Link href={`/doctors/${doctor.slug}`} className={styles.staff_card__link}>{doctor.fullName}</Link>
         </article>
     )
 }

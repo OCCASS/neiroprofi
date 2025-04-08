@@ -19,6 +19,11 @@ export const Services: CollectionConfig = {
             }
         },
         {
+            name: 'slug',
+            type: 'text',
+            required: true,
+        },
+        {
             name: "icon",
             type: "text",
             required: true,
@@ -36,7 +41,7 @@ export const Services: CollectionConfig = {
         },
         {
             name: "descriptionLong",
-            type: "textarea",
+            type: "richText",
             required: true,
         },
         {

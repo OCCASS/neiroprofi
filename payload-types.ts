@@ -128,6 +128,7 @@ export interface UserAuthOperations {
 export interface Doctor {
   id: string;
   fullName: string;
+  slug: string;
   about: string;
   image: string | Media;
   position: 'admin' | 'doctor' | 'nurse' | 'paramedic-laboratory-assistant';
@@ -190,10 +191,25 @@ export interface Service {
    * Название
    */
   name: string;
+  slug: string;
   icon: string;
   image: string | Media;
   descriptionShort: string;
-  descriptionLong: string;
+  descriptionLong: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   advantages?:
     | {
         name: string;
@@ -354,6 +370,7 @@ export interface PayloadMigration {
  */
 export interface DoctorsSelect<T extends boolean = true> {
   fullName?: T;
+  slug?: T;
   about?: T;
   image?: T;
   position?: T;
@@ -421,6 +438,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface ServicesSelect<T extends boolean = true> {
   name?: T;
+  slug?: T;
   icon?: T;
   image?: T;
   descriptionShort?: T;

@@ -9,7 +9,7 @@ import { Reviews } from './collections/reviews'
 import { Faqs } from './collections/faqs'
 
 export default buildConfig({
-    editor: lexicalEditor(),
+    editor: lexicalEditor({}),
 
     collections: [Doctors, Media, Services, Reviews, Faqs],
 

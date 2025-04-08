@@ -1,0 +1,22 @@
+.rich-text p {
+  margin: 8px 0;
+}
+
+.rich-text ul,
+ol {
+  margin: 8px 0;
+}
+
+.rich-text a {
+  color: var(--color-primary);
+}
+
+.rich-text blockquote {
+  margin: 8px 0;
+  border-left: 3px solid var(--color-grey-hard);
+  padding: 4px 0 4px 15px;
+}
+
+.rich-text hr {
+  margin: 8px 0;
+}
