@@ -65,7 +65,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                     <div className={styles.about__imageWrapper}>
                         <Image
                             className={styles.about__image}
-                            src={(service.image as Media).thumbnailURL ?? ""}
+                            src={(service.image as Media).url ?? ""}
                             alt={service.name}
                             width={500}
                             height={500}
