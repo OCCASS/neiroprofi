@@ -85,29 +85,29 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 ((service.advantages?.length ?? 0) + (service.indications?.length ?? 0) + (service.contraindications?.length ?? 0)) > 0 &&
                 <Section className={styles.infoSection}>
                     {
-                        service.advantages?.length &&
+                        (service.advantages?.length ?? 0) > 0 &&
                         <SubSection>
                             <LargeP className={styles.infoSection__title}>{service.name}:</LargeP>
                             <List separators={true}>
-                                {service.advantages.map((item) => <List.Item key={item.id} className={styles.infoSection__item}>{item.name?.toLowerCase()}</List.Item>)}
+                                {service.advantages?.map((item) => <List.Item key={item.id} className={styles.infoSection__item}>{item.name?.toLowerCase()}</List.Item>)}
                             </List>
                         </SubSection>
                     }
                     {
-                        service.indications?.length &&
+                        (service.indications?.length ?? 0) > 0 &&
                         <SubSection>
                             <LargeP className={styles.infoSection__title}>Показания к применению:</LargeP>
                             <List separators={true}>
-                                {service.indications.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.name?.toLowerCase()}</List.Item>)}
+                                {service.indications?.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.name?.toLowerCase()}</List.Item>)}
                             </List>
                         </SubSection>
                     }
                     {
-                        service.contraindications?.length &&
+                        (service.contraindications?.length ?? 0) > 0 &&
                         <SubSection>
                             <LargeP className={styles.infoSection__title}>Противопоказания к применению:</LargeP>
                             <List separators={true}>
-                                {service.contraindications.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.name?.toLowerCase()}</List.Item>)}
+                                {service.contraindications?.map((item, index) => <List.Item key={index} className={styles.infoSection__item}>{item.name?.toLowerCase()}</List.Item>)}
                             </List>
                         </SubSection>
                     }
