@@ -2,7 +2,6 @@ import BreadCrumb from "@/components/BreadCrumb";
 import PageTitle from "@/components/PageTitle";
 import Section from "@/components/Section";
 import styles from "./page.module.css"
-import H3 from "@/components/H3";
 import Staff from "@/components/Staff";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
@@ -12,6 +11,9 @@ import RichText from "@/components/RichTextViewer";
 export const metadata: Metadata = {
     title: `О нас | Медицинский центр «Нейропрофи»`,
 }
+
+export const dynamic = "force-dynamic"
+export const revalidate = 120
 
 const UnderHeader = () => {
     return (
