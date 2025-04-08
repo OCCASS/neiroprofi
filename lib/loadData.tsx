@@ -2,7 +2,7 @@ import fsPromises from "fs/promises"
 import path from "path"
 import { getPayload, PaginatedDocs } from "payload";
 import config from "@payload-config"
-import { Doctor, Faq, Review, Service } from "../payload-types";
+import { AboutUs, Doctor, Faq, Review, Service } from "../payload-types";
 
 export default async function loadData(file: string) {
     const filePath = path.join(process.cwd(), `data/${file}`);
@@ -50,4 +50,9 @@ export async function loadReivews(): Promise<PaginatedDocs<Review>> {
 export async function loadFaq(): Promise<PaginatedDocs<Faq>> {
     const payload = await getPayload({ config })
     return await payload.find({ collection: "faqs", pagination: false })
+}
+
+export async function loadAboutUs(): Promise<AboutUs> {
+    const payload = await getPayload({ config })
+    return await payload.findGlobal({ slug: "about_us" })
 }

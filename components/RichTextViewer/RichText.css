@@ -1,9 +1,20 @@
+.rich-text * {
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  color: var(--color-grey-hard);
+}
+
 .rich-text p {
   margin: 8px 0;
 }
 
-.rich-text ul,
-ol {
+.rich-text ul {
+  margin: 8px 0;
+}
+
+.rich-text ol {
   margin: 8px 0;
 }
 
@@ -19,4 +30,46 @@ ol {
 
 .rich-text hr {
   margin: 8px 0;
+}
+
+.rich-text strong {
+  font-weight: 600;
+}
+
+.rich-text h1 {
+  margin: 16px 0;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: var(--color-black);
+}
+
+.rich-text h2 {
+  margin: 8px 0;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.rich-text h3 {
+  margin: 8px 0;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.rich-text h4 {
+  margin: 8px 0;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.rich-text h5 {
+  margin: 8px 0;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.rich-text h6 {
+  margin: 8px 0;
+  font-weight: 500;
+  color: var(--color-black);
 }

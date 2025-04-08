@@ -7,11 +7,13 @@ import { Media } from './collections/media'
 import { Services } from './collections/service'
 import { Reviews } from './collections/reviews'
 import { Faqs } from './collections/faqs'
+import { AboutUs } from './globals/about_us'
 
 export default buildConfig({
     editor: lexicalEditor({}),
 
     collections: [Doctors, Media, Services, Reviews, Faqs],
+    globals: [AboutUs],
 
     secret: process.env.PAYLOAD_SECRET || '',
     db: mongooseAdapter({
