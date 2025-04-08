@@ -18,7 +18,8 @@ const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
         throw new Error('Expected value to be an object')
     }
     switch (relationTo) {
-        case "doctors": return `/doctors/${value.id}`
+        case "doctors": return `/doctors/${value.slug}`
+        case "services": return `/services/${value.slug}`
         default: return `/${value.id}`
     }
 }
