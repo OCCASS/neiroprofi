@@ -8,5 +8,6 @@
 @media (max-width: 729px) {
   .section {
     padding: 30px 15px;
+    margin-bottom: 16px;
   }
 }

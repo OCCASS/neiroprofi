@@ -7,8 +7,8 @@
 
 .about_drugs__title {
   margin: 0;
-  font-size: 32px;
-  line-height: 37px;
+  font-size: 2rem;
+  line-height: 2.2rem;
   font-weight: 500;
   word-break: break-word;
   -ms-hyphens: auto;
@@ -35,15 +35,15 @@
   color: inherit;
   background-color: var(--color-white);
   border-radius: 100px;
-  line-height: 36px;
+  line-height: 2.5rem;
   text-align: center;
   text-decoration: none;
 }
 
 @media (max-width: 1500px) {
   .about_drugs__title {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
   }
 }
 

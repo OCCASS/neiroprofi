@@ -22,7 +22,10 @@
 }
 
 .doctor_card__name {
-  margin: 0;
+  word-break: normal !important;
+  hyphens: none !important;
+  -ms-hyphens: none !important;
+  -webkit-hyphens: none !important;
 }
 
 .doctor_card__link {

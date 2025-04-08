@@ -46,7 +46,7 @@
   color: var(--color-grey-hard);
   border-radius: 100px;
   text-decoration: none;
-  line-height: 36px;
+  line-height: 2.5rem;
 }
 
 @media (max-width: 805px) {
@@ -55,7 +55,7 @@
   }
 
   .service_card__name {
-    font-size: 14px;
+    font-size: 0.9rem;
     word-break: break-word;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
@@ -64,7 +64,7 @@
 
   .service_card__button {
     height: 30px;
-    line-height: 30px;
-    font-size: 14px;
+    font-size: 0.9rem;
+    line-height: 2rem;
   }
 }

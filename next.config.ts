@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     experimental: {
         reactCompiler: false,
     },
+    allowedDevOrigins: ["localhost", "172.20.10.3"]
 }
 
 export default withPayload(nextConfig) 

@@ -15,7 +15,7 @@
 
 .services__headerTitle {
   margin: 0;
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 500;
 }
 
@@ -47,11 +47,12 @@
   }
 
   .services__headerTitle {
-    font-size: 36px;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 
   .services__headerDescription {
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 }
 

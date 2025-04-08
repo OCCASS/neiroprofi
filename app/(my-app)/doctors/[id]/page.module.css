@@ -1,8 +1,19 @@
+.header__doctorName {
+  word-break: normal !important;
+  hyphens: none !important;
+  -ms-hyphens: none !important;
+  -webkit-hyphens: none !important;
+}
+
 .doctor__about {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 30px;
   background-color: var(--color-white) !important;
+  word-break: break-word;
+  hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .about__left {
@@ -12,8 +23,8 @@
 }
 
 .about__title {
-  font-size: 27px;
-  line-height: 32px;
+  font-size: 1.75rem;
+  line-height: 2rem;
 }
 
 .about__imageWrapper {
@@ -89,7 +100,7 @@
 .section__text {
   padding-left: 35px;
   white-space: pre-wrap;
-  line-height: 24px;
+  line-height: 1.5rem;
 }
 
 .about__section_detailed {
@@ -140,7 +151,7 @@
   }
 
   .about__title {
-    font-size: 27px !important;
-    line-height: 34px !important;
+    font-size: 1.75rem !important;
+    line-height: 2rem !important;
   }
 }

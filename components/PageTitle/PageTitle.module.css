@@ -1,12 +1,12 @@
 .page_title {
   margin: 0;
   font-weight: 500;
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 3.75rem;
+  line-height: 3.75rem;
   word-break: break-word;
+  hyphens: auto;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
-  hyphens: auto;
 }
 
 .page_title_skeleton {
@@ -43,15 +43,15 @@
 
 @media (max-width: 1230px) {
   .page_title {
-    font-size: 56px;
-    line-height: 60px;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
   }
 }
 
 @media (max-width: 1000px) {
   .page_title {
-    font-size: 48px;
-    line-height: 52px;
+    font-size: 3rem;
+    line-height: 3.5rem;
   }
 
   .page_title_skeleton {
@@ -61,8 +61,8 @@
 
 @media (max-width: 900px) {
   .page_title {
-    font-size: 35px;
-    line-height: 44px;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 
   .page_title_skeleton {

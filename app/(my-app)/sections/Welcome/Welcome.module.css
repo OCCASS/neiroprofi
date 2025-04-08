@@ -3,12 +3,13 @@
   grid-template-rows: 1fr max-content;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  width: 100%;
 }
 
 .welcome_section__title {
   font-weight: 600;
-  font-size: 66px;
-  line-height: 1.2;
+  font-size: 4rem;
+  line-height: 4.5rem;
   margin-bottom: 90px;
 }
 
@@ -71,7 +72,8 @@
 
 @media (max-width: 1230px) {
   .welcome_section__title {
-    font-size: 56px;
+    font-size: 3.5rem;
+    line-height: 4rem;
   }
 
   .welcome_section__buttons {
@@ -83,13 +85,14 @@
 
 @media (max-width: 1000px) {
   .welcome_section__title {
-    font-size: 48px;
+    font-size: 3rem;
+    line-height: 3.5rem;
   }
 }
 
 @media (max-width: 900px) {
   .welcome_section__title {
-    font-size: 44px;
+    font-size: 2.75rem;
   }
 }
 
@@ -115,8 +118,8 @@
   .welcome_section__title {
     text-align: center;
     font-weight: 500;
-    font-size: 32px;
-    line-height: 1.4;
+    font-size: 2rem;
+    line-height: 2.5rem;
     margin: 0;
   }
 
@@ -134,9 +137,16 @@
   }
 }
 
+@media (max-width: 729px) {
+  .welcome_section__prodoctorov_icon {
+    width: 110px;
+    height: auto;
+  }
+}
+
 @media (max-width: 450px) {
   .welcome_section__title {
-    font-size: 26px;
-    line-height: 1.3;
+    font-size: 1.625rem;
+    line-height: 2rem;
   }
 }

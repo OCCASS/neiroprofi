@@ -16,7 +16,8 @@
 
 .staff__headerTitle {
   margin: 0;
-  font-size: 48px;
+  font-size: 3rem;
+  line-height: 3.5rem;
   font-weight: 500;
 }
 
@@ -38,14 +39,14 @@
 }
 
 .staff__button {
-  font-size: 16px;
+  font-size: 1rem;
   height: 40px;
   padding: 0 15px;
   color: var(--color-grey-hard);
   border: 1px solid var(--color-grey-hard);
   border-radius: 100px;
   text-decoration: none;
-  line-height: 40px;
+  line-height: 2.3rem;
 }
 
 @media (max-width: 1200px) {
@@ -64,11 +65,12 @@
   }
 
   .staff__headerTitle {
-    font-size: 36px;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 
   .staff__headerDescription {
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 }
 

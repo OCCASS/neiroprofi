@@ -7,7 +7,7 @@ import Rating from "@/components/Rating";
 const Welcome = () => {
     return (
         <div className={styles.welcome_section}>
-            <div>
+            <div style={{ width: "100%" }}>
                 <h1 className={styles.welcome_section__title}>Здоровая – <span
                     className={styles.welcome_section__titlePrimary}>неврология</span> через здоровую печень!</h1>
                 <div className={styles.welcome_section__buttons}>
@@ -33,7 +33,7 @@ const Welcome = () => {
                 />
             </div>
             <div className={styles.welcome_section__rating}>
-                <Icon name="pro_doctorov" width={134} height={20} />
+                <Icon name="pro_doctorov" width={134} height={20} className={styles.welcome_section__prodoctorov_icon} />
                 <Rating value={4} />
                 <p>71 отзыв</p>
             </div>

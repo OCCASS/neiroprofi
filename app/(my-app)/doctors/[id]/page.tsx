@@ -47,7 +47,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                     { name: "Персонал", path: "/doctors" },
                     { name: doctor.fullName, path: `/doctors/${doctor.id}` },
                 ]} />
-                <PageTitle>{doctor.fullName}</PageTitle>
+                <PageTitle className={styles.header__doctorName}>{doctor.fullName}</PageTitle>
             </>
         )
     }

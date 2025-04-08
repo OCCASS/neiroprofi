@@ -24,8 +24,4 @@ const Staff = async () => {
     )
 }
 
-const StaffDynamic = () => {
-    return <Staff />
-}
-
-export default StaffDynamic;
+export default Staff;

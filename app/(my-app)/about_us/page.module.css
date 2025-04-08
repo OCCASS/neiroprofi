@@ -22,6 +22,6 @@
 .first__content {
   margin: 0;
   white-space: pre-wrap;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: var(--color-grey-hard);
 }
