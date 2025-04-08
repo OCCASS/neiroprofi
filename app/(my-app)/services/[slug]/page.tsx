@@ -85,7 +85,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 ((service.advantages?.length ?? 0) + (service.indications?.length ?? 0) + (service.contraindications?.length ?? 0)) > 0 &&
                 <Section className={styles.infoSection}>
                     {
-                        service.advantages &&
+                        service.advantages?.length &&
                         <SubSection>
                             <LargeP className={styles.infoSection__title}>{service.name}:</LargeP>
                             <List separators={true}>
@@ -94,7 +94,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                         </SubSection>
                     }
                     {
-                        service.indications &&
+                        service.indications?.length &&
                         <SubSection>
                             <LargeP className={styles.infoSection__title}>Показания к применению:</LargeP>
                             <List separators={true}>
@@ -103,7 +103,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                         </SubSection>
                     }
                     {
-                        service.contraindications &&
+                        service.contraindications?.length &&
                         <SubSection>
                             <LargeP className={styles.infoSection__title}>Противопоказания к применению:</LargeP>
                             <List separators={true}>
