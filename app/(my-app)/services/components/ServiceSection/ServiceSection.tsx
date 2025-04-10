@@ -21,12 +21,15 @@ const ServiceSection = ({ service, className = "" }: {
             <div className={styles.service_section__header}>
                 <Icon className={styles.service_section__headerMainIcon} name={service.icon} width={60} height={60} />
                 <LargeP className={styles.service_section__headerTitle}><Link className={styles.service_section__headerLink} href={`/services/${service.slug}`}>{service.name}</Link></LargeP>
-                <button className={styles.service_section__headerButton} onClick={() => setClose(prev => !prev)}>
-                    <Icon className={`${styles.service_section__headerIcon} ${close ? "" : styles.service_section__headerIcon_open}`} name="arrow_bottom" width={24} height={24} />
-                </button>
+                {
+                    (service.services?.length ?? 0) > 0 &&
+                    <button className={styles.service_section__headerButton} onClick={() => setClose(prev => !prev)}>
+                        <Icon className={`${styles.service_section__headerIcon} ${close ? "" : styles.service_section__headerIcon_open}`} name="arrow_bottom" width={24} height={24} />
+                    </button>
+                }
             </div>
             {
-                service.services &&
+                (service.services?.length ?? 0) > 0 &&
                 <ul className={`${styles.service_section__list} ${close ? styles.service_section__listClose : ""}`}>
                     {
                         service.services?.map((item) => (

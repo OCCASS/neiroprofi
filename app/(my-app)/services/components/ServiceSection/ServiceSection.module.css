@@ -11,15 +11,12 @@
 }
 
 .service_section__header {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
 }
 
 .service_section__headerTitle {
-  flex: 1;
-  overflow-wrap: anywhere;
   padding: 0 20px;
 }
 
@@ -97,7 +94,7 @@
 .service_section__itemRight {
   display: flex;
   gap: 2px;
-  text-wrap: nowrap;
+  /*text-wrap: nowrap;*/
   margin: 0;
   font-size: 1rem;
 }
@@ -130,8 +127,19 @@
 }
 
 @media (max-width: 729px) {
+  .service_section {
+    padding: 20px;
+  }
+
+  .service_section__headerMainIcon {
+    width: 32px;
+    height: 32px;
+  }
+
   .service_section__headerTitle {
-    line-height: 1.2rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.1rem !important;
+    padding: 0 15px;
   }
 
   .service_section__itemRight {
