@@ -22,7 +22,7 @@
 }
 
 .doctor_card__name {
-  word-break: normal !important;
+  overflow-wrap: normal !important;
   hyphens: none !important;
   -ms-hyphens: none !important;
   -webkit-hyphens: none !important;

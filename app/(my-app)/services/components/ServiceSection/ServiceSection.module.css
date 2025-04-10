@@ -84,7 +84,7 @@
   line-height: 1.3rem;
   gap: 15px;
   color: var(--color-grey-hard);
-  word-break: break-word;
+  overflow-wrap: break-word;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;

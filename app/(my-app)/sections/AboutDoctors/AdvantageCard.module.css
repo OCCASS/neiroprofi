@@ -8,7 +8,5 @@
   .advantage_card__title {
     font-size: 1rem !important;
     line-height: 1.5rem !important;
-    word-break: break-all;
-    hyphens: manual;
   }
 }

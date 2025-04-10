@@ -1,5 +1,5 @@
 .header__doctorName {
-  word-break: normal !important;
+  overflow-wrap: normal !important;
   hyphens: none !important;
   -ms-hyphens: none !important;
   -webkit-hyphens: none !important;
@@ -10,10 +10,10 @@
   grid-template-columns: 2fr 1fr;
   gap: 30px;
   background-color: var(--color-white) !important;
-  word-break: break-word;
-  hyphens: auto;
+  overflow-wrap: break-word;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .about__left {

@@ -17,7 +17,7 @@
 .about__content {
   margin: 0;
   white-space: pre-wrap;
-  word-break: break-word;
+  overflow-wrap: break-word;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
@@ -96,7 +96,7 @@
   .about__title {
     font-size: 1.75rem !important;
     line-height: 2rem !important;
-    word-break: break-word;
+    overflow-wrap: break-word;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;

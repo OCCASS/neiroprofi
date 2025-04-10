@@ -3,10 +3,10 @@
   font-weight: 500;
   font-size: 3.75rem;
   line-height: 3.75rem;
-  word-break: break-word;
-  hyphens: auto;
+  overflow-wrap: break-word;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .page_title_skeleton {

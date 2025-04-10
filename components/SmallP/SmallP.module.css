@@ -7,7 +7,7 @@
 
 @media (max-width: 768px) {
   .small_p {
-    word-break: break-word;
+    overflow-wrap: break-word;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
