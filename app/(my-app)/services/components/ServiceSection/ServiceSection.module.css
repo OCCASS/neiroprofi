@@ -94,7 +94,7 @@
 .service_section__itemRight {
   display: flex;
   gap: 2px;
-  /*text-wrap: nowrap;*/
+  text-wrap: nowrap;
   margin: 0;
   font-size: 1rem;
 }
