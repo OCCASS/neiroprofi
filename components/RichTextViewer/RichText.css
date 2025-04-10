@@ -75,3 +75,11 @@
   font-weight: 500;
   color: var(--color-black);
 }
+
+.rich-text picture img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
