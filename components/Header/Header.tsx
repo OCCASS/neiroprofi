@@ -26,7 +26,7 @@ const Header = () => {
                 <div className={styles.phone__icon_wrapper}>
                     <Icon className={styles.phone__icon} name="phone" width={24} height={25} />
                 </div>
-                <a className={styles.phone__content} href="tel:8 (843) 296-66-67">8 (843) 296-66-67</a>
+                <a className={styles.phone__content} href="tel:8 (987) 296-66-67">8 (987) 296-66-67</a>
             </div>
             <Burger />
         </header>
