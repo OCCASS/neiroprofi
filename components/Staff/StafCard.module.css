@@ -32,6 +32,7 @@
   align-items: start;
   column-gap: 20px;
   row-gap: 10px;
+  height: fit-content;
 }
 
 .staff_card__position {
@@ -72,4 +73,23 @@
   height: 30px;
   background: var(--color-white);
   background: linear-gradient(180deg, transparent 0%, var(--color-white) 100%);
+}
+
+@media (max-width: 769px) {
+  .staff_card {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .staff_card__top {
+    column-gap: 10px;
+  }
+
+  .staff_card__specialities {
+    max-height: 100px;
+  }
+
+  .staff_card__image {
+    max-width: 120px;
+  }
 }

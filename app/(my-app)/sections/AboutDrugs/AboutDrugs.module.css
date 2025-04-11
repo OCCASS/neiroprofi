@@ -50,7 +50,7 @@
 @media (max-width: 1200px) {
   .about_drugs {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 30px;
   }
 
   .about_drugs__license {

@@ -17,6 +17,7 @@
 }
 
 .about__left {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -28,6 +29,7 @@
 }
 
 .about__imageWrapper {
+  min-width: 0;
   position: relative;
   width: 100%;
   height: fit-content;
@@ -153,5 +155,11 @@
   .about__title {
     font-size: 1.75rem !important;
     line-height: 2rem !important;
+  }
+}
+
+@media (max-width: 769px) {
+  .about__section_detailed {
+    padding: 15px;
   }
 }

@@ -39,7 +39,9 @@
 }
 
 .staff__button {
-  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
   height: 40px;
   padding: 0 15px;
   color: var(--color-grey-hard);
@@ -81,5 +83,11 @@
     grid-auto-flow: column;
     grid-auto-columns: minmax(var(--list-item-min-width), 90%);
     overflow-x: scroll;
+  }
+}
+
+@media (max-width: 769px) {
+  .staff__list {
+    --list-item-min-width: 300px;
   }
 }

@@ -10,7 +10,7 @@
 }
 
 html {
-  lang: ru;
+  -webkit-locale: "ru";
   position: relative;
   width: 100vw;
   height: 100%;

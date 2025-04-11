@@ -3,6 +3,8 @@
   font-size: 2.25rem !important;
   line-height: 2.75rem !important;
   font-weight: 500;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 @media (max-width: 768px) {

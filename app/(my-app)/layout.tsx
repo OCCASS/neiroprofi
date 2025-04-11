@@ -9,6 +9,7 @@ export const viewport: Viewport = {
     userScalable: false,
     themeColor: "#ffffff",
     colorScheme: "light",
+    width: "device-width",
     initialScale: 1,
     maximumScale: 1
 }
