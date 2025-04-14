@@ -72,7 +72,7 @@ export const Doctors: CollectionConfig = {
         {
             name: 'education',
             type: 'textarea',
-            required: true,
+            required: false,
         },
     ],
 }

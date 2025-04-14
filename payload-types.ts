@@ -144,7 +144,7 @@ export interface Doctor {
     name?: string | null;
     id?: string | null;
   }[];
-  education: string;
+  education?: string | null;
   updatedAt: string;
   createdAt: string;
 }
