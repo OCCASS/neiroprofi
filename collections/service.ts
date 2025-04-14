@@ -37,12 +37,12 @@ export const Services: CollectionConfig = {
         {
             name: "descriptionShort",
             type: "textarea",
-            required: true,
+            required: false,
         },
         {
             name: "descriptionLong",
             type: "richText",
-            required: true,
+            required: false,
         },
         {
             name: "advantages",
