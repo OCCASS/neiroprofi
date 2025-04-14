@@ -42,7 +42,8 @@ export const Doctors: CollectionConfig = {
                 "admin",
                 "doctor",
                 "nurse",
-                "paramedic-laboratory-assistant"
+                "paramedic-laboratory-assistant",
+                "massage-specialist"
             ]
         },
         {

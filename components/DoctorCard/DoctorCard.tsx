@@ -13,6 +13,7 @@ const DoctorCard = ({ doctor }: { doctor: Doctor }) => {
             case "admin": return "Администратор"
             case "nurse": return "Медсестра"
             case "paramedic-laboratory-assistant": return "Фельдшер-лаборант"
+            case "massage-specialist": return "Специалист по массажу"
             default: return "Врач"
         }
     })()
