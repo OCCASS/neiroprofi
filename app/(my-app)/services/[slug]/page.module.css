@@ -1,5 +1,6 @@
 .aboutSection {
   background-color: var(--color-white) !important;
+  padding-top: 0 !important;
 }
 
 .about {

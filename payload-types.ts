@@ -198,8 +198,8 @@ export interface Service {
   slug: string;
   icon: string;
   image: string | Media;
-  descriptionShort: string;
-  descriptionLong: {
+  descriptionShort?: string | null;
+  descriptionLong?: {
     root: {
       type: string;
       children: {
@@ -213,7 +213,7 @@ export interface Service {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
   advantages?:
     | {
         name: string;
