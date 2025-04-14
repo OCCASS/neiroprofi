@@ -23,7 +23,7 @@ export const Doctors: CollectionConfig = {
         {
             name: 'about',
             type: 'textarea',
-            required: true,
+            required: false,
         },
         {
             name: 'image',
