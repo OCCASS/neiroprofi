@@ -60,7 +60,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 <div className={styles.about}>
                     <div className={styles.about__left}>
                         <H3 className={styles.about__title}>{titleContent}</H3>
-                        <RichText className={styles.about__content} data={service.descriptionLong} />
+                        {service.descriptionLong && <RichText className={styles.about__content} data={service.descriptionLong} />}
                     </div>
                     <div className={styles.about__imageWrapper}>
                         <Image
