@@ -12,7 +12,7 @@ export default async function loadData(file: string) {
 
 export async function loadDoctors(): Promise<PaginatedDocs<Doctor>> {
     const payload = await getPayload({ config })
-    return await payload.find({ collection: "doctors", pagination: false })
+    return await payload.find({ collection: "doctors", pagination: false, sort: ["-createdAt"] })
 }
 
 export async function loadDoctor(slug: string): Promise<Doctor | null> {
