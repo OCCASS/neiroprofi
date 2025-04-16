@@ -5,9 +5,21 @@ import { numberWithSpaces } from "@/utils/number_with_spaces";
 import { Service } from "../../../../payload-types";
 
 const ServiceCard = ({ service }: { service: Service }) => {
-    const minPrice = service?.services?.length ? service.services?.reduce((min, obj) => {
-        return obj.items[0].price < min ? obj.items[0].price : min;
-    }, Infinity) : null
+    const minPrice = (() => {
+        if (!service.services) return null;
+
+        const prices: number[] = [];
+
+        for (const group of service.services) {
+            for (const item of group.items) {
+                prices.push(item.price);
+            }
+        }
+
+        if (prices.length === 0) return null;
+
+        return Math.min(...prices);
+    })()
 
     return (
         <article className={styles.service_card}>
