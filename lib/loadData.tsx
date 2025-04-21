@@ -28,7 +28,7 @@ export async function loadDoctor(slug: string): Promise<Doctor | null> {
 
 export async function loadSerivces(): Promise<PaginatedDocs<Service>> {
     const payload = await getPayload({ config })
-    return await payload.find({ collection: "services", pagination: false })
+    return await payload.find({ collection: "services", pagination: false, sort: ["-createdAt"] })
 }
 
 export async function loadSerivce(slug: string): Promise<Service | null> {
