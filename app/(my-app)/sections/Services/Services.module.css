@@ -16,6 +16,7 @@
 .services__headerTitle {
   margin: 0;
   font-size: 3rem;
+  line-height: 3rem;
   font-weight: 500;
 }
 
@@ -48,7 +49,7 @@
 
   .services__headerTitle {
     font-size: 2rem;
-    line-height: 2.5rem;
+    line-height: 2rem;
   }
 
   .services__headerDescription {
