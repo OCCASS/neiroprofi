@@ -12,7 +12,7 @@ const Reviews = async () => {
         <Section className={styles.reviews}>
             <div className={styles.reviews__header}>
                 <div className={styles.reviews__headerDescription}></div>
-                <h2 className={styles.reviews__headerTitle}>Что о нас говорят клиенты</h2>
+                <h2 className={styles.reviews__headerTitle}>Что о нас говорят пациенты</h2>
             </div>
             <div className={styles.reviews__content}>
                 <Section className={styles.reviews__list}>

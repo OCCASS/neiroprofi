@@ -45,11 +45,17 @@ export default function Page() {
                                 <Icon name="multi_arrow_right_in_circle" width={21} height={21} />
                                 Телефон
                             </span>
-                            <span>
-                                <Link className={styles.info__phone} href="tel:88432966667">
+                            <div className={styles.info__phones_list}>
+                                <Link className={styles.info__phone} href="tel:8 (987) 296-66-67">
+                                    8 (987) 296-66-67
+                                </Link>
+                                <Link className={styles.info__phone} href="tel:8 (917) 295-66-67">
+                                    8 (917) 295-66-67
+                                </Link>
+                                <Link className={styles.info__phone} href="tel:8 (843) 296-66-67">
                                     8 (843) 296-66-67
                                 </Link>
-                            </span>
+                            </div>
                         </li>
                         <li className={styles.info__item}>
                             <span className={styles.info__name}>

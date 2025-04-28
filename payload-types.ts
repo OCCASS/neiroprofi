@@ -214,6 +214,10 @@ export interface Service {
     };
     [k: string]: unknown;
   } | null;
+  /**
+   * Цена "от", если цена не указана будет выводиться минмальная цена среди услуг
+   */
+  priceFrom?: number | null;
   advantages?:
     | {
         name: string;
@@ -447,6 +451,7 @@ export interface ServicesSelect<T extends boolean = true> {
   image?: T;
   descriptionShort?: T;
   descriptionLong?: T;
+  priceFrom?: T;
   advantages?:
     | T
     | {

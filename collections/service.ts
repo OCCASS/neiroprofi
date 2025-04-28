@@ -44,6 +44,15 @@ export const Services: CollectionConfig = {
             type: "richText",
             required: false,
         },
+
+        {
+            name: "priceFrom",
+            type: "number",
+            required: false,
+            admin: {
+                description: "Цена \"от\", если цена не указана будет выводиться минмальная цена среди услуг"
+            }
+        },
         {
             name: "advantages",
             type: "array",

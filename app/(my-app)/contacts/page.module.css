@@ -45,6 +45,12 @@
   color: var(--color-secondary);
 }
 
+.info__phones_list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .info__social_list {
   display: flex;
   gap: 30px;
@@ -146,6 +152,10 @@
 
   .wishes__button {
     grid-column: 1;
+  }
+
+  .info__phones_list {
+    flex-direction: column;
   }
 }
 

@@ -5,7 +5,7 @@ import { numberWithSpaces } from "@/utils/number_with_spaces";
 import { Service } from "../../../../payload-types";
 
 const ServiceCard = ({ service }: { service: Service }) => {
-    const minPrice = (() => {
+    const minPrice = service.priceFrom ? service.priceFrom : (() => {
         if (!service.services) return null;
 
         const prices: number[] = [];

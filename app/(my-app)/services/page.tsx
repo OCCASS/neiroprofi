@@ -34,26 +34,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
 
     const filterServices = (services: Service[]) => {
         if (search) {
-            return services.map(service => {
-                let filteredList = service.services?.map(
-                    item => {
-                        const filteredItems = item.items?.filter(item1 => item1.name?.toLowerCase().includes(search.toLowerCase().trim()))
-                        return { ...item, items: filteredItems }
-                    }
-                )
-                filteredList = filteredList?.filter(item => item.items) ?? []
-
-                if (filteredList.length > 0) {
-                    return {
-                        ...service,
-                        list: filteredList
-                    };
-                }
-
-                return null;
-            }).filter(service => service !== null)
+            return services.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
         }
-
         return services
     }
 
