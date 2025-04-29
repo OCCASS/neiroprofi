@@ -135,11 +135,20 @@ export interface Doctor {
   slug: string;
   about?: string | null;
   image: string | Media;
+  /**
+   * Позиция
+   */
   position: 'admin' | 'doctor' | 'nurse' | 'paramedic-laboratory-assistant' | 'massage-specialist';
+  /**
+   * Специальности кратко
+   */
   specialitiesShort: {
     name?: string | null;
     id?: string | null;
   }[];
+  /**
+   * Специальности полностью
+   */
   specialitiesLong: {
     name?: string | null;
     id?: string | null;
@@ -191,9 +200,6 @@ export interface Media {
  */
 export interface Service {
   id: string;
-  /**
-   * Название
-   */
   name: string;
   slug: string;
   icon: string;
@@ -218,30 +224,51 @@ export interface Service {
    * Цена "от", если цена не указана будет выводиться минмальная цена среди услуг
    */
   priceFrom?: number | null;
+  /**
+   * Преимущества
+   */
   advantages?:
     | {
         name: string;
         id?: string | null;
       }[]
     | null;
+  /**
+   * Проказания
+   */
   indications?:
     | {
         name: string;
         id?: string | null;
       }[]
     | null;
+  /**
+   * Противопоказания
+   */
   contraindications?:
     | {
         name: string;
         id?: string | null;
       }[]
     | null;
+  /**
+   * Услуги
+   */
   services?:
     | {
+        /**
+         * Спиок услуг можно разбить подгруппы, например, как в массаже. Если подгруппа одна и ее название пустое, тогда все будет отображаться просто списком без разделений
+         */
         title?: string | null;
+        /**
+         * Услуги
+         */
         items: {
           name: string;
           price: number;
+          /**
+           * Здесь можно написать "час", тогда будет отбражаться как {цена}/час. По умолчанию это значение пустое
+           */
           per?: string | null;
           id?: string | null;
         }[];

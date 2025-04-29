@@ -5,7 +5,7 @@ import { numberWithSpaces } from "@/utils/number_with_spaces";
 import { Service } from "../../../../payload-types";
 
 const ServiceCard = ({ service }: { service: Service }) => {
-    const minPrice = service.priceFrom ? service.priceFrom : (() => {
+    const priceFrom = service.priceFrom ? service.priceFrom : (() => {
         if (!service.services) return null;
 
         const prices: number[] = [];
@@ -29,7 +29,7 @@ const ServiceCard = ({ service }: { service: Service }) => {
             </div>
             <div className={styles.service_card__bottom}>
                 <p className={styles.service_card__price}>
-                    {minPrice ? `от ${numberWithSpaces(minPrice)}₽` : null}
+                    {priceFrom ? `от ${numberWithSpaces(priceFrom)}₽` : null}
                 </p>
                 <Link className={styles.service_card__button} href={`/services/${service.slug}`}>К услуге</Link>
             </div>

@@ -14,16 +14,25 @@ export const Doctors: CollectionConfig = {
             name: 'fullName',
             type: 'text',
             required: true,
+            admin: {
+                placeholder: "ФИО"
+            }
         },
         {
             name: 'slug',
             type: 'text',
             required: true,
+            admin: {
+                placeholder: "Slug"
+            }
         },
         {
             name: 'about',
             type: 'textarea',
             required: false,
+            admin: {
+                placeholder: "Описание"
+            }
         },
         {
             name: 'image',
@@ -38,6 +47,9 @@ export const Doctors: CollectionConfig = {
             name: "position",
             type: "select",
             required: true,
+            admin: {
+                description: "Позиция",
+            },
             options: [
                 "admin",
                 "doctor",
@@ -50,10 +62,16 @@ export const Doctors: CollectionConfig = {
             name: "specialitiesShort",
             type: "array",
             required: true,
+            admin: {
+                description: "Специальности кратко"
+            },
             fields: [
                 {
                     name: "name",
-                    type: "text"
+                    type: "text",
+                    admin: {
+                        placeholder: "Название специальности"
+                    }
                 }
             ],
             defaultValue: [],
@@ -61,10 +79,16 @@ export const Doctors: CollectionConfig = {
         {
             name: "specialitiesLong",
             type: "array",
+            admin: {
+                description: "Специальности полностью"
+            },
             fields: [
                 {
                     name: "name",
-                    type: "text"
+                    type: "text",
+                    admin: {
+                        placeholder: "Название специальности"
+                    }
                 }
             ],
             defaultValue: [],
@@ -74,6 +98,9 @@ export const Doctors: CollectionConfig = {
             name: 'education',
             type: 'textarea',
             required: false,
+            admin: {
+                placeholder: "Образование"
+            }
         },
     ],
 }
