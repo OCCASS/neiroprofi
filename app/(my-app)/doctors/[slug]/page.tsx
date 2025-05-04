@@ -23,7 +23,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     if (!doctor) return { title: "Доктор не найден" }
 
-    return { title: `${doctor.fullName} | Медицинский цент «Нейропрофи»` }
+    const image = (doctor.image as Media).sizes?.thumbnail
+
+    return {
+        title: `${doctor.fullName} | Медицинский цент «Нейропрофи»`,
+        keywords: [doctor.fullName],
+        openGraph: {
+            title: `${doctor.fullName} | Медицинский цент «Нейропрофи»`,
+            siteName: "Нейропрофи",
+            images: image ? [
+                {
+                    url: `${process.env.NEXT_PUBLIC_SITE_ROOT_URL}${image.url}`,
+                    width: image.width ?? 600,
+                    height: image.height ?? 300,
+                }
+            ] : [],
+            locale: "ru_RU",
+            type: "website",
+        }
+    }
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

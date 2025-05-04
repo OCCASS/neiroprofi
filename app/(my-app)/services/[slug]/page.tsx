@@ -16,13 +16,36 @@ import { loadSerivce } from "@/lib/loadData"
 import FloatingWhatsappButton from "@/components/FloatingWhatsappButton"
 import { Media } from "../../../../payload-types"
 import RichText from "@/components/RichTextViewer"
+import { capitalize } from "@/utils/capitalize"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const slug = (await params).slug
     const service = await loadSerivce(slug)
 
+    if (!service) {
+        return { title: "Услуга не найдена" }
+    }
+
+    const image = (service.image as Media).sizes?.thumbnail
+
     return {
-        title: service ? `${service.name} | Медицинский цент «Нейропрофи»` : "Услуга не найдена"
+        title: `${service.name} | Медицинский цент «Нейропрофи»`,
+        description: service.descriptionShort ? capitalize(service.descriptionShort) : "",
+        keywords: [service.name],
+        openGraph: {
+            title: `${service.name} | Медицинский цент «Нейропрофи»`,
+            description: service.descriptionShort ? capitalize(service.descriptionShort) : "",
+            siteName: "Нейропрофи",
+            images: image ? [
+                {
+                    url: `${process.env.NEXT_PUBLIC_SITE_ROOT_URL}${image.url}`,
+                    width: image.width ?? 600,
+                    height: image.height ?? 300,
+                }
+            ] : [],
+            locale: "ru_RU",
+            type: "website",
+        }
     }
 }
 
