@@ -25,6 +25,9 @@ export const metadata: Metadata = {
         url: process.env.NEXT_PUBLIC_SITE_ROOT_URL,
         phoneNumbers: ["88432966667"],
         siteName: `Медицинский центр "Нейропрофи"`,
+    },
+    appleWebApp: {
+        title: "Нейропрофи"
     }
 };
 
@@ -35,9 +38,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ru">
-            <head>
-                <meta name="apple-mobile-web-app-title" content="Нейропрофи" />
-            </head>
+            <head></head>
             <body className={montserrat.className}>
                 <NuqsAdapter>
                     {children}

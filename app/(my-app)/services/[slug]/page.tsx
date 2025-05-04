@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${service.name} | Медицинский цент «Нейропрофи»`,
         description: service.descriptionShort ? capitalize(service.descriptionShort) : "",
-        keywords: [service.name],
+        keywords: service.keywords.length > 0 ? service.keywords.split(",").map(item => item.trim()) : [service.name],
         openGraph: {
             title: `${service.name} | Медицинский цент «Нейропрофи»`,
             description: service.descriptionShort ? capitalize(service.descriptionShort) : "",

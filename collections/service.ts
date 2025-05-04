@@ -36,6 +36,16 @@ export const Services: CollectionConfig = {
             }
         },
         {
+            name: "keywords",
+            type: "text",
+            required: false,
+            defaultValue: "",
+            admin: {
+                placeholder: "Ключевые слова через запятую",
+                description: "Указываются через запятую. Если ничего не указано, тогда будет использоваться назчание услуги"
+            }
+        },
+        {
             name: "image",
             type: "upload",
             relationTo: "media",
@@ -51,7 +61,6 @@ export const Services: CollectionConfig = {
             type: "richText",
             required: false,
         },
-
         {
             name: "priceFrom",
             type: "number",

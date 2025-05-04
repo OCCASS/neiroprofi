@@ -13,248 +13,249 @@
  * via the `definition` "supportedTimezones".
  */
 export type SupportedTimezones =
-  | 'Pacific/Midway'
-  | 'Pacific/Niue'
-  | 'Pacific/Honolulu'
-  | 'Pacific/Rarotonga'
-  | 'America/Anchorage'
-  | 'Pacific/Gambier'
-  | 'America/Los_Angeles'
-  | 'America/Tijuana'
-  | 'America/Denver'
-  | 'America/Phoenix'
-  | 'America/Chicago'
-  | 'America/Guatemala'
-  | 'America/New_York'
-  | 'America/Bogota'
-  | 'America/Caracas'
-  | 'America/Santiago'
-  | 'America/Buenos_Aires'
-  | 'America/Sao_Paulo'
-  | 'Atlantic/South_Georgia'
-  | 'Atlantic/Azores'
-  | 'Atlantic/Cape_Verde'
-  | 'Europe/London'
-  | 'Europe/Berlin'
-  | 'Africa/Lagos'
-  | 'Europe/Athens'
-  | 'Africa/Cairo'
-  | 'Europe/Moscow'
-  | 'Asia/Riyadh'
-  | 'Asia/Dubai'
-  | 'Asia/Baku'
-  | 'Asia/Karachi'
-  | 'Asia/Tashkent'
-  | 'Asia/Calcutta'
-  | 'Asia/Dhaka'
-  | 'Asia/Almaty'
-  | 'Asia/Jakarta'
-  | 'Asia/Bangkok'
-  | 'Asia/Shanghai'
-  | 'Asia/Singapore'
-  | 'Asia/Tokyo'
-  | 'Asia/Seoul'
-  | 'Australia/Brisbane'
-  | 'Australia/Sydney'
-  | 'Pacific/Guam'
-  | 'Pacific/Noumea'
-  | 'Pacific/Auckland'
-  | 'Pacific/Fiji';
+    | 'Pacific/Midway'
+    | 'Pacific/Niue'
+    | 'Pacific/Honolulu'
+    | 'Pacific/Rarotonga'
+    | 'America/Anchorage'
+    | 'Pacific/Gambier'
+    | 'America/Los_Angeles'
+    | 'America/Tijuana'
+    | 'America/Denver'
+    | 'America/Phoenix'
+    | 'America/Chicago'
+    | 'America/Guatemala'
+    | 'America/New_York'
+    | 'America/Bogota'
+    | 'America/Caracas'
+    | 'America/Santiago'
+    | 'America/Buenos_Aires'
+    | 'America/Sao_Paulo'
+    | 'Atlantic/South_Georgia'
+    | 'Atlantic/Azores'
+    | 'Atlantic/Cape_Verde'
+    | 'Europe/London'
+    | 'Europe/Berlin'
+    | 'Africa/Lagos'
+    | 'Europe/Athens'
+    | 'Africa/Cairo'
+    | 'Europe/Moscow'
+    | 'Asia/Riyadh'
+    | 'Asia/Dubai'
+    | 'Asia/Baku'
+    | 'Asia/Karachi'
+    | 'Asia/Tashkent'
+    | 'Asia/Calcutta'
+    | 'Asia/Dhaka'
+    | 'Asia/Almaty'
+    | 'Asia/Jakarta'
+    | 'Asia/Bangkok'
+    | 'Asia/Shanghai'
+    | 'Asia/Singapore'
+    | 'Asia/Tokyo'
+    | 'Asia/Seoul'
+    | 'Australia/Brisbane'
+    | 'Australia/Sydney'
+    | 'Pacific/Guam'
+    | 'Pacific/Noumea'
+    | 'Pacific/Auckland'
+    | 'Pacific/Fiji';
 
 export interface Config {
-  auth: {
-    users: UserAuthOperations;
-  };
-  blocks: {};
-  collections: {
-    doctors: Doctor;
-    media: Media;
-    services: Service;
-    reviews: Review;
-    faqs: Faq;
-    users: User;
-    'payload-locked-documents': PayloadLockedDocument;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
-  };
-  collectionsJoins: {};
-  collectionsSelect: {
-    doctors: DoctorsSelect<false> | DoctorsSelect<true>;
-    media: MediaSelect<false> | MediaSelect<true>;
-    services: ServicesSelect<false> | ServicesSelect<true>;
-    reviews: ReviewsSelect<false> | ReviewsSelect<true>;
-    faqs: FaqsSelect<false> | FaqsSelect<true>;
-    users: UsersSelect<false> | UsersSelect<true>;
-    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
-    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
-    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
-  };
-  db: {
-    defaultIDType: string;
-  };
-  globals: {
-    about_us: AboutUs;
-  };
-  globalsSelect: {
-    about_us: AboutUsSelect<false> | AboutUsSelect<true>;
-  };
-  locale: null;
-  user: User & {
-    collection: 'users';
-  };
-  jobs: {
-    tasks: unknown;
-    workflows: unknown;
-  };
+    auth: {
+        users: UserAuthOperations;
+    };
+    blocks: {};
+    collections: {
+        doctors: Doctor;
+        media: Media;
+        services: Service;
+        reviews: Review;
+        faqs: Faq;
+        users: User;
+        'payload-locked-documents': PayloadLockedDocument;
+        'payload-preferences': PayloadPreference;
+        'payload-migrations': PayloadMigration;
+    };
+    collectionsJoins: {};
+    collectionsSelect: {
+        doctors: DoctorsSelect<false> | DoctorsSelect<true>;
+        media: MediaSelect<false> | MediaSelect<true>;
+        services: ServicesSelect<false> | ServicesSelect<true>;
+        reviews: ReviewsSelect<false> | ReviewsSelect<true>;
+        faqs: FaqsSelect<false> | FaqsSelect<true>;
+        users: UsersSelect<false> | UsersSelect<true>;
+        'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
+        'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
+        'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
+    };
+    db: {
+        defaultIDType: string;
+    };
+    globals: {
+        about_us: AboutUs;
+    };
+    globalsSelect: {
+        about_us: AboutUsSelect<false> | AboutUsSelect<true>;
+    };
+    locale: null;
+    user: User & {
+        collection: 'users';
+    };
+    jobs: {
+        tasks: unknown;
+        workflows: unknown;
+    };
 }
 export interface UserAuthOperations {
-  forgotPassword: {
-    email: string;
-    password: string;
-  };
-  login: {
-    email: string;
-    password: string;
-  };
-  registerFirstUser: {
-    email: string;
-    password: string;
-  };
-  unlock: {
-    email: string;
-    password: string;
-  };
+    forgotPassword: {
+        email: string;
+        password: string;
+    };
+    login: {
+        email: string;
+        password: string;
+    };
+    registerFirstUser: {
+        email: string;
+        password: string;
+    };
+    unlock: {
+        email: string;
+        password: string;
+    };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "doctors".
  */
 export interface Doctor {
-  id: string;
-  fullName: string;
-  slug: string;
-  about?: string | null;
-  image: string | Media;
-  /**
-   * Позиция
-   */
-  position: 'admin' | 'doctor' | 'nurse' | 'paramedic-laboratory-assistant' | 'massage-specialist';
-  /**
-   * Специальности кратко
-   */
-  specialitiesShort: {
-    name?: string | null;
-    id?: string | null;
-  }[];
-  /**
-   * Специальности полностью
-   */
-  specialitiesLong: {
-    name?: string | null;
-    id?: string | null;
-  }[];
-  education?: string | null;
-  updatedAt: string;
-  createdAt: string;
+    id: string;
+    fullName: string;
+    slug: string;
+    about?: string | null;
+    image: string | Media;
+    /**
+     * Позиция
+     */
+    position: 'admin' | 'doctor' | 'nurse' | 'paramedic-laboratory-assistant' | 'massage-specialist';
+    /**
+     * Специальности кратко
+     */
+    specialitiesShort: {
+        name?: string | null;
+        id?: string | null;
+    }[];
+    /**
+     * Специальности полностью
+     */
+    specialitiesLong: {
+        name?: string | null;
+        id?: string | null;
+    }[];
+    education?: string | null;
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
-  id: string;
-  alt?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
-  sizes?: {
-    thumbnail?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
+    id: string;
+    alt?: string | null;
+    updatedAt: string;
+    createdAt: string;
+    url?: string | null;
+    thumbnailURL?: string | null;
+    filename?: string | null;
+    mimeType?: string | null;
+    filesize?: number | null;
+    width?: number | null;
+    height?: number | null;
+    focalX?: number | null;
+    focalY?: number | null;
+    sizes?: {
+        thumbnail?: {
+            url?: string | null;
+            width?: number | null;
+            height?: number | null;
+            mimeType?: string | null;
+            filesize?: number | null;
+            filename?: string | null;
+        };
+        card?: {
+            url?: string | null;
+            width?: number | null;
+            height?: number | null;
+            mimeType?: string | null;
+            filesize?: number | null;
+            filename?: string | null;
+        };
     };
-    card?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-  };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "services".
  */
 export interface Service {
-  id: string;
-  name: string;
-  slug: string;
-  icon: string;
-  image: string | Media;
-  descriptionShort?: string | null;
-  descriptionLong?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
+    id: string;
+    name: string;
+    slug: string;
+    icon: string;
+    keywords: string
+    image: string | Media;
+    descriptionShort?: string | null;
+    descriptionLong?: {
+        root: {
+            type: string;
+            children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+        };
         [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  /**
-   * Цена "от", если цена не указана будет выводиться минмальная цена среди услуг
-   */
-  priceFrom?: number | null;
-  /**
-   * Преимущества
-   */
-  advantages?:
+    } | null;
+    /**
+     * Цена "от", если цена не указана будет выводиться минмальная цена среди услуг
+     */
+    priceFrom?: number | null;
+    /**
+     * Преимущества
+     */
+    advantages?:
     | {
         name: string;
         id?: string | null;
-      }[]
+    }[]
     | null;
-  /**
-   * Проказания
-   */
-  indications?:
+    /**
+     * Проказания
+     */
+    indications?:
     | {
         name: string;
         id?: string | null;
-      }[]
+    }[]
     | null;
-  /**
-   * Противопоказания
-   */
-  contraindications?:
+    /**
+     * Противопоказания
+     */
+    contraindications?:
     | {
         name: string;
         id?: string | null;
-      }[]
+    }[]
     | null;
-  /**
-   * Услуги
-   */
-  services?:
+    /**
+     * Услуги
+     */
+    services?:
     | {
         /**
          * Спиок услуг можно разбить подгруппы, например, как в массаже. Если подгруппа одна и ее название пустое, тогда все будет отображаться просто списком без разделений
@@ -264,369 +265,369 @@ export interface Service {
          * Услуги
          */
         items: {
-          name: string;
-          price: number;
-          /**
-           * Здесь можно написать "час", тогда будет отбражаться как {цена}/час. По умолчанию это значение пустое
-           */
-          per?: string | null;
-          id?: string | null;
+            name: string;
+            price: number;
+            /**
+             * Здесь можно написать "час", тогда будет отбражаться как {цена}/час. По умолчанию это значение пустое
+             */
+            per?: string | null;
+            id?: string | null;
         }[];
         id?: string | null;
-      }[]
+    }[]
     | null;
-  updatedAt: string;
-  createdAt: string;
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "reviews".
  */
 export interface Review {
-  id: string;
-  from: string;
-  content: string;
-  /**
-   * Рейтинг от 0 до 5
-   */
-  rating: number;
-  proDoctorov: boolean;
-  /**
-   * Если это отзыв из ПроДокторов
-   */
-  link?: string | null;
-  updatedAt: string;
-  createdAt: string;
+    id: string;
+    from: string;
+    content: string;
+    /**
+     * Рейтинг от 0 до 5
+     */
+    rating: number;
+    proDoctorov: boolean;
+    /**
+     * Если это отзыв из ПроДокторов
+     */
+    link?: string | null;
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "faqs".
  */
 export interface Faq {
-  id: string;
-  title: string;
-  content: string;
-  updatedAt: string;
-  createdAt: string;
+    id: string;
+    title: string;
+    content: string;
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  password?: string | null;
+    id: string;
+    updatedAt: string;
+    createdAt: string;
+    email: string;
+    resetPasswordToken?: string | null;
+    resetPasswordExpiration?: string | null;
+    salt?: string | null;
+    hash?: string | null;
+    loginAttempts?: number | null;
+    lockUntil?: string | null;
+    password?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: string;
-  document?:
+    id: string;
+    document?:
     | ({
         relationTo: 'doctors';
         value: string | Doctor;
-      } | null)
+    } | null)
     | ({
         relationTo: 'media';
         value: string | Media;
-      } | null)
+    } | null)
     | ({
         relationTo: 'services';
         value: string | Service;
-      } | null)
+    } | null)
     | ({
         relationTo: 'reviews';
         value: string | Review;
-      } | null)
+    } | null)
     | ({
         relationTo: 'faqs';
         value: string | Faq;
-      } | null)
+    } | null)
     | ({
         relationTo: 'users';
         value: string | User;
-      } | null);
-  globalSlug?: string | null;
-  user: {
-    relationTo: 'users';
-    value: string | User;
-  };
-  updatedAt: string;
-  createdAt: string;
+    } | null);
+    globalSlug?: string | null;
+    user: {
+        relationTo: 'users';
+        value: string | User;
+    };
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
-  user: {
-    relationTo: 'users';
-    value: string | User;
-  };
-  key?: string | null;
-  value?:
+    id: string;
+    user: {
+        relationTo: 'users';
+        value: string | User;
+    };
+    key?: string | null;
+    value?:
     | {
         [k: string]: unknown;
-      }
+    }
     | unknown[]
     | string
     | number
     | boolean
     | null;
-  updatedAt: string;
-  createdAt: string;
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
-  name?: string | null;
-  batch?: number | null;
-  updatedAt: string;
-  createdAt: string;
+    id: string;
+    name?: string | null;
+    batch?: number | null;
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "doctors_select".
  */
 export interface DoctorsSelect<T extends boolean = true> {
-  fullName?: T;
-  slug?: T;
-  about?: T;
-  image?: T;
-  position?: T;
-  specialitiesShort?:
+    fullName?: T;
+    slug?: T;
+    about?: T;
+    image?: T;
+    position?: T;
+    specialitiesShort?:
     | T
     | {
         name?: T;
         id?: T;
-      };
-  specialitiesLong?:
+    };
+    specialitiesLong?:
     | T
     | {
         name?: T;
         id?: T;
-      };
-  education?: T;
-  updatedAt?: T;
-  createdAt?: T;
+    };
+    education?: T;
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
-  alt?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
-  sizes?:
+    alt?: T;
+    updatedAt?: T;
+    createdAt?: T;
+    url?: T;
+    thumbnailURL?: T;
+    filename?: T;
+    mimeType?: T;
+    filesize?: T;
+    width?: T;
+    height?: T;
+    focalX?: T;
+    focalY?: T;
+    sizes?:
     | T
     | {
         thumbnail?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
+        | T
+        | {
+            url?: T;
+            width?: T;
+            height?: T;
+            mimeType?: T;
+            filesize?: T;
+            filename?: T;
+        };
         card?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
-      };
+        | T
+        | {
+            url?: T;
+            width?: T;
+            height?: T;
+            mimeType?: T;
+            filesize?: T;
+            filename?: T;
+        };
+    };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "services_select".
  */
 export interface ServicesSelect<T extends boolean = true> {
-  name?: T;
-  slug?: T;
-  icon?: T;
-  image?: T;
-  descriptionShort?: T;
-  descriptionLong?: T;
-  priceFrom?: T;
-  advantages?:
+    name?: T;
+    slug?: T;
+    icon?: T;
+    image?: T;
+    descriptionShort?: T;
+    descriptionLong?: T;
+    priceFrom?: T;
+    advantages?:
     | T
     | {
         name?: T;
         id?: T;
-      };
-  indications?:
+    };
+    indications?:
     | T
     | {
         name?: T;
         id?: T;
-      };
-  contraindications?:
+    };
+    contraindications?:
     | T
     | {
         name?: T;
         id?: T;
-      };
-  services?:
+    };
+    services?:
     | T
     | {
         title?: T;
         items?:
-          | T
-          | {
-              name?: T;
-              price?: T;
-              per?: T;
-              id?: T;
-            };
+        | T
+        | {
+            name?: T;
+            price?: T;
+            per?: T;
+            id?: T;
+        };
         id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
+    };
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "reviews_select".
  */
 export interface ReviewsSelect<T extends boolean = true> {
-  from?: T;
-  content?: T;
-  rating?: T;
-  proDoctorov?: T;
-  link?: T;
-  updatedAt?: T;
-  createdAt?: T;
+    from?: T;
+    content?: T;
+    rating?: T;
+    proDoctorov?: T;
+    link?: T;
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "faqs_select".
  */
 export interface FaqsSelect<T extends boolean = true> {
-  title?: T;
-  content?: T;
-  updatedAt?: T;
-  createdAt?: T;
+    title?: T;
+    content?: T;
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
-  updatedAt?: T;
-  createdAt?: T;
-  email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
+    updatedAt?: T;
+    createdAt?: T;
+    email?: T;
+    resetPasswordToken?: T;
+    resetPasswordExpiration?: T;
+    salt?: T;
+    hash?: T;
+    loginAttempts?: T;
+    lockUntil?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents_select".
  */
 export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
-  document?: T;
-  globalSlug?: T;
-  user?: T;
-  updatedAt?: T;
-  createdAt?: T;
+    document?: T;
+    globalSlug?: T;
+    user?: T;
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences_select".
  */
 export interface PayloadPreferencesSelect<T extends boolean = true> {
-  user?: T;
-  key?: T;
-  value?: T;
-  updatedAt?: T;
-  createdAt?: T;
+    user?: T;
+    key?: T;
+    value?: T;
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations_select".
  */
 export interface PayloadMigrationsSelect<T extends boolean = true> {
-  name?: T;
-  batch?: T;
-  updatedAt?: T;
-  createdAt?: T;
+    name?: T;
+    batch?: T;
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "about_us".
  */
 export interface AboutUs {
-  id: string;
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
+    id: string;
+    content: {
+        root: {
+            type: string;
+            children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+        };
         [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
     };
-    [k: string]: unknown;
-  };
-  updatedAt?: string | null;
-  createdAt?: string | null;
+    updatedAt?: string | null;
+    createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "about_us_select".
  */
 export interface AboutUsSelect<T extends boolean = true> {
-  content?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+    content?: T;
+    updatedAt?: T;
+    createdAt?: T;
+    globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "auth".
  */
 export interface Auth {
-  [k: string]: unknown;
+    [k: string]: unknown;
 }
 
 
 declare module 'payload' {
-  export interface GeneratedTypes extends Config {}
+    export interface GeneratedTypes extends Config { }
 }
