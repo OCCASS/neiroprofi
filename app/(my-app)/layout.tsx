@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     },
     appleWebApp: {
         title: "Нейропрофи"
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true
+        }
     }
 };
 
