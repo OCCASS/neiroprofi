@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "generate:sprite": "svg-sprite -s --symbol-dest ./public --symbol-sprite icons.svg icons/*.svg"
@@ -16,6 +17,7 @@
     "@payloadcms/richtext-lexical": "^3.31.0",
     "graphql": "^16.10.0",
     "next": "^15.2.4",
+    "next-sitemap": "^4.2.3",
     "nuqs": "^2.4.1",
     "payload": "^3.31.0",
     "react": "^19.1.0",

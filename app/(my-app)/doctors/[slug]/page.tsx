@@ -12,7 +12,7 @@ import List from "@/components/List";
 import { notFound } from "next/navigation"
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { loadDoctor } from "@/lib/loadData";
+import { loadDoctor, loadDoctors } from "@/lib/loadData";
 import FloatingWhatsappButton from "@/components/FloatingWhatsappButton";
 import { Media } from "../../../../payload-types";
 
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug
-    const doctor = await loadDoctor(slug)
+    const [doctors, doctor] = await Promise.all([loadDoctors(), loadDoctor(slug)])
 
     if (!doctor) notFound()
 
@@ -103,7 +103,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                     ><Icon name="whatsapp" width={45} height={45} className={styles.about__buttonIcon} /> Записаться через WhatsApp</Link>
                 </div>
             </Section>
-            <Staff />
+            <Staff doctors={doctors.docs} />
             <FloatingWhatsappButton url={`https://wa.me/79872966667?text=Здравсвтуйте, хочу записаться к доктору ${doctor.fullName}`} />
         </PageLayout>
     )

@@ -5,7 +5,7 @@ import styles from "./page.module.css"
 import Staff from "@/components/Staff";
 import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { loadAboutUs } from "@/lib/loadData";
+import { loadAboutUs, loadDoctors } from "@/lib/loadData";
 import RichText from "@/components/RichTextViewer";
 
 export const metadata: Metadata = {
@@ -28,14 +28,14 @@ const UnderHeader = () => {
 }
 
 export default async function Page() {
-    const aboutUs = await loadAboutUs()
+    const [aboutUs, doctors] = await Promise.all([loadAboutUs(), loadDoctors()])
 
     return (
         <PageLayout UnderHeaderComponent={UnderHeader}>
             <Section className={styles.section}>
                 <RichText data={aboutUs.content} />
             </Section>
-            <Staff />
+            <Staff doctors={doctors.docs} />
         </PageLayout>
     )
 }

@@ -6,12 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import LargeP from "@/components/LargeP";
 import Icon from "@/components/Icon";
-import { loadDoctors } from "@/lib/loadData";
-import { Media } from "../../../../payload-types";
+import { Doctor, Media } from "../../../../payload-types";
 
-const AboutDoctors = async () => {
-    const doctors = await loadDoctors()
-
+const AboutDoctors = async ({ doctors }: { doctors: Doctor[] }) => {
     return (
         <Section className={styles.about_doctors}>
             <SubSection>
@@ -44,7 +41,7 @@ const AboutDoctors = async () => {
                     style={{ color: "var(--color-primary)" }}>более 26</span> профессионалов</LargeP>
                 <div className={styles.doctors_list}>
                     {
-                        doctors.docs.slice(0, 8).map(item =>
+                        doctors.slice(0, 8).map(item =>
                             <Image
                                 key={item.id}
                                 className={styles.doctors_list__image}

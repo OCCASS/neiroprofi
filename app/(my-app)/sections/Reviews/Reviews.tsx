@@ -3,11 +3,9 @@ import styles from "./Reviews.module.css"
 import ReviewCard from "@/components/ReviewCard";
 import Link from "next/link";
 import Icon from "@/components/Icon";
-import { loadReivews } from "@/lib/loadData";
+import { Review } from "../../../../payload-types";
 
-const Reviews = async () => {
-    const reviews = await loadReivews()
-
+const Reviews = async ({ reviews }: { reviews: Review[] }) => {
     return (
         <Section className={styles.reviews}>
             <div className={styles.reviews__header}>
@@ -16,7 +14,7 @@ const Reviews = async () => {
             </div>
             <div className={styles.reviews__content}>
                 <Section className={styles.reviews__list}>
-                    {reviews.docs.map((item) => <ReviewCard key={item.id} review={item} className={styles.list__item} />)}
+                    {reviews.map((item) => <ReviewCard key={item.id} review={item} className={styles.list__item} />)}
                 </Section>
                 <Link href={encodeURI(`https://wa.me/79872966667?text=Здравсвтуйте, хочу написать отзыв.`)} target="_blank" rel="norepeer,noreferer" className={styles.reviews__add_button}>
                     <div className={styles.reviews__add_buttonContent}>
